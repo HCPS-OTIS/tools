@@ -17,6 +17,21 @@ for (let i = 0; i < elements.length; i++) {
     });
 }
 
+if (document.body.animate) {
+    document.querySelector('.copy-on-click').addEventListener('click', pop);
+}
+
+function pop(e) {
+    e.target.animate([
+        { transform: 'scale(1)', opacity: 1 },
+        { transform: 'scale(1.1)', opacity: 1 },
+        { transform: 'scale(1)', opacity: 1 }
+    ], {
+        duration: 1000,
+        iterations: 1
+    });
+}
+
 function openTab(evt, cityName) {
     // Declare all variables
     var i, tabcontent, tablinks;
