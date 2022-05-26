@@ -13,73 +13,98 @@
         <h1>Technician Repair Scripts</h1>
         <h3>Harford County Public Schools</h3>
 
-        <h2># motherboard</h2>
+        <!-- Tab links -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Chromebooks')" id="defaultOpen">Chromebooks</button>
+            <button class="tablinks" onclick="openTab(event, 'Windows')">Windows</button>
+            <button class="tablinks" onclick="openTab(event, 'Work Orders')">Work Orders</button>
+        </div>
 
-        <p>
-            Device becomes unresponsive<br>
-            Device shows artifacts on screen and freezes/becomes unresponsive.<br>
-        </p>
+        <!-- Tab content -->
+        <div id="Chromebooks" class="tabcontent">
+            <h2># motherboard</h2>
 
-        <p>
-            Device does not turn on<br>
-            Device will not power on/screen stays black. LED is lit. Reseated internal connections.<br>
-            Device will not power on/screen stays black. LED will not light. Reseated internal connections.<br>
-        </p>
+            <p>
+                Device becomes unresponsive<br>
+                Device shows artifacts on screen and freezes/becomes unresponsive.<br>
+            </p>
 
-        <p>
-            ChromeOS will not stay installed<br>
-            ChromeOS reinstalled multiple times and device continues to show "ChromeOS missing or damaged" error.<br>
-        </p>
+            <p>
+                Device does not turn on<br>
+                Device will not power on/screen stays black. LED is lit. Reseated internal connections.<br>
+                Device will not power on/screen stays black. LED will not light. Reseated internal connections.<br>
+            </p>
 
-        <h2># screen</h2>
+            <p>
+                ChromeOS will not stay installed<br>
+                ChromeOS reinstalled multiple times and device continues to show "ChromeOS missing or damaged"
+                error.<br>
+            </p>
 
-        <p>
-            Screen has known defect<br>
-            Screen has known black spot defect. Replacing under SITM-3169.<br>
-        </p>
+            <h2># screen</h2>
 
-        <h2># charge</h2>
+            <p>
+                Screen has known defect<br>
+                Screen has known black spot defect. Replacing under SITM-3169.<br>
+            </p>
 
-        <p>
-            Device will not charge<br>
-            Device will not power on/does not charge when plugged into known working charger. No signs of damage in the
-            ports.<br>
-        </p>
+            <h2># charge</h2>
 
-        <p>
-            Charger died<br>
-            Charger will not charge device. Tried other chargers on device and they function as expected. Charger will
-            not
-            charge other devices.<br>
-        </p>
+            <p>
+                Device will not charge<br>
+                Device will not power on/does not charge when plugged into known working charger. No signs of damage in
+                the
+                ports.<br>
+            </p>
 
-        <h2># overheating</h2>
+            <p>
+                Charger died<br>
+                Charger will not charge device. Tried other chargers on device and they function as expected. Charger
+                will
+                not
+                charge other devices.<br>
+            </p>
 
-        <p>
-            Device overheats/reboots<br>
-            Device freezes and reboots under high loads. Issue not seen on other Chromebooks. Performed
-            powerwash/software
-            reset.<br>
-        </p>
+            <h2># overheating</h2>
 
-        <h2># keyboard</h2>
+            <p>
+                Device overheats/reboots<br>
+                Device freezes and reboots under high loads. Issue not seen on other Chromebooks. Performed
+                powerwash/software
+                reset.<br>
+            </p>
 
-        <p>
-            Bad keyboard<br>
-            Keyboard keys no longer registered by device. Keys mechanically function with no sign of physical damage.
-            Reseated internal ribbon cable.<br>
-            Keys occasionally typing multiple times. Keys mechanically function with no sign of physical damage.
-            Reseated internal ribbon cable.<br>
-        </p>
+            <h2># keyboard</h2>
 
-        <h2># touchpad</h2>
+            <p>
+                Bad keyboard<br>
+                Keyboard keys no longer registered by device. Keys mechanically function with no sign of physical
+                damage.
+                Reseated internal ribbon cable.<br>
+                Keys occasionally typing multiple times. Keys mechanically function with no sign of physical damage.
+                Reseated internal ribbon cable.<br>
+            </p>
 
-        <p>
-            Touchpad is unresponsive<br>
-            Touchpad does not respond to any movements or button clicks. External USB mouse works fine. Reseated
-            touchpad ribbon cable on motherboard and still does not function.<br>
+            <h2># touchpad</h2>
 
-        </p>
+            <p>
+                Touchpad is unresponsive<br>
+                Touchpad does not respond to any movements or button clicks. External USB mouse works fine. Reseated
+                touchpad ribbon cable on motherboard and still does not function.<br>
+
+            </p>
+        </div>
+
+        <div id="Windows" class="tabcontent">
+            <h3>Windows</h3>
+            <p>Windows is the capital of France.</p>
+        </div>
+
+        <div id="Work Orders" class="tabcontent">
+            <h3>Work Orders</h3>
+            <p>Work Orders is the capital of Japan.</p>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
