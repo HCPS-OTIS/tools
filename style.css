@@ -43,15 +43,19 @@ p {
 h1 {
     margin-bottom: 0;
     font-family: roboto-light;
+    font-weight: inherit;
 }
 
 h2 {
     margin-bottom: 13px;
+    font-weight: inherit;
+    font-family: roboto-bold;
 }
 
 h3 {
     margin-top: 0;
     font-family: roboto-light;
+    font-weight: inherit;
 }
 
 h1,
