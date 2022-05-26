@@ -129,7 +129,7 @@ footer {
     text-align: center;
     padding: 10px 0;
     background: #222;
-    box-shadow: black 0 -5px 10px -5px;
+    box-shadow: black 0 -10px 10px -10px;
 }
 
 footer a:link {
