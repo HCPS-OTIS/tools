@@ -11,25 +11,25 @@ for (let i = 0; i < elements.length; i++) {
 
 elements = document.getElementsByClassName("copy-on-click");
 for (let i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("click", function () {
-        let text = elements[i].innerText;
-        navigator.clipboard.writeText(text);
-    });
+    elements[i].addEventListener("click", copy);
 }
 
-if (document.body.animate) {
-    document.querySelector('.copy-on-click').addEventListener('click', pop);
-}
+// if (document.body.animate) {
+//     document.querySelector('.copy-on-click').addEventListener('click', pop);
+// }
 
-function pop(e) {
-    e.target.animate([
-        { transform: 'scale(1)', opacity: 1 },
-        { transform: 'scale(1.1)', opacity: 1 },
-        { transform: 'scale(1)', opacity: 1 }
-    ], {
-        duration: 1000,
-        iterations: 1
-    });
+function copy(e) {
+    navigator.clipboard.writeText(e.target.innerText);
+    
+    alert("Copied to clipboard!");
+    // e.target.animate([
+    //     { transform: 'scale(1)', opacity: 1 },
+    //     { transform: 'scale(1.1)', opacity: 1 },
+    //     { transform: 'scale(1)', opacity: 1 }
+    // ], {
+    //     duration: 1000,
+    //     iterations: 1
+    // });
 }
 
 function openTab(evt, cityName) {
