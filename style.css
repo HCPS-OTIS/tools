@@ -114,7 +114,7 @@ h2 {
     color: white;
 }
 
-span:first-child {
+.eheader span:first-child {
     font-family: roboto-black;
     line-height: 32px;
 }
