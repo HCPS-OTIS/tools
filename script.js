@@ -1,4 +1,10 @@
-scrollTo(0, 0);
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+} else {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+}
 
 start = "<span class='copy-on-click' title='click to copy'>";
 end = "</span>";
@@ -43,7 +49,7 @@ function copy(e) {
 function openTab(evt, cityName) {
     location.hash = evt.target.id;
 
-    scrollTo(0, 0);
+    // scrollTo(0, 0);
 
     var i, tabcontent, tablinks;
 
