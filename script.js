@@ -14,22 +14,51 @@ for (let i = 0; i < elements.length; i++) {
     elements[i].addEventListener("click", copy);
 }
 
-// if (document.body.animate) {
-//     document.querySelector('.copy-on-click').addEventListener('click', pop);
-// }
-
 function copy(e) {
     navigator.clipboard.writeText(e.target.innerText);
     
-    alert("Copied to clipboard!");
-    // e.target.animate([
-    //     { transform: 'scale(1)', opacity: 1 },
-    //     { transform: 'scale(1.1)', opacity: 1 },
-    //     { transform: 'scale(1)', opacity: 1 }
-    // ], {
-    //     duration: 1000,
-    //     iterations: 1
-    // });
+    for (let i = 0; i < 8; i++) {
+        createParticle(e.clientX, e.clientY, i / 8 * 2 * Math.PI);
+    }
+
+}
+
+function createParticle(x, y, direction) {
+    const particle = document.createElement('particle');
+    particle.style.transform = 'rotate(90deg)';
+    document.body.appendChild(particle);
+
+    const startX = x + Math.sin(direction) * 20;
+    const startY = y + Math.cos(direction) * 20;
+
+    const endX = x + Math.sin(direction) * 50;
+    const endY = y + Math.cos(direction) * 50;
+
+    const size = 10;
+    const animation = particle.animate([
+        {
+            transform: `translate(${startX - size / 2}px, ${startY - size / 2}px) rotate(${-direction}rad)`,
+            opacity: 1,
+            height: `${size}px`,
+        },
+        {
+            transform: `translate(${startX - size / 2}px, ${startY - size / 2}px) rotate(${-direction}rad)`,
+            opacity: 1,
+            height: `${size*4}px`,
+        },
+        {
+            transform: `translate(${endX - size / 2}px, ${endY - size / 2}px) rotate(${-direction}rad)`,
+            opacity: 1,
+            height: `${size}px`,
+        }
+    ],
+    {
+        duration: 500
+    });
+
+    animation.onfinish = () => {
+        particle.remove();
+    };
 }
 
 function openTab(evt, cityName) {
