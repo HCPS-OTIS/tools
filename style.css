@@ -130,11 +130,11 @@ footer a:link {
 }
 
 particle {
-    border-radius: 5px;
+    border-radius: 50px;
     top: 0;
     left: 0;
     pointer-events: none;
     position: fixed;
     width: 10px;
-    background: #ddd;
+    background: white;
 }

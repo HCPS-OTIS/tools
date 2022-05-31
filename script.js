@@ -35,44 +35,43 @@ for (let i = 0; i < elements.length; i++) {
 // copy text to clipboard and create particles
 function copy(e) {
     navigator.clipboard.writeText(e.target.innerText);
-    
-    for (let i = 0; i < 8; i++) {
-        createParticle(e.clientX, e.clientY, i / 8 * 2 * Math.PI);
-    }
+
+    flashColor(e.target);
+
+    createParticle(e.clientX, e.clientY);
+}
+
+// flash the text color of the clicked element
+function flashColor(element) {
+    origColor = element.style.textShadow;
+    element.style.textShadow = "0 0 10px #fff";
+    setTimeout(function() {
+        element.style.textShadow = origColor;
+    }, 100);
 }
 
 // create each individual particle
-function createParticle(x, y, direction) {
+function createParticle(x, y) {
     const particle = document.createElement('particle');
-    particle.style.transform = 'rotate(90deg)';
     document.body.appendChild(particle);
 
-    const startX = x + Math.sin(direction) * 20;
-    const startY = y + Math.cos(direction) * 20;
-
-    const endX = x + Math.sin(direction) * 50;
-    const endY = y + Math.cos(direction) * 50;
-
-    const size = 10;
+    const size = 50;
     const animation = particle.animate([
         {
-            transform: `translate(${startX - size / 2}px, ${startY - size / 2}px) rotate(${-direction}rad)`,
+            transform: `translate(${x}px, ${y}px)`,
             opacity: 1,
-            height: `${size}px`,
+            height: `0px`,
+            width: `0px`
         },
         {
-            transform: `translate(${startX - size / 2}px, ${startY - size / 2}px) rotate(${-direction}rad)`,
-            opacity: 1,
-            height: `${size*4}px`,
-        },
-        {
-            transform: `translate(${endX - size / 2}px, ${endY - size / 2}px) rotate(${-direction}rad)`,
-            opacity: 1,
+            transform: `translate(${x - size / 2}px, ${y - size / 2}px)`,
+            opacity: 0,
             height: `${size}px`,
+            width: `${size}px`
         }
     ],
     {
-        duration: 500
+        duration: 300
     });
 
     animation.onfinish = () => {
