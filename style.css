@@ -136,5 +136,5 @@ particle {
     pointer-events: none;
     position: fixed;
     width: 10px;
-    background: rgb(255, 174, 0);
+    background: #ddd;
 }

@@ -3,40 +3,45 @@ if (history.scrollRestoration) {
 } else {
     window.onbeforeunload = function () {
         window.scrollTo(0, 0);
-    }
-}
+    }    
+}    
 
-start = "<span class='copy-on-click' title='click to copy'>";
-end = "</span>";
-
-elements = document.getElementsByTagName('p');
-for (let i = 0; i < elements.length; i++) {
-    html = elements[i].innerHTML;
-    html = html.replace(/<br>/g, end + "<br>" + start);
-    html = start + html + end;
-    elements[i].innerHTML = html;
-}
-
-elements = document.getElementsByClassName("copy-on-click");
-for (let i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("click", copy);
-}
-
+// default to the Chromebook tab
 try {
     document.getElementById(location.hash.substring(1)).click();
 } catch (error) {
     document.getElementById("cbs").click();
 }
 
+// tags to add around each line of text
+start = "<span class='copy-on-click' title='click to copy'>";
+end = "</span>";
+
+// add tags around text in <p>s based on <br>s
+elements = document.getElementsByTagName('p');
+for (let i = 0; i < elements.length; i++) {
+    html = elements[i].innerHTML;
+    html = html.replace(/<br>/g, end + "<br>" + start);
+    html = start + html + end;
+    elements[i].innerHTML = html;
+}    
+
+// add event listener to newly added <span>s
+elements = document.getElementsByClassName("copy-on-click");
+for (let i = 0; i < elements.length; i++) {
+    elements[i].addEventListener("click", copy);
+}    
+
+// copy text to clipboard and create particles
 function copy(e) {
     navigator.clipboard.writeText(e.target.innerText);
     
     for (let i = 0; i < 8; i++) {
         createParticle(e.clientX, e.clientY, i / 8 * 2 * Math.PI);
     }
-
 }
 
+// create each individual particle
 function createParticle(x, y, direction) {
     const particle = document.createElement('particle');
     particle.style.transform = 'rotate(90deg)';
@@ -75,20 +80,19 @@ function createParticle(x, y, direction) {
     };
 }
 
+// switch between tabs
 function openTab(evt, cityName) {
     location.hash = evt.target.id;
 
-    // scrollTo(0, 0);
-
-    var i, tabcontent, tablinks;
+    var tabcontent, tablinks;
 
     tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
+    for (let i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
     tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
+    for (let i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
