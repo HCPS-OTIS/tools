@@ -23,13 +23,11 @@
     src: url(fonts/roboto/Roboto-Medium.ttf);
 }
 
-/* Style the tab */
 .tab {
     overflow: hidden;
     background-color: inherit;
 }
 
-/* Style the buttons that are used to open the tab content */
 .tab button {
     color: white;
     background-color: inherit;
@@ -43,27 +41,22 @@
     border-radius: 2px;
 }
 
-/* Change background color of buttons on hover */
 .tab button:hover {
     background-color: #444;
 }
 
-/* Create an active/current tablink class */
 .tab button.active {
     background-color: #666;
 }
 
-/* Style the tab content */
 .tabcontent {
     display: none;
 }
 
 .tabcontent {
     animation: fadeEffect 1s;
-    /* Fading effect takes 1 second */
 }
 
-/* Go from zero to full opacity */
 @keyframes fadeEffect {
     from {
         opacity: 0;
@@ -114,7 +107,7 @@ h2 {
     color: white;
 }
 
-span:first-child {
+.eheader span:first-child {
     font-family: roboto-black;
     line-height: 32px;
 }
