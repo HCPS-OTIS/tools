@@ -1,26 +1,26 @@
 @font-face {
     font-family: roboto;
-    src: url(fonts/roboto/Roboto-Regular.ttf);
+    src: url(/assets/fonts/roboto/Roboto-Regular.ttf);
 }
 
 @font-face {
     font-family: roboto-bold;
-    src: url(fonts/roboto/Roboto-Bold.ttf);
+    src: url(/assets/fonts/roboto/Roboto-Bold.ttf);
 }
 
 @font-face {
     font-family: roboto-light;
-    src: url(fonts/roboto/Roboto-Light.ttf);
+    src: url(/assets/fonts/roboto/Roboto-Light.ttf);
 }
 
 @font-face {
     font-family: roboto-black;
-    src: url(fonts/roboto/Roboto-Black.ttf);
+    src: url(/assets/fonts/roboto/Roboto-Black.ttf);
 }
 
 @font-face {
     font-family: roboto-medium;
-    src: url(fonts/roboto/Roboto-Medium.ttf);
+    src: url(/assets/fonts/roboto/Roboto-Medium.ttf);
 }
 
 .tab {
@@ -28,33 +28,27 @@
     background-color: inherit;
 }
 
-.tab button {
+.tab .tablinks {
     color: white;
     background-color: inherit;
     float: left;
     border: none;
     outline: none;
     cursor: pointer;
+    text-decoration: none;
     padding: 14px 16px;
     margin-right: 12px;
     transition: 0.3s;
     border-radius: 2px;
 }
 
-.tab button:hover {
+.tab .tablinks:hover {
     background-color: #444;
 }
 
-.tab button.active {
+.tab .tablinks:active,
+.tab .tablinks.active {
     background-color: #666;
-}
-
-.tabcontent {
-    display: none;
-}
-
-.tabcontent {
-    animation: fadeEffect 1s;
 }
 
 @keyframes fadeEffect {
@@ -107,7 +101,7 @@ h2 {
     color: white;
 }
 
-.eheader span:first-child {
+.eheader p::first-line {
     font-family: roboto-black;
     line-height: 32px;
 }

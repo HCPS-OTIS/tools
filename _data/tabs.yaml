@@ -1,0 +1,8 @@
+- id: chromebooks
+  name: Chromebooks
+
+- id: windows
+  name: Windows Laptops
+
+- id: workorders
+  name: Work Orders

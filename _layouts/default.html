@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Endpoint Technician Repair Scripts — Harford County Public Schools</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" href="assets/favicon.png">
+</head>
+
+<body>
+    <div id="content">
+        <h1>Endpoint Technician Repair Scripts</h1>
+        <h3>Harford County Public Schools</h3>
+
+        <div class="tab">
+            {% for tab in site.data.tabs %}
+            <a class="tablinks{% if page.name contains tab.id %} active{% endif %}" href="/{{ tab.id }}">{{ tab.name
+                }}</a>
+            {% endfor %}
+        </div>
+
+        <div class="content eheader">
+            {{ page.content }}
+        </div>
+
+    </div>
+
+    <script src="assets/script.js"></script>
+
+    <footer>
+        <span>Authors: <a href="mailto:aidan.bennett@hcps.org">Aidan Bennett</a> and <a
+                href="mailto:conner.welker@hcps.org">Conner Welker</a></span>
+    </footer>
+</body>
+
+</html>
