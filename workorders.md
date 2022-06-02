@@ -3,48 +3,28 @@ title: Work Orders
 layout: default
 ---
 
-<h2># tech direct</h2>
+## techdirect
 
-<p>
-    Created dispatch: [code]. Waiting to return to Dell for repair.<br>
-</p>
+Created dispatch: [code]. Waiting to return to Dell for repair.
 
-<p>
-    Created dispatch for part replacement: [code]. Waiting on parts.<br>
-</p>
+Created dispatch for part replacement: [code]. Waiting on parts.
 
-<p>
-    Repaired by Dell.<br>
-</p>
+Repaired by Dell.
 
-<h2># replacements</h2>
+## replacements
 
-<p>
-    Screen replaced.<br>
-</p>
+Screen replaced.
 
-<p>
-    Barcode replaced.<br>
-</p>
+Barcode replaced.
 
-<p>
-    Keyboard replaced.<br>
-</p>
+Keyboard replaced.
 
-<p>
-    Plastics replaced.<br>
-</p>
+Plastics replaced.
 
-<p>
-    Touchpad replaced.<br>
-</p>
+Touchpad replaced.
 
-<h2># repairs</h2>
+## repairs
 
-<p>
-    Reimaged device. Device in working order.<br>
-</p>
+Reimaged device. Device in working order.
 
-<p>
-    Could not replicate problem. Device in working order.<br>
-</p>
+Could not replicate problem. Device in working order.

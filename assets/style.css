@@ -1,26 +1,26 @@
 @font-face {
     font-family: roboto;
-    src: url(/assets/fonts/roboto/Roboto-Regular.ttf);
+    src: url(fonts/roboto/Roboto-Regular.ttf);
 }
 
 @font-face {
     font-family: roboto-bold;
-    src: url(/assets/fonts/roboto/Roboto-Bold.ttf);
+    src: url(fonts/roboto/Roboto-Bold.ttf);
 }
 
 @font-face {
     font-family: roboto-light;
-    src: url(/assets/fonts/roboto/Roboto-Light.ttf);
+    src: url(fonts/roboto/Roboto-Light.ttf);
 }
 
 @font-face {
     font-family: roboto-black;
-    src: url(/assets/fonts/roboto/Roboto-Black.ttf);
+    src: url(fonts/roboto/Roboto-Black.ttf);
 }
 
 @font-face {
     font-family: roboto-medium;
-    src: url(/assets/fonts/roboto/Roboto-Medium.ttf);
+    src: url(fonts/roboto/Roboto-Medium.ttf);
 }
 
 .tab {
@@ -88,6 +88,10 @@ h2 {
     margin-bottom: 13px;
     font-weight: inherit;
     font-family: roboto-bold;
+}
+
+h2::before {
+    content: "# ";
 }
 
 h3 {

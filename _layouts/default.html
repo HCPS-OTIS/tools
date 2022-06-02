@@ -20,8 +20,8 @@
             {% endfor %}
         </div>
 
-        <div class="content eheader">
-            {{ page.content }}
+        <div markdown="1" class="content eheader">
+            {{ page.content | markdownify }}
         </div>
 
     </div>
