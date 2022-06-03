@@ -15,7 +15,7 @@
 
         <div class="tab">
             {% for tab in site.data.tabs %}
-            <a class="tablinks{% if page.name contains tab.id %} active{% endif %}" href="/{{ tab.id }}">{{ tab.name
+            <a class="tablinks{% if page.name contains tab.id %} active{% endif %}" href="{{ tab.id }}">{{ tab.name
                 }}</a>
             {% endfor %}
         </div>
