@@ -1,3 +1,4 @@
+/* fonts */
 @font-face {
     font-family: roboto;
     src: url(fonts/roboto/Roboto-Regular.ttf);
@@ -23,6 +24,7 @@
     src: url(fonts/roboto/Roboto-Medium.ttf);
 }
 
+/* tab buttons */
 .tab {
     overflow: hidden;
     background-color: inherit;
@@ -51,21 +53,13 @@
     background-color: #666;
 }
 
-@keyframes fadeEffect {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
+/* padding around page */
 #content {
     padding-left: 15px;
     margin-bottom: 50px;
 }
 
+/* general formatting */
 body {
     background-color: #222;
     color: #ddd;
@@ -78,6 +72,12 @@ p {
     margin-top: 0;
 }
 
+.copy-on-click {
+    width: auto;
+    cursor: pointer;
+}
+
+/* header formatting */
 h1 {
     margin-bottom: 0;
     font-family: roboto-light;
@@ -105,16 +105,13 @@ h2 {
     color: white;
 }
 
+/* first line (title of reason) */
 .eheader p::first-line {
     font-family: roboto-black;
     line-height: 32px;
 }
 
-.copy-on-click {
-    width: auto;
-    cursor: pointer;
-}
-
+/* footer */
 footer {
     width: 100%;
     text-align: center;
@@ -127,6 +124,7 @@ footer a:link {
     color: inherit;
 }
 
+/* click animation */
 particle {
     border-radius: 50px;
     top: 0;
