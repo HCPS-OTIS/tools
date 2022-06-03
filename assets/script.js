@@ -17,6 +17,13 @@ for (let i = 0; i < elements.length; i++) {
     elements[i].addEventListener("click", copy);
 }
 
+// create service worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('assets/service-worker.js', {
+        scope: '/repair/'
+    });
+}
+
 // copy text to clipboard and create particles
 function copy(e) {
     navigator.clipboard.writeText(e.target.innerText);
