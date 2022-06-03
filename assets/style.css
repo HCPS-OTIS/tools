@@ -134,3 +134,26 @@ particle {
     width: 10px;
     background: white;
 }
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* selection */
+::selection {
+    background: #555;
+    color: white;
+}
