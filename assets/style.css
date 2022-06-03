@@ -85,13 +85,24 @@ h1 {
 }
 
 h2 {
+    display: flex;
+    align-items: center;
     margin-bottom: 13px;
     font-weight: inherit;
     font-family: roboto-bold;
 }
 
 h2::before {
-    content: "# ";
+    content: '# ';
+    margin-right: 10px;
+}
+
+h2::after {
+    content: '';
+    background: #444;
+    height: 2px;
+    margin: 10px;
+    flex: 1;
 }
 
 h3 {
