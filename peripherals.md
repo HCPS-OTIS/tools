@@ -1,5 +1,5 @@
 ---
-title: Dell Devices
+title: Peripherals
 layout: default
 ---
 

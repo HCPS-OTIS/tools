@@ -4,5 +4,8 @@
 - id: windows
   name: Windows Laptops
 
+- id: peripherals
+  name: Peripherals
+
 - id: workorders
   name: Work Orders
