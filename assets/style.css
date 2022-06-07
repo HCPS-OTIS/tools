@@ -208,6 +208,17 @@ h2 {
     color: white;
 }
 
+h1,
+h2,
+h3 {
+    user-select: none;
+}
+
+h1,
+h3 {
+    cursor: default;
+}
+
 /* first line (title of reason) */
 .content span:first-child {
     font-family: roboto-black;
