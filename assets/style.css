@@ -145,7 +145,7 @@ nav a:hover span::after {
 /* padding left of page */
 .header,
 .content {
-    padding-left: 16px;
+    padding: 0 10px 0 16px;
 }
 
 /* general formatting */
@@ -190,7 +190,7 @@ h2::after {
     content: '';
     background: #444;
     height: 2px;
-    margin: 10px;
+    margin-left: 10px;
     flex: 1;
 }
 
