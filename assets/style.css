@@ -148,6 +148,7 @@ nav a:hover span {
     background: #eeef;
     margin-left: 10px;
     transform: translateY(-50%) scale(1);
+    box-shadow: 0 0 5px -1px #000f;
 }
 
 nav a:hover span::after {
