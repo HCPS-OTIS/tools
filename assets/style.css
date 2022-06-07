@@ -29,15 +29,17 @@ body {
     height: 100vh;
     display: grid;
     grid-template-columns: 72px auto;
-    grid-template-rows: 100px auto;
+    grid-template-rows: min-content auto;
     grid-template-areas:
-        "nav header"
+        "header header"
         "nav main";
 }
 
 .header {
     grid-area: header;
-    box-shadow: black 0 0 10px 2px;
+    box-shadow: black 0 0 10px 0px;
+    background: #333;
+    z-index: 1000;
 }
 
 .content-wrapper {
@@ -48,14 +50,15 @@ body {
 /* navbar */
 
 nav {
-    background: #333;
+    background: #282828;
     grid-area: nav;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
     padding-top: 10px;
-    z-index: 1000;
+    z-index: 999;
+    box-shadow: black 0 0 10px 0px;
 }
 
 /* navbar items */
@@ -142,8 +145,11 @@ nav a:hover span::after {
     border-right: 5px solid rgba(238, 238, 238, 1);
 }
 
-/* padding left of page */
-.header,
+/* padding around page */
+.header {
+    padding: 16px;
+}
+
 .content {
     padding: 0 10px 0 16px;
 }
@@ -168,7 +174,7 @@ p {
 
 /* headings formatting */
 h1 {
-    margin-bottom: 0;
+    margin: 0;
     font-family: roboto-light;
     font-weight: inherit;
 }
@@ -195,7 +201,7 @@ h2::after {
 }
 
 h3 {
-    margin-top: 0;
+    margin: 0;
     font-family: roboto-light;
     font-weight: inherit;
 }
@@ -206,7 +212,7 @@ h2 {
 }
 
 /* first line (title of reason) */
-.content p::first-line {
+.content span:first-child {
     font-family: roboto-black;
     line-height: 32px;
 }
@@ -217,7 +223,7 @@ footer {
     text-align: center;
     padding: 10px 0;
     background: #222;
-    box-shadow: black 0 0 10px 2px;
+    box-shadow: black 0 0 10px 0px;
     clip-path: inset(-15px 0 1px 0);
 }
 
