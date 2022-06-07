@@ -24,39 +24,134 @@
     src: url(fonts/roboto/Roboto-Medium.ttf);
 }
 
-/* tab buttons */
-.tab {
-    overflow: hidden;
-    background-color: inherit;
+/* layout */
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 72px auto;
+    grid-template-rows: min-content auto;
+    grid-template-areas:
+        "header header"
+        "nav main";
 }
 
-.tab .tablinks {
-    color: white;
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
+.header {
+    grid-area: header;
+    box-shadow: black 0 0 10px 0px;
+    background: #333;
+    z-index: 1000;
+}
+
+.content-wrapper {
+    grid-area: main;
+    overflow-y: auto;
+}
+
+/* navbar */
+
+nav {
+    background: #282828;
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 10px;
+    z-index: 999;
+    box-shadow: black 0 0 10px 0px;
+}
+
+/* navbar items */
+
+nav a {
+    display: block;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #444;
+    transition: all .25s;
     text-decoration: none;
-    padding: 14px 16px;
-    margin-right: 12px;
-    transition: 0.3s;
-    border-radius: 2px;
 }
 
-.tab .tablinks:hover {
-    background-color: #444;
+nav a:hover,
+nav a:active,
+nav a.active {
+    background: #eee;
+    border-radius: 30%;
 }
 
-.tab .tablinks:active,
-.tab .tablinks.active {
-    background-color: #666;
+nav a img {
+    width: 28px;
+    height: 28px;
+    position: relative;
+    top: -24px;
+    left: 12px;
+    filter: contrast(0%) brightness(200%);
+    transition: all .25s;
+}
+
+nav a:hover img,
+nav a.active img {
+    filter: none;
+}
+
+/* navbar label */
+
+nav a span {
+    background: rgba(238, 238, 238, 0);
+    color: rgba(0, 0, 0, 0);
+    font-family: roboto-bold;
+    font-size: 14px;
+
+    position: relative;
+    left: 60px;
+    top: 50%;
+    margin-left: 5px;
+
+    display: block;
+    padding: 10px 12px;
+    width: max-content;
+    border-radius: 8px;
+    transform: translateY(-50%) translateX(-25%) scale(0.7);
+    transition: all .25s;
+    pointer-events: none;
+}
+
+nav a span::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid rgba(238, 238, 238, 0);
+
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .25s;
+}
+
+nav a:hover span {
+    display: block;
+    color: rgba(0, 0, 0, 1);
+    background: rgba(238, 238, 238, 1);
+    margin-left: 10px;
+    transform: translateY(-50%) scale(1);
+}
+
+nav a:hover span::after {
+    border-right: 5px solid rgba(238, 238, 238, 1);
 }
 
 /* padding around page */
-#content {
-    padding-left: 15px;
-    margin-bottom: 50px;
+.header {
+    padding: 16px;
+}
+
+.content {
+    padding: 0 10px 0 16px;
 }
 
 /* general formatting */
@@ -77,9 +172,9 @@ p {
     cursor: pointer;
 }
 
-/* header formatting */
+/* headings formatting */
 h1 {
-    margin-bottom: 0;
+    margin: 0;
     font-family: roboto-light;
     font-weight: inherit;
 }
@@ -101,12 +196,12 @@ h2::after {
     content: '';
     background: #444;
     height: 2px;
-    margin: 10px;
+    margin-left: 10px;
     flex: 1;
 }
 
 h3 {
-    margin-top: 0;
+    margin: 0;
     font-family: roboto-light;
     font-weight: inherit;
 }
@@ -128,7 +223,7 @@ h3 {
 }
 
 /* first line (title of reason) */
-.eheader p::first-line {
+.content span:first-child {
     font-family: roboto-black;
     line-height: 32px;
 }
@@ -139,7 +234,8 @@ footer {
     text-align: center;
     padding: 10px 0;
     background: #222;
-    box-shadow: black 0 -10px 10px -10px;
+    box-shadow: black 0 0 10px 0px;
+    clip-path: inset(-15px 0 1px 0);
 }
 
 footer a:link {

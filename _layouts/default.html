@@ -30,30 +30,40 @@
 </head>
 
 <body>
-    <div id="content">
+
+    <nav>
+        {% for tab in site.data.tabs %}
+        <a {% if page.name contains tab.id %}class="active" {% endif %} href="{{ tab.id }}">
+            <span>{{ tab.name }}</span>
+            <img src="assets/svg/{{ tab.id }}.svg">
+        </a>
+        {% endfor %}
+    </nav>
+
+    <div class="header">
         <h1>Endpoint Technician Repair Scripts</h1>
         <h3>Harford County Public Schools</h3>
+    </div>
 
-        <div class="tab">
-            {% for tab in site.data.tabs %}
-            <a class="tablinks{% if page.name contains tab.id %} active{% endif %}" href="{{ tab.id }}">{{
-                tab.name
-                }}</a>
-            {% endfor %}
+    <div class="content-wrapper">
+
+        <div class="content">
+
+            <div>
+                {{ page.content | markdownify }}
+            </div>
+
         </div>
 
-        <div markdown="1" class="content eheader">
-            {{ page.content | markdownify }}
-        </div>
+        <footer>
+            <span>Authors: <a href="mailto:aidan.bennett@hcps.org">Aidan Bennett</a> and <a
+                    href="mailto:conner.welker@hcps.org">Conner Welker</a></span>
+        </footer>
 
     </div>
 
     <script src="assets/script.js"></script>
 
-    <footer>
-        <span>Authors: <a href="mailto:aidan.bennett@hcps.org">Aidan Bennett</a> and <a
-                href="mailto:conner.welker@hcps.org">Conner Welker</a></span>
-    </footer>
 </body>
 
 </html>
