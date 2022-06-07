@@ -43,12 +43,12 @@ body {
 }
 
 .content-wrapper {
+    background: #222;
     grid-area: main;
     overflow-y: auto;
 }
 
 /* navbar */
-
 nav {
     background: #282828;
     grid-area: nav;
@@ -62,7 +62,6 @@ nav {
 }
 
 /* navbar items */
-
 nav a {
     display: block;
     width: 52px;
@@ -97,10 +96,9 @@ nav a.active img {
 }
 
 /* navbar label */
-
 nav a span {
-    background: rgba(238, 238, 238, 0);
-    color: rgba(0, 0, 0, 0);
+    background: #eee0;
+    color: #0000;
     font-family: roboto-bold;
     font-size: 14px;
 
@@ -125,7 +123,7 @@ nav a span::after {
     height: 0;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
-    border-right: 5px solid rgba(238, 238, 238, 0);
+    border-right: 5px solid #eee0;
 
     position: absolute;
     left: -5px;
@@ -136,14 +134,14 @@ nav a span::after {
 
 nav a:hover span {
     display: block;
-    color: rgba(0, 0, 0, 1);
-    background: rgba(238, 238, 238, 1);
+    color: #000f;
+    background: #eeef;
     margin-left: 10px;
     transform: translateY(-50%) scale(1);
 }
 
 nav a:hover span::after {
-    border-right: 5px solid rgba(238, 238, 238, 1);
+    border-right: 5px solid #eeef;
 }
 
 /* padding around page */
@@ -157,7 +155,6 @@ nav a:hover span::after {
 
 /* general formatting */
 body {
-    background-color: #222;
     color: #ddd;
     font-family: roboto;
     margin: 0;
@@ -234,13 +231,17 @@ footer {
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    background: #222;
     box-shadow: black 0 0 10px 0px;
     clip-path: inset(-15px 0 1px 0);
 }
 
 footer a:link {
     color: inherit;
+}
+
+footer .pencil {
+    cursor: pointer;
+    user-select: none;
 }
 
 /* click animation */
@@ -260,19 +261,62 @@ particle {
 }
 
 ::-webkit-scrollbar-track {
-    background: #222;
+    background: #0000;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #444;
+    background: #fff2;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #fff3;
 }
 
 /* selection */
 ::selection {
     background: #555;
     color: white;
+}
+
+/* chill */
+body {
+    background: url(background.svg);
+    background-size: cover;
+    --transition: background-color 1s, box-shadow 1s;
+}
+
+.content-wrapper,
+.header,
+nav,
+h2::after,
+footer {
+    transition: var(--transition);
+}
+
+body.chill .content-wrapper {
+    background: #0000;
+}
+
+body.chill .header {
+    background: #0003;
+}
+
+body.chill nav {
+    background: #0003;
+}
+
+body.chill h2::after {
+    background: #0000;
+}
+
+body.chill footer {
+    box-shadow: none;
+}
+
+body.chill ::-webkit-scrollbar-thumb {
+    background: #0003;
+}
+
+body.chill ::-webkit-scrollbar-thumb:hover {
+    background: #0004;
 }
