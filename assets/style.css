@@ -71,6 +71,7 @@ nav a {
     background: #444;
     transition: all .25s;
     text-decoration: none;
+    user-select: none;
 }
 
 nav a:hover,
