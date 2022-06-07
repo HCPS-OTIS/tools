@@ -70,6 +70,7 @@ nav a {
     background: #444;
     transition: all .25s;
     text-decoration: none;
+    cursor: pointer;
 }
 
 nav a:hover,
@@ -92,6 +93,15 @@ nav a img {
 nav a:hover img,
 nav a.active img {
     filter: none;
+}
+
+/* navbar hr */
+nav hr {
+    width: 50%;
+    height: 2px;
+    background: #444;
+    border: none;
+    margin: 0;
 }
 
 /* navbar label */
@@ -236,11 +246,6 @@ footer {
 
 footer a:link {
     color: inherit;
-}
-
-footer .pencil {
-    cursor: pointer;
-    user-select: none;
 }
 
 /* click animation */
