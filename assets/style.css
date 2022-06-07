@@ -281,7 +281,7 @@ particle {
 body {
     background: url(background.svg);
     background-size: cover;
-    --transition: background-color 1s;
+    --transition: background-color 1s, box-shadow 1s;
 }
 
 .content-wrapper,

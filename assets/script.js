@@ -77,12 +77,15 @@ function togglechill() {
     }
 }
 
-// check for chill cookie and toggle background
+// check for chill cookie and toggle background instantly
+orig = getComputedStyle(document.body).getPropertyValue("--transition")
+document.body.style.setProperty("--transition", "none")
+
 if (document.cookie.includes("chill=true")) {
-    document.body.style.setProperty("--transition", "none")
     document.body.className = "chill"
-    // pause for 1s
-    setTimeout(function () {
-        document.body.style.setProperty("--transition", "all 1s")
-    }, 100)
 }
+
+// pause for 100ms, then restore original transition
+setTimeout(function () {
+    document.body.style.setProperty("--transition", orig)
+}, 100)
