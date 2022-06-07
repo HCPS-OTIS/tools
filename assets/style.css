@@ -78,18 +78,18 @@ nav a.active {
 }
 
 nav a img {
-    width: 27px;
-    height: 27px;
+    width: 28px;
+    height: 28px;
     position: relative;
     top: -24px;
-    left: 13px;
+    left: 12px;
     filter: contrast(0%) brightness(200%);
     transition: all .25s;
 }
 
 nav a:hover img,
 nav a.active img {
-    filter: contrast(0%) brightness(0%);
+    filter: none;
 }
 
 /* navbar label */
