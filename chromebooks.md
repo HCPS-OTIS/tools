@@ -23,6 +23,9 @@ ChromeOS reinstalled multiple times and device continues to show "ChromeOS missi
 Screen has known defect  
 Screen has known black spot defect. Replacing under SITM-3169.
 
+Screen not displaying  
+Screen not displaying an image. I have reseated the battery and video cable, but screen still shows nothing.
+
 Touch Screen  
 Device touchscreen isn't working or is malfunctioning. I have reseated the battery and LCD Panel but the touchscreen still isn't working properly.
 
