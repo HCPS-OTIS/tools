@@ -250,6 +250,10 @@ footer a:link {
     color: inherit;
 }
 
+.pencil:link {
+    text-decoration: none;
+}
+
 /* click animation */
 particle {
     border-radius: 50px;
