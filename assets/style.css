@@ -70,6 +70,7 @@ nav a {
     background: #444;
     transition: all .25s;
     text-decoration: none;
+    cursor: pointer;
     user-select: none;
 }
 
@@ -92,7 +93,16 @@ nav a img {
 
 nav a:hover img,
 nav a.active img {
-    filter: none;
+    filter: drop-shadow(1px 1px 2px #888);
+}
+
+/* navbar hr */
+nav hr {
+    width: 50%;
+    height: 2px;
+    background: #444;
+    border: none;
+    margin: 0;
 }
 
 /* navbar label */
@@ -138,6 +148,7 @@ nav a:hover span {
     background: #eeef;
     margin-left: 10px;
     transform: translateY(-50%) scale(1);
+    box-shadow: 0 0 5px -1px #000f;
 }
 
 nav a:hover span::after {
@@ -237,11 +248,6 @@ footer {
 
 footer a:link {
     color: inherit;
-}
-
-footer .pencil {
-    cursor: pointer;
-    user-select: none;
 }
 
 /* click animation */

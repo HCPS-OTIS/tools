@@ -65,27 +65,38 @@ function createParticle(x, y) {
 }
 
 // toggle background
+function chillon() {
+    document.body.className = "chill"
+    document.cookie = "chill=true"
+    document.getElementById("backgroundtoggle").className = "active"
+}
+
+function chilloff() {
+    document.body.className = ""
+    document.cookie = "chill=false"
+    document.getElementById("backgroundtoggle").className = ""
+}
+
 function togglechill() {
     if (document.body.className == "chill") {
-        document.body.className = ""
-        // set chill cookie to false
-        document.cookie = "chill=false"
+        chilloff()
     } else {
-        document.body.className = "chill"
-        // set chill cookie to true
-        document.cookie = "chill=true"
+        chillon()
     }
 }
 
 // check for chill cookie and toggle background instantly
 orig = getComputedStyle(document.body).getPropertyValue("--transition")
+origbutton = getComputedStyle(document.getElementById("backgroundtoggle")).getPropertyValue("transition")
 document.body.style.setProperty("--transition", "none")
+document.getElementById("backgroundtoggle").style.setProperty("transition", "none")
 
 if (document.cookie.includes("chill=true")) {
-    document.body.className = "chill"
+    chillon()
 }
 
 // pause for 100ms, then restore original transition
 setTimeout(function () {
     document.body.style.setProperty("--transition", orig)
+    document.getElementById("backgroundtoggle").style.setProperty("transition", origbutton)
 }, 100)
