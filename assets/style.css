@@ -93,7 +93,7 @@ nav a img {
 
 nav a:hover img,
 nav a.active img {
-    filter: drop-shadow(1px 1px 2px #888);
+    filter: contrast(100%) brightness(100%) drop-shadow(1px 1px 2px #888);
 }
 
 /* navbar hr */
