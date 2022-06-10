@@ -1,27 +1,7 @@
 /* fonts */
 @font-face {
-    font-family: roboto;
-    src: url(fonts/roboto/Roboto-Regular.ttf);
-}
-
-@font-face {
-    font-family: roboto-bold;
-    src: url(fonts/roboto/Roboto-Bold.ttf);
-}
-
-@font-face {
-    font-family: roboto-light;
-    src: url(fonts/roboto/Roboto-Light.ttf);
-}
-
-@font-face {
-    font-family: roboto-black;
-    src: url(fonts/roboto/Roboto-Black.ttf);
-}
-
-@font-face {
-    font-family: roboto-medium;
-    src: url(fonts/roboto/Roboto-Medium.ttf);
+    font-family: 'Roboto Flex';
+    src: url(fonts/roboto/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf) format('truetype');
 }
 
 /* layout */
@@ -109,8 +89,9 @@ nav hr {
 nav a span {
     background: #eee0;
     color: #0000;
-    font-family: roboto-bold;
+    font-family: 'Roboto Flex';
     font-size: 14px;
+    font-variation-settings: 'wght' 700;
 
     position: relative;
     left: 60px;
@@ -167,7 +148,7 @@ nav a:hover span::after {
 /* general formatting */
 body {
     color: #ddd;
-    font-family: roboto;
+    font-family: 'Roboto Flex';
     margin: 0;
     font-size: 16px;
 }
@@ -182,18 +163,28 @@ p {
 }
 
 /* headings formatting */
+h1,
+h2,
+h3 {
+    user-select: none;
+    font-weight: inherit;
+}
+
 h1 {
     margin: 0;
-    font-family: roboto-light;
-    font-weight: inherit;
+    font-family: 'Roboto Flex';
+    font-variation-settings: 'wght' 300;
+    color: white;
 }
 
 h2 {
     display: flex;
     align-items: center;
     margin-bottom: 13px;
-    font-weight: inherit;
-    font-family: roboto-bold;
+    font-family: 'Roboto Flex';
+    font-variation-settings: 'wght' 700, 'wdth' 80;
+    font-size: 24px;
+    color: white;
 }
 
 h2::before {
@@ -211,29 +202,14 @@ h2::after {
 
 h3 {
     margin: 0;
-    font-family: roboto-light;
-    font-weight: inherit;
-}
-
-h1,
-h2 {
-    color: white;
-}
-
-h1,
-h2,
-h3 {
-    user-select: none;
-}
-
-h1,
-h3 {
-    cursor: default;
+    font-family: 'Roboto Flex';
+    font-weight: 300;
 }
 
 /* first line (title of reason) */
 .content span:first-child {
-    font-family: roboto-black;
+    font-family: 'Roboto Flex';
+    font-variation-settings: 'wght' 700;
     line-height: 32px;
 }
 

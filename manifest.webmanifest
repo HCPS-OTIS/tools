@@ -1,6 +1,6 @@
 {
-    "name": "HCPS Repair Scripts",
-    "description": "Commonly used repair scripts for HCPS endpoint technicians",
+    "name": "HCPS Technician Utilities",
+    "description": "A set of utilities to make our jobs slightly easier",
     "icons": [
         {
             "src": "assets/icon/favicon.svg",
