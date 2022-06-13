@@ -1,0 +1,51 @@
+.label-container {
+    width: 8.5in;
+    height: 11in;
+    margin: 16px;
+    border: 1px solid white;
+    padding: .5in .1875in;
+    box-sizing: border-box;
+}
+
+.labels {
+    display: grid;
+    grid-template-columns: repeat(3, 2.625in);
+    grid-template-rows: repeat(10, 1in);
+    column-gap: .125in;
+}
+
+.label {
+    display: block;
+    /* box-sizing: content-box; */
+    border: 1px solid white;
+    border-radius: .1in;
+}
+
+@media print {
+    body {
+        display: block;
+        background: white;
+    }
+
+    .content-wrapper {
+        background: none;
+    }
+
+    .content {
+        padding: 0;
+    }
+
+    .header,
+    nav,
+    footer {
+        display: none;
+    }
+
+    .label-container {
+        margin: 0;
+    }
+
+    .label {
+        border: 1px solid black;
+    }
+}

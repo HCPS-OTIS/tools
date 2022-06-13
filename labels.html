@@ -4,3 +4,11 @@ layout: default
 ---
 
 <link rel="stylesheet" href="assets/css/labels.css">
+
+<div class="label-container">
+    <div class="labels">
+        {% for item in (1..30) %}
+        <div class="label"></div>
+        {% endfor %}
+    </div>
+</div>
