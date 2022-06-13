@@ -33,9 +33,7 @@
 
     <nav>
         {% for cat in site.data.tabs %}
-        <!-- {{ cat }} -->
         {% for tab in cat[1] %}
-        <!-- {{ tab }} -->
         <a {% if page.name contains tab.id %}class="active" {% endif %} href="{{ tab.id }}">
             <span>{{ tab.name }}</span>
             <img src="assets/svg/{{ tab.id }}.svg">
