@@ -23,7 +23,6 @@
 
 @media print {
     body {
-        display: block;
         background: white;
     }
 
