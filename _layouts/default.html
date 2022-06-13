@@ -5,7 +5,7 @@
 <head>
     <title>{{ page.title }} | HCPS Technician Utilities</title>
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/icon/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/icon/apple-touch-icon-114x114.png" />
@@ -32,7 +32,10 @@
 <body>
 
     <nav>
-        {% for tab in site.data.tabs %}
+        {% for cat in site.data.tabs %}
+        <!-- {{ cat }} -->
+        {% for tab in cat[1] %}
+        <!-- {{ tab }} -->
         <a {% if page.name contains tab.id %}class="active" {% endif %} href="{{ tab.id }}">
             <span>{{ tab.name }}</span>
             <img src="assets/svg/{{ tab.id }}.svg">
@@ -40,6 +43,7 @@
         {% endfor %}
 
         <hr>
+        {% endfor %}
 
         <a id="backgroundtoggle" onclick="togglechill()">
             <span>Toggle Background</span>

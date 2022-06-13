@@ -1,7 +1,6 @@
 ---
 title: Windows Laptops
 layout: default
-id: wl
 ---
 
 ## motherboard

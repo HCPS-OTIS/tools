@@ -1,11 +1,16 @@
-- id: chromebooks
-  name: Chromebooks
+scripts:
+  - id: chromebooks
+    name: Chromebooks
 
-- id: windows
-  name: Windows Laptops
+  - id: windows
+    name: Windows Laptops
 
-- id: peripherals
-  name: Peripherals
+  - id: peripherals
+    name: Peripherals
 
-- id: workorders
-  name: Work Orders
+  - id: workorders
+    name: Work Orders
+
+tools:
+  - id: labels
+    name: Label Generator

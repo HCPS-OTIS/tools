@@ -1,7 +1,7 @@
 /* fonts */
 @font-face {
     font-family: 'Roboto Flex';
-    src: url(fonts/roboto/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf) format('truetype');
+    src: url(../fonts/roboto/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf) format('truetype');
 }
 
 /* layout */
@@ -266,7 +266,7 @@ particle {
 
 /* chill */
 body {
-    background: url(background.svg);
+    background: url(../background.svg);
     background-size: cover;
     --transition: background-color 1s, box-shadow 1s;
 }
