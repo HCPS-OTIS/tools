@@ -258,6 +258,10 @@ particle {
     background: #fff3;
 }
 
+::-webkit-scrollbar-corner {
+    background: #0000;
+}
+
 /* selection */
 ::selection {
     background: #555;
