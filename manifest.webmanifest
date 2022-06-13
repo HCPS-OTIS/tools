@@ -18,7 +18,7 @@
             "sizes": "512x512"
         }
     ],
-    "scope": "/repair/",
-    "start_url": "/repair/",
+    "scope": "/util/",
+    "start_url": "/util/",
     "display": "minimal-ui"
 }
