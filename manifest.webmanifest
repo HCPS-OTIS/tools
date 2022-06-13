@@ -18,7 +18,7 @@
             "sizes": "512x512"
         }
     ],
-    "scope": "/util/",
-    "start_url": "/util/",
+    "scope": "/tools/",
+    "start_url": "/tools/",
     "display": "minimal-ui"
 }
