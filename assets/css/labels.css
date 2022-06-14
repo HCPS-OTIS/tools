@@ -1,8 +1,15 @@
+@font-face {
+    font-family: 'Code128';
+    src: url(../fonts/LibreBarcode128-Regular.ttf);
+}
+
 .label-container {
     width: 8.5in;
     height: 11in;
     margin: 16px;
-    border: 1px solid white;
+    border: 2px solid #444;
+    box-shadow: 0 0 12px #000;
+    border-radius: 4px;
     padding: .5in .1875in;
     box-sizing: border-box;
 }
@@ -17,8 +24,175 @@
 .label {
     display: block;
     /* box-sizing: content-box; */
-    border: 1px solid white;
+    border: 2px dashed #444;
     border-radius: .1in;
+    position: relative;
+}
+
+.label>input:placeholder-shown {
+    user-select: none;
+}
+
+.label>input:placeholder-shown+img {
+    display: none;
+}
+
+.label>input {
+    position: absolute;
+    padding: 0;
+    top: .25in;
+    left: 1in;
+    width: 1.5in;
+
+    font-size: .15in;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+
+    background: #0000;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.label>input:focus {
+    background: #333;
+    border: none;
+    outline: none;
+}
+
+.label>img {
+    position: absolute;
+    height: .8in;
+    top: .1in;
+    left: .3in;
+    filter: contrast(0) brightness(200%);
+    user-select: none;
+}
+
+.label>label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.625in;
+    height: 1in;
+    border-radius: .1in;
+    cursor: text;
+}
+
+.label>span {
+    position: absolute;
+    top: 0.05in;
+    left: 1in;
+    width: 1.5in;
+    text-align: center;
+    font-family: Code128;
+    font-size: 24px;
+    transform: scaleX(1.2);
+    user-select: none;
+}
+
+/* print button */
+.print {
+    position: absolute;
+    top: .25in;
+    right: .25in;
+}
+
+.print a {
+    display: block;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #444;
+    transition: all .25s;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 0 4px #000;
+}
+
+.print a:hover,
+.print a:active,
+.print a.active {
+    background: #eee;
+    border-radius: 30%;
+    box-shadow: 0 0 8px #000;
+}
+
+.print a img {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 13px;
+    left: 12px;
+    filter: contrast(0%) brightness(200%);
+    transition: all .25s;
+}
+
+.print a:hover img,
+.print a.active img {
+    filter: contrast(100%) brightness(100%) drop-shadow(1px 1px 2px #888);
+}
+
+/* .printbar hr */
+.print hr {
+    width: 50%;
+    height: 2px;
+    background: #444;
+    border: none;
+    margin: 0;
+}
+
+/* .printbar label */
+.print a span {
+    background: #eee0;
+    color: #0000;
+    font-family: 'Roboto Flex';
+    font-size: 14px;
+    font-variation-settings: 'wght' 700;
+
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    margin-right: 5px;
+
+    display: block;
+    padding: 10px 12px;
+    width: max-content;
+    border-radius: 8px;
+    transform: translateY(-50%) translateX(25%) scale(0.7);
+    transition: all .25s;
+    pointer-events: none;
+}
+
+.print a span::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #eee0;
+
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .25s;
+}
+
+.print a:hover span {
+    display: block;
+    color: #000f;
+    background: #eeef;
+    margin-right: 10px;
+    transform: translateY(-50%) scale(1);
+    box-shadow: 0 0 5px -1px #000f;
+}
+
+.print a:hover span::after {
+    border-left: 5px solid #eeef;
 }
 
 @media print {
@@ -36,8 +210,9 @@
     }
 
     .header,
-    nav,
-    footer {
+    .print,
+    footer,
+    nav {
         display: none;
     }
 
@@ -46,6 +221,15 @@
     }
 
     .label {
-        border: 1px solid black;
+        border: none;
+        color: black;
+    }
+
+    .label>input {
+        color: black;
+    }
+
+    .label>img {
+        filter: contrast(0.5) brightness(0);
     }
 }

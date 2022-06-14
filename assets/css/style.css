@@ -1,7 +1,7 @@
 /* fonts */
 @font-face {
     font-family: 'Roboto Flex';
-    src: url(../fonts/roboto/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf) format('truetype');
+    src: url(../fonts/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf) format('truetype');
 }
 
 /* layout */
@@ -26,6 +26,7 @@ body {
     background: #222;
     grid-area: main;
     overflow-y: auto;
+    position: relative;
 }
 
 /* navbar */
@@ -207,7 +208,7 @@ h3 {
 }
 
 /* first line (title of reason) */
-.content span:first-child {
+.content span.copy-on-click:first-child {
     font-family: 'Roboto Flex';
     font-variation-settings: 'wght' 700;
     line-height: 32px;

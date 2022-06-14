@@ -4,11 +4,38 @@ layout: default
 ---
 
 <link rel="stylesheet" href="assets/css/labels.css">
+<script type='module'>
+    import encode from './assets/js/encoder.mjs'
+
+    export function update(e) {
+        let num = e.target.id.substr(5)
+        let barcode = encode(e.target.value.toUpperCase())
+        document.getElementById('barcode' + num).innerHTML = barcode
+    }
+
+    // attach update to all input fields in a .label
+    document.querySelectorAll('.label>input').forEach(function (input) {
+        input.addEventListener('input', update)
+    })
+</script>
 
 <div class="label-container">
     <div class="labels">
-        {% for item in (1..30) %}
-        <div class="label"></div>
+        {% for i in (1..30) %}
+        <div class="label">
+            <input id="input{{ i }}" type="text" maxlength="7" placeholder=" " oninput="">
+            <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
+            <label for="input{{ i }}"></label>
+            <span id="barcode{{ i }}"></span>
+        </div>
         {% endfor %}
+
     </div>
+</div>
+
+<div class="print">
+    <a onclick="window.print()">
+        <span>Print</span>
+        <img src="assets/img/print.svg" alt="">
+    </a>
 </div>
