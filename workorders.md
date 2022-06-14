@@ -13,15 +13,15 @@ Repaired by Dell.
 
 ## replacements
 
-Screen replaced.
-
-Barcode replaced.
-
-Keyboard replaced.
-
+Replaced  
+Screen replaced.  
+Barcode replaced.  
+Keyboard replaced.  
+Touchpad replaced.  
 Plastics replaced.
 
-Touchpad replaced.
+Not replaced  
+Damage does not warrant replacement at this time. Device in working order.
 
 ## repairs
 

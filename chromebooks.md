@@ -55,4 +55,3 @@ Keys occasionally typing multiple times. Keys mechanically function with no sign
 
 Touchpad is unresponsive  
 Touchpad does not respond to any movements or button clicks. External USB mouse works fine. Reseated touchpad ribbon cable on motherboard and still does not function.
-
