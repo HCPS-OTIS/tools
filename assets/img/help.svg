@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="40"
+   width="40"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="help.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="7.4895833"
+     inkscape:cx="12.751043"
+     inkscape:cy="14.954103"
+     inkscape:window-width="1280"
+     inkscape:window-height="955"
+     inkscape:window-x="1280"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     d="m 20.2,31.65 q 0.8,0 1.35,-0.55 0.55,-0.55 0.55,-1.35 0,-0.8 -0.55,-1.35 -0.55,-0.55 -1.35,-0.55 -0.8,0 -1.35,0.55 -0.55,0.55 -0.55,1.35 0,0.8 0.55,1.35 0.55,0.55 1.35,0.55 z M 20.15,11 q 1.7,0 2.75,0.925 1.05,0.925 1.05,2.375 0,1 -0.6,1.975 -0.6,0.975 -1.95,2.125 -1.3,1.15 -2.075,2.425 -0.775,1.275 -0.775,2.325 0,0.55 0.425,0.875 0.425,0.325 0.975,0.325 0.6,0 1,-0.4 0.4,-0.4 0.5,-1 0.15,-1 0.675,-1.775 Q 22.65,20.4 23.75,19.5 25.25,18.25 25.925,17 26.6,15.75 26.6,14.2 26.6,11.55 24.875,9.95 23.15,8.35 20.3,8.35 q -1.9,0 -3.5,0.75 -1.6,0.75 -2.65,2.2 -0.4,0.55 -0.325,1.125 Q 13.9,13 14.3,13.3 q 0.55,0.4 1.175,0.25 0.625,-0.15 1.025,-0.7 0.65,-0.9 1.575,-1.375 Q 19,11 20.15,11 Z M 20,40 Q 15.8,40 12.15,38.475 8.5,36.95 5.8,34.25 3.1,31.55 1.55,27.9 0,24.25 0,20 0,15.8 1.55,12.15 3.1,8.5 5.8,5.8 8.5,3.1 12.15,1.55 15.8,0 20,0 q 4.15,0 7.8,1.55 3.65,1.55 6.35,4.25 2.7,2.7 4.275,6.35 Q 40,15.8 40,20 q 0,4.25 -1.575,7.9 -1.575,3.65 -4.275,6.35 -2.7,2.7 -6.35,4.225 Q 24.15,40 20,40 Z"
+     id="path2" />
+</svg>

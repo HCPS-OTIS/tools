@@ -16,10 +16,37 @@ body {
 }
 
 .header {
+    position: relative;
     grid-area: header;
     box-shadow: black 0 0 10px 0px;
     background: #333;
     z-index: 1000;
+}
+
+.help-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    background: #333;
+    cursor: pointer;
+}
+
+.help-button>img {
+    filter: brightness(0) invert(0.5);
+    height: 36px;
+    width: 36px;
+    transition: filter .25s;
+}
+
+.help-button:hover>img {
+    filter: brightness(0) invert(0.7);
 }
 
 .content-wrapper {
