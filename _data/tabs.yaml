@@ -1,21 +1,16 @@
 scripts:
   - id: chromebooks
     name: Chromebooks
-    help: scripts
 
   - id: windows
     name: Windows Laptops
-    help: scripts
 
   - id: peripherals
     name: Peripherals
-    help: scripts
 
   - id: workorders
     name: Work Orders
-    help: scripts
 
 tools:
   - id: labels
     name: Label Generator
-    help: labels

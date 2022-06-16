@@ -1,6 +1,7 @@
 ---
 title: Windows Laptops
 layout: default
+help: scripts
 ---
 
 ## motherboard

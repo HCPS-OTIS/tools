@@ -1,6 +1,7 @@
 ---
 title: Work Orders
 layout: default
+help: scripts
 ---
 
 ## techdirect

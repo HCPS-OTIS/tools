@@ -1,6 +1,7 @@
 ---
 title: Chromebooks
 layout: default
+help: scripts
 ---
 
 ## motherboard

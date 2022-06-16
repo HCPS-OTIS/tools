@@ -1,6 +1,7 @@
 ---
 title: Peripherals
 layout: default
+help: scripts
 ---
 
 ## docking station
