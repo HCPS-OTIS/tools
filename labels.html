@@ -11,6 +11,14 @@ layout: default
         let num = e.target.id.substr(5)
         let barcode = encode(e.target.value.toUpperCase())
         document.getElementById('barcode' + num).innerHTML = barcode
+
+        // move to next input box if input is 7 characters long
+        if (e.target.value.length == 7) {
+            let next = document.getElementById('input' + (parseInt(num) + 1))
+            if (next) {
+                next.focus()
+            }
+        }
     }
 
     // attach update to all input fields in a .label
