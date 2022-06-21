@@ -7,7 +7,7 @@
     width: 8.5in;
     height: 11in;
     margin: 16px;
-    border: 2px solid #444;
+    border: 2px solid #fff2;
     box-shadow: 0 0 12px #000;
     border-radius: 4px;
     padding: .5in .1875in;
@@ -24,7 +24,7 @@
 .label {
     display: block;
     /* box-sizing: content-box; */
-    border: 2px dashed #444;
+    border: 2px dashed #fff2;
     border-radius: .1in;
     position: relative;
 }
