@@ -23,6 +23,14 @@ body {
     z-index: 1000;
 }
 
+.content-wrapper {
+    background: #222;
+    grid-area: main;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* help */
 .help-button {
     display: flex;
     align-items: center;
@@ -32,28 +40,105 @@ body {
     right: 24px;
     transform: translateY(-50%);
     border-radius: 50%;
-    height: 48px;
-    width: 48px;
-    background: #333;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+    opacity: 40%;
+    height: 36px;
+    width: 36px;
+    transition: opacity .25s;
+}
+
+.help-button:hover {
+    opacity: 60%;
+}
+
+.help-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0000;
+    z-index: 1001;
+    pointer-events: none;
+    transition: background .25s;
+}
+
+.help-wrapper.visible {
+    background: #0008;
+    pointer-events: auto;
     cursor: pointer;
 }
 
-.help-button>img {
-    filter: brightness(0) invert(0.5);
-    height: 36px;
-    width: 36px;
-    transition: filter .25s;
+.help-wrapper+.help {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    width: calc(100% - 200px);
+    height: calc(100% - 200px);
+    background: #0000;
+    color: #0000;
+    border-radius: 10px;
+    padding: 0 20px;
+    box-shadow: black 0 0 0;
+    box-sizing: border-box;
+    pointer-events: none;
+    cursor: inherit;
+    overflow-y: scroll;
+    z-index: 1002;
+    transform: scale(0.9);
+    transition: all .25s;
 }
 
-.help-button:hover>img {
-    filter: brightness(0) invert(0.7);
+.help-wrapper.visible+.help {
+    background: #333;
+    color: #eee;
+    box-shadow: black 0 0 10px;
+    pointer-events: all;
+    transform: scale(1);
 }
 
-.content-wrapper {
-    background: #222;
-    grid-area: main;
-    overflow-y: auto;
-    position: relative;
+.help-wrapper+.help h2 {
+    color: #0000;
+    transition: color .25s;
+}
+
+.help-wrapper+.help h2::before {
+    content: "# help: ";
+}
+
+.help-wrapper.visible+.help h2 {
+    color: white;
+}
+
+.help-wrapper+.help h2::after {
+    background: #0000;
+    transition: background .25s;
+}
+
+.help-wrapper.visible+.help h2::after {
+    background: #444;
+}
+
+.help-wrapper+.help img {
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+.help-wrapper.visible+.help img {
+    opacity: 1;
+}
+
+.help-wrapper+.help::-webkit-scrollbar-thumb {
+    background: #0000;
+}
+
+.help-wrapper.visible+.help::-webkit-scrollbar-thumb {
+    background: #444;
+}
+
+.help-wrapper.visible+.help::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 /* navbar */
@@ -117,7 +202,7 @@ nav hr {
 nav a span {
     background: #eee0;
     color: #0000;
-    font-family: 'Roboto Flex';
+    font-family: 'Roboto Flex', 'sans serif';
     font-size: 14px;
     font-variation-settings: 'wght' 700;
 
@@ -176,7 +261,7 @@ nav a:hover span::after {
 /* general formatting */
 body {
     color: #ddd;
-    font-family: 'Roboto Flex';
+    font-family: 'Roboto Flex', 'sans serif';
     margin: 0;
     font-size: 16px;
 }
@@ -200,7 +285,7 @@ h3 {
 
 h1 {
     margin: 0;
-    font-family: 'Roboto Flex';
+    font-family: 'Roboto Flex', 'sans serif';
     font-variation-settings: 'wght' 300;
     color: white;
 }
@@ -209,7 +294,7 @@ h2 {
     display: flex;
     align-items: center;
     margin-bottom: 13px;
-    font-family: 'Roboto Flex';
+    font-family: 'Roboto Flex', 'sans serif';
     font-variation-settings: 'wght' 700, 'wdth' 80;
     font-size: 24px;
     color: white;
@@ -230,13 +315,13 @@ h2::after {
 
 h3 {
     margin: 0;
-    font-family: 'Roboto Flex';
+    font-family: 'Roboto Flex', 'sans serif';
     font-weight: 300;
 }
 
 /* first line (title of reason) */
 .content span.copy-on-click:first-child {
-    font-family: 'Roboto Flex';
+    font-family: 'Roboto Flex', 'sans serif';
     font-variation-settings: 'wght' 700;
     line-height: 32px;
 }

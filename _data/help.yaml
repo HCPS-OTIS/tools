@@ -1,0 +1,13 @@
+scripts: |
+  ## scripts
+  When submitting dispatches in Dell TechDirect, there are several issues that come up repeatedly. The purpose of these pages is to make entering these issues much easier by providing a script to use.  
+
+  The first line, in bold, is for the Description of Problem. The second is for the larger field, Troubleshooting Performed. Some issues have multiple options for the second field, for slightly different variants of the same general issue.
+  To copy one of these lines to your clipboard for pasting into TechDirect, simply click on it. The line will be momentarily highlighted to show what was copied.
+
+labels: |
+  ## labels
+  Creating labels for student laptops can be a pain, using Word documents or other templates. This page is designed to simplify the process.  
+  
+  To use it, click in the label you wish to use and type the service tag. When you would like to print the sheet, click the print button at the top right. Open the More Options dropdown and set the print margins to None, otherwise the labels will not line up with the printed page.  
+  ![settings margins to none](assets/img/margins.png)

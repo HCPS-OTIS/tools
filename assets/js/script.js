@@ -2,8 +2,17 @@
 start = "<span class='copy-on-click' title='click to copy'>"
 end = "</span>"
 
+// show help if this help hasn't been seen before
+// get data-help attribute from the .help
+var help = document.getElementById('help').getAttribute("data-help")
+// check for matching cookie
+if (document.cookie.indexOf(`help.${help}=true`) === -1) {
+    document.getElementById("help-wrapper").classList = "help-wrapper visible"
+    document.cookie = `help.${help}=true`
+}
+
 // add tags around text in <p>s based on <br>s
-elements = document.getElementsByTagName('p')
+elements = document.querySelectorAll('.content p')
 for (let i = 0; i < elements.length; i++) {
     html = elements[i].innerHTML
     html = html.replace(/<br>/g, end + "<br>" + start)
