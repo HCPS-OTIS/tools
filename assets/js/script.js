@@ -8,7 +8,7 @@ var help = document.getElementById('help').getAttribute("data-help")
 // check for matching cookie
 if (document.cookie.indexOf(`help.${help}=true`) === -1) {
     document.getElementById("help-wrapper").classList = "help-wrapper visible"
-    document.cookie = `help.${help}=true`
+    document.cookie = `help.${help}=true; expires=Fri, 31 Dec 9999 23:59:59 GMT`
 }
 
 // add tags around text in <p>s based on <br>s
