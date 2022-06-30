@@ -12,5 +12,5 @@ scripts:
     name: Work Orders
 
 tools:
-  - id: labels
-    name: Label Generator
+  - id: studentlabels
+    name: Student Label Generator
