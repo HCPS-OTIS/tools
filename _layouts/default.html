@@ -51,7 +51,7 @@
 
     <div class="header">
         <h1>Endpoint Technician Utilities</h1>
-        <h3>{{ page.help | capitalize}} — {{ page.title }}</h3>
+        <h3>{{ page.help | capitalize }} — {{ page.title }}</h3>
         <img class="help-button" src="assets/img/help.svg"
             onclick="document.getElementById('help-wrapper').classList = 'help-wrapper visible'">
     </div>
@@ -61,7 +61,7 @@
     </div>
 
     <div class="help" id="help" data-help="{{ page.help }}">
-        {% assign help = site.data.help.[page.help] %}
+        {% assign help = site.data.help[page.help] %}
         {{ help | markdownify }}
     </div>
 
