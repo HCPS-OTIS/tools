@@ -3,7 +3,7 @@
     src: url(../fonts/LibreBarcode128-Regular.ttf);
 }
 
-.label-container {
+.page {
     width: 8.5in;
     height: 11in;
     margin: 16px;
@@ -92,107 +92,43 @@
     user-select: none;
 }
 
-/* print button */
-.print {
-    position: absolute;
-    top: .25in;
-    right: .25in;
+/* right hand toolbar */
+
+nav.toolbar {
+    position: fixed;
+    top: 1.25in;
+    right: .3in;
+    background: #0000;
+    box-shadow: none;
 }
 
-.print a {
-    display: block;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: #444;
-    transition: all .25s;
-    text-decoration: none;
-    cursor: pointer;
-    user-select: none;
-    box-shadow: 0 0 4px #000;
+nav.toolbar a {
+    box-shadow: 0 2px 4px black;
 }
 
-.print a:hover,
-.print a:active,
-.print a.active {
-    background: #eee;
-    border-radius: 30%;
-    box-shadow: 0 0 8px #000;
-}
-
-.print a img {
-    width: 28px;
-    height: 28px;
-    position: absolute;
-    top: 13px;
-    left: 12px;
-    filter: contrast(0%) brightness(200%);
-    transition: all .25s;
-}
-
-.print a:hover img,
-.print a.active img {
-    filter: contrast(100%) brightness(100%) drop-shadow(1px 1px 2px #888);
-}
-
-/* .printbar hr */
-.print hr {
-    width: 50%;
-    height: 2px;
-    background: #444;
-    border: none;
-    margin: 0;
-}
-
-/* .printbar label */
-.print a span {
-    background: #eee0;
-    color: #0000;
-    font-family: 'Roboto Flex';
-    font-size: 14px;
-    font-variation-settings: 'wght' 700;
-
-    position: absolute;
+nav.toolbar a span {
+    left: inherit;
     right: 60px;
-    top: 50%;
-    margin-right: 5px;
-
-    display: block;
-    padding: 10px 12px;
-    width: max-content;
-    border-radius: 8px;
-    transform: translateY(-50%) translateX(25%) scale(0.7);
-    transition: all .25s;
-    pointer-events: none;
-}
-
-.print a span::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 5px solid #eee0;
-
-    position: absolute;
-    right: -5px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all .25s;
-}
-
-.print a:hover span {
-    display: block;
-    color: #000f;
-    background: #eeef;
+    margin-left: 0;
     margin-right: 10px;
-    transform: translateY(-50%) scale(1);
-    box-shadow: 0 0 5px -1px #000f;
+    float: right;
+    transform: translateY(-50%) translateX(25%) scale(0.7);
 }
 
-.print a:hover span::after {
-    border-left: 5px solid #eeef;
+nav.toolbar a:hover span {
+    transform: translateY(-50%) scale(1);
+}
+
+nav.toolbar a span::after {
+    border-left: 5px solid #eee0;
+    border-right: none;
+    left: inherit;
+    right: -5px;
+}
+
+nav.toolbar a:hover span::after {
+    border-left: 5px solid #eee;
+    border-right: none;
 }
 
 @media print {
@@ -210,14 +146,15 @@
     }
 
     .header,
-    .print,
+    .toolbar,
     footer,
     nav {
         display: none;
     }
 
-    .label-container {
+    .page {
         margin: 0;
+        box-shadow: none;
     }
 
     .label {
