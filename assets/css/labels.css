@@ -3,6 +3,31 @@
     src: url(../fonts/LibreBarcode128-Regular.ttf);
 }
 
+.label-content {
+    display: grid;
+    grid-template-areas: 'pages textarea';
+    grid-template-columns: min-content 1fr;
+}
+
+.textarea {
+    grid-area: 'textarea';
+    margin: 16px;
+}
+
+.textarea textarea {
+    background: #333;
+    border-radius: 2px;
+    color: white;
+    border: none;
+    resize: none;
+    text-transform: uppercase;
+    overflow-y: scroll;
+}
+
+.textarea textarea:focus {
+    outline: none;
+}
+
 .page {
     width: 8.5in;
     height: 11in;
@@ -57,7 +82,6 @@
 
 .label>input:focus {
     background: #333;
-    border: none;
     outline: none;
 }
 
@@ -96,8 +120,8 @@
 
 nav.toolbar {
     position: fixed;
-    top: 1.25in;
-    right: .3in;
+    top: 100px;
+    right: 30px;
     background: #0000;
     box-shadow: none;
 }
@@ -148,7 +172,8 @@ nav.toolbar a:hover span::after {
     .header,
     .toolbar,
     footer,
-    nav {
+    nav,
+    .textarea {
         display: none;
     }
 

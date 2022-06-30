@@ -7,18 +7,25 @@ help: labels
 <link rel="stylesheet" href="assets/css/labels.css">
 <script src="assets/js/labels.js" type="module"></script>
 
-<div class="pages" id="pages">
-    <div class="page" id="page1">
-        <div class="labels">
-            {% for i in (0..29) %}
-            <div class="label">
-                <input id="input{{ i }}" type="text" maxlength="7" placeholder=" " oninput="update()">
-                <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
-                <label for="input{{ i }}"></label>
-                <span id="barcode{{ i }}"></span>
+<div class="label-content">
+    <div class="pages" id="pages">
+        <div class="page" id="page1">
+            <div class="labels">
+                {% for i in (0..29) %}
+                <div class="label">
+                    <input id="input{{ i }}" type="text" maxlength="7" placeholder=" " oninput="update(event)">
+                    <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
+                    <label for="input{{ i }}"></label>
+                    <span id="barcode{{ i }}"></span>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
+    </div>
+
+    <div class="textarea">
+        <textarea name="labeltexts" id="labeltexts" cols="7" rows="20" wrap="hard" oninput="updateAll(event)"
+            placeholder="to     create labels in     bulk:  -------paste  servicetags   here"></textarea>
     </div>
 </div>
 
