@@ -34,7 +34,7 @@ function addPage() {
 
     for (let i = 0; i < 30; i++) {
         var currentLabel = document.createElement('div')
-        currentLabel.className = 'label'
+        currentLabel.className = 'label student'
         currentLabel.innerHTML = `<input id="input${(currentPageNum - 1) * 30 + i}" type="text" maxlength="7" placeholder=" " oninput="update(event)">
                 <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
                 <label for="input${(currentPageNum - 1) * 30 + i}"></label>
