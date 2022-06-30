@@ -1,18 +1,15 @@
 ---
 title: Label Generator
-layout: default
+layout: labels
 help: labels
 ---
-
-<link rel="stylesheet" href="assets/css/labels.css">
-<script src="assets/js/labels.js" type="module"></script>
 
 <div class="label-content">
     <div class="pages" id="pages">
         <div class="page" id="page1">
             <div class="labels">
                 {% for i in (0..29) %}
-                <div class="label">
+                <div class="label student">
                     <input id="input{{ i }}" type="text" maxlength="7" placeholder=" " oninput="update(event)">
                     <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
                     <label for="input{{ i }}"></label>
@@ -28,18 +25,3 @@ help: labels
             placeholder="to     create labels in     bulk:  -------paste  servicetags   here"></textarea>
     </div>
 </div>
-
-<nav class="toolbar">
-    <a onclick="window.print()">
-        <span>Print</span>
-        <img src="assets/img/print.svg" alt="">
-    </a>
-    <a onclick="addPage()" id="addPage">
-        <span>Add Page</span>
-        <img src="assets/img/add.svg" alt="">
-    </a>
-    <a onclick="removePage()" id="removePage">
-        <span>Remove Page</span>
-        <img src="assets/img/delete.svg" alt="">
-    </a>
-</nav>

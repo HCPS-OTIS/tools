@@ -9,6 +9,7 @@
     grid-template-columns: min-content 1fr;
 }
 
+/* bulk service tag textarea */
 .textarea {
     grid-area: 'textarea';
     margin: 16px;
@@ -41,6 +42,7 @@ body.chill .textarea textarea::placeholder {
     outline: none;
 }
 
+/* page and label layout */
 .page {
     width: 8.5in;
     height: 11in;
@@ -67,15 +69,17 @@ body.chill .textarea textarea::placeholder {
     position: relative;
 }
 
-.label>input:placeholder-shown {
+
+/* student label specific labels */
+.label.student>input:placeholder-shown {
     user-select: none;
 }
 
-.label>input:placeholder-shown+img {
+.label.student>input:placeholder-shown+img {
     display: none;
 }
 
-.label>input {
+.label.student>input {
     position: absolute;
     padding: 0;
     top: .25in;
@@ -93,12 +97,12 @@ body.chill .textarea textarea::placeholder {
     border-radius: 3px;
 }
 
-.label>input:focus {
+.label.student>input:focus {
     background: #333;
     outline: none;
 }
 
-.label>img {
+.label.student>img {
     position: absolute;
     height: .8in;
     top: .1in;
@@ -107,7 +111,7 @@ body.chill .textarea textarea::placeholder {
     user-select: none;
 }
 
-.label>label {
+.label.student>label {
     position: absolute;
     top: 0;
     left: 0;
@@ -117,7 +121,7 @@ body.chill .textarea textarea::placeholder {
     cursor: text;
 }
 
-.label>span {
+.label.student>span {
     position: absolute;
     top: 0.05in;
     left: 1in;
@@ -168,6 +172,7 @@ nav.toolbar a:hover span::after {
     border-right: none;
 }
 
+/* remove unnecessary stuff from printed page */
 @media print {
     body {
         display: block;
@@ -200,11 +205,11 @@ nav.toolbar a:hover span::after {
         color: black;
     }
 
-    .label>input {
+    .label.student>input {
         color: black;
     }
 
-    .label>img {
+    .label.student>img {
         filter: contrast(0.5) brightness(0);
     }
 }

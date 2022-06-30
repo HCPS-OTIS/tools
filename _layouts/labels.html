@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="assets/css/labels.css">
+<script src="assets/js/labels.js" type="module"></script>
+
+{{ content }}
+
+<nav class="toolbar">
+    <a onclick="window.print()">
+        <span>Print</span>
+        <img src="assets/img/print.svg" alt="">
+    </a>
+    <a onclick="addPage()" id="addPage">
+        <span>Add Page</span>
+        <img src="assets/img/add.svg" alt="">
+    </a>
+    <a onclick="removePage()" id="removePage">
+        <span>Remove Page</span>
+        <img src="assets/img/delete.svg" alt="">
+    </a>
+</nav>
