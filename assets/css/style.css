@@ -73,6 +73,7 @@ body {
 }
 
 .help-wrapper+.help {
+    visibility: hidden;
     position: fixed;
     top: 100px;
     left: 100px;
@@ -94,6 +95,7 @@ body {
 }
 
 .help-wrapper.visible+.help {
+    visibility: visible;
     box-shadow: black 0 0 10px;
     pointer-events: all;
     transform: scale(1);
