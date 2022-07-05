@@ -270,4 +270,8 @@ nav.toolbar a:hover span::after {
     .label.student>img {
         filter: contrast(0.5) brightness(0);
     }
+
+    .label.teacher input::placeholder {
+        color: #0000;
+    }
 }
