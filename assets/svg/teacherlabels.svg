@@ -4,7 +4,7 @@
    width="43.950001"
    version="1.1"
    id="svg333"
-   sodipodi:docname="stafflabels.svg"
+   sodipodi:docname="teacherlabels.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -25,15 +25,16 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="4"
-     inkscape:zoom="7.4895833"
-     inkscape:cx="27.037552"
-     inkscape:cy="20.428373"
+     inkscape:zoom="5.2959351"
+     inkscape:cx="26.529781"
+     inkscape:cy="35.3101"
      inkscape:window-width="1280"
      inkscape:window-height="987"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg333" />
+     inkscape:current-layer="svg333"
+     inkscape:snap-global="false" />
   <path
      id="path331"
      d="M 0 4 L 0 13.099609 L 3 13.099609 L 3 7 L 9.0996094 7 L 9.0996094 4 L 0 4 z M 34.849609 4 L 34.849609 7 L 40.949219 7 L 40.949219 13.099609 L 43.949219 13.099609 L 43.949219 4 L 34.849609 4 z M 5.6503906 9.5 L 5.6503906 34.449219 L 9.6503906 34.449219 L 9.6503906 9.5 L 5.6503906 9.5 z M 11.699219 9.5 L 11.699219 34.449219 L 13.800781 34.449219 L 13.800781 9.5 L 11.699219 9.5 z M 17.800781 9.5 L 17.800781 34.449219 L 21.949219 34.449219 L 21.949219 9.5 L 17.800781 9.5 z M 24.050781 9.5 L 24.050781 34.449219 L 30.099609 34.449219 L 30.099609 9.5 L 24.050781 9.5 z M 32.199219 9.5 L 32.199219 28.740234 A 8.5250406 8.5250406 0 0 1 34.300781 26.998047 L 34.300781 9.5 L 32.199219 9.5 z M 36.349609 9.5 L 36.349609 26.099609 A 8.5250406 8.5250406 0 0 1 38.25 25.791016 L 38.25 9.5 L 36.349609 9.5 z M 0 30.900391 L 0 40 L 9.0996094 40 L 9.0996094 37 L 3 37 L 3 30.900391 L 0 30.900391 z " />
@@ -45,12 +46,13 @@
      id="text4877"><tspan
        sodipodi:role="line"
        id="tspan4875" /></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:17.2283px;line-height:1.25;font-family:montserrat;-inkscape-font-specification:'montserrat, Semi-Bold';stroke-width:0.807578;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-     x="33.111076"
-     y="40.294025"
-     id="text1397"><tspan
-       sodipodi:role="line"
-       id="tspan11008">T</tspan></text>
+  <g
+     aria-label="T"
+     id="text1397"
+     style="font-weight:600;font-size:17.2283px;line-height:1.25;font-family:montserrat;-inkscape-font-specification:'montserrat, Semi-Bold';stroke-width:0.807578"
+     transform="translate(-0.39607793,1.9771963)">
+    <path
+       d="M 37.176955,40.294025 V 30.129328 H 33.17999 V 28.234215 H 43.4136 v 1.895113 h -3.996966 v 10.164697 z"
+       id="path97" />
+  </g>
 </svg>
