@@ -4,6 +4,16 @@ layout: labels
 help: labels
 ---
 
+<!-- blank label for use by javascript when creating new pages -->
+<div id="blank_label" style="display: none;">
+    <div class="label student">
+        <input id="input%i%" type="text" maxlength="7" placeholder=" " oninput="update(event)">
+        <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
+        <label for="input%i%"></label>
+        <span id="barcode%i%"></span>
+    </div>
+</div>
+
 <div class="label-content">
     <div class="pages" id="pages">
         <div class="page" id="page1">

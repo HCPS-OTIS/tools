@@ -24,24 +24,27 @@ function addPage() {
     var currentPages = document.getElementsByClassName('page')
     var currentPageNum = parseInt(currentPages[currentPages.length - 1].id.slice(4)) + 1
 
+    // create blank page
     var blankPage = document.createElement('div')
     blankPage.className = 'page'
     blankPage.id = 'page' + currentPageNum
     blankPage.innerHTML = `<div class="labels">
     </div>`
 
+    // get blank list of labels
     var blankLabels = blankPage.getElementsByClassName('labels')[0]
 
+    // get innerHTML from #blank_label for blanks
+    var blank_label = document.getElementById('blank_label').innerHTML
+
+    // add labels to blank list
     for (let i = 0; i < 30; i++) {
-        var currentLabel = document.createElement('div')
-        currentLabel.className = 'label student'
-        currentLabel.innerHTML = `<input id="input${(currentPageNum - 1) * 30 + i}" type="text" maxlength="7" placeholder=" " oninput="update(event)">
-                <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
-                <label for="input${(currentPageNum - 1) * 30 + i}"></label>
-                <span id="barcode${(currentPageNum - 1) * 30 + i}"></span>`
-        blankLabels.appendChild(currentLabel)
+        blankLabels.appendChild(document.createElement('div'))
+        var currentText = blank_label.replaceAll('%i%', (currentPageNum - 1) * 30 + i)
+        blankLabels.getElementsByTagName('div')[i].outerHTML = currentText
     }
 
+    // add new page to webpage
     document.getElementById('pages').appendChild(blankPage)
 }
 
