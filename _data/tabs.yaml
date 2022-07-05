@@ -14,3 +14,6 @@ scripts:
 tools:
   - id: studentlabels
     name: Student Label Generator
+
+  - id: teacherlabels
+    name: Teacher Label Generator

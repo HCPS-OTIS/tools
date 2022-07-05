@@ -4,7 +4,7 @@
    width="43.950001"
    version="1.1"
    id="svg333"
-   sodipodi:docname="studentlabels.svg"
+   sodipodi:docname="stafflabels.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -47,13 +47,10 @@
        id="tspan4875" /></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:17.2283px;line-height:1.25;font-family:montserrat;-inkscape-font-specification:'montserrat Semi-Bold';stroke-width:0.807578"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:17.2283px;line-height:1.25;font-family:montserrat;-inkscape-font-specification:'montserrat, Semi-Bold';stroke-width:0.807578;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
      x="33.111076"
      y="40.294025"
      id="text1397"><tspan
        sodipodi:role="line"
-       id="tspan1395"
-       x="33.111076"
-       y="40.294025"
-       style="stroke-width:0.807578">S</tspan></text>
+       id="tspan11008">T</tspan></text>
 </svg>

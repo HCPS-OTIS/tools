@@ -3,6 +3,10 @@
     src: url(../fonts/LibreBarcode128-Regular.ttf);
 }
 
+input {
+    font-family: 'Roboto Flex';
+}
+
 .label-content {
     display: grid;
     grid-template-areas: 'pages textarea';
@@ -43,6 +47,7 @@ body.chill .textarea textarea::placeholder {
 }
 
 /* page and label layout */
+
 .page {
     width: 8.5in;
     height: 11in;
@@ -70,7 +75,8 @@ body.chill .textarea textarea::placeholder {
 }
 
 
-/* student label specific labels */
+/* student labels */
+
 .label.student>input:placeholder-shown {
     user-select: none;
 }
@@ -131,6 +137,49 @@ body.chill .textarea textarea::placeholder {
     font-size: 24px;
     transform: scaleX(1.2);
     user-select: none;
+}
+
+/* teacher labels */
+
+.label.teacher {
+    padding: 15px;
+    line-height: 1em;
+}
+
+.label.teacher>* {
+    font-size: 9pt;
+}
+
+.label.teacher .hostname {
+    width: 100%;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+
+    font-size: 14pt;
+    font-variation-settings: 'wght' 700, 'slnt' -10;
+}
+
+.label.teacher input {
+    width: 100px;
+
+    background: #fff1;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.label.teacher input:focus {
+    background: #333;
+    outline: none;
+}
+
+.label.teacher input.st {
+    text-transform: uppercase;
+}
+
+.label.teacher .hostname:placeholder-shown+.nothostname span {
+    color: #0000;
 }
 
 /* right hand toolbar */
@@ -205,7 +254,8 @@ nav.toolbar a:hover span::after {
         color: black;
     }
 
-    .label.student>input {
+    .label.student>input,
+    .label.teacher input {
         color: black;
     }
 

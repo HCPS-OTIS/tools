@@ -1,0 +1,38 @@
+---
+title: Staff Label Generator
+layout: labels
+help: labels
+---
+
+<!-- blank label for use by javascript when creating new pages -->
+<div id="blank_label" style="display: none;">
+    <div class="label teacher">
+        <input type="text" placeholder=" " class="hostname">
+        <div class="nothostname">
+            <span class="st">Dell Service Tag: </span>
+            <input type="text" placeholder=" " class="st" maxlength="7"><br>
+            <span class="model">Model Name: </span>
+            <input type="text" placeholder=" " class="model">
+        </div>
+    </div>
+</div>
+
+<div class="label-content">
+    <div class="pages" id="pages">
+        <div class="page" id="page1">
+            <div class="labels">
+                {% for i in (0..29) %}
+                <div class="label teacher">
+                    <input type="text" placeholder=" " class="hostname">
+                    <div class="nothostname">
+                        <span class="st">Dell Service Tag: </span>
+                        <input type="text" placeholder=" " class="st" maxlength="7"><br>
+                        <span class="model">Model Name: </span>
+                        <input type="text" placeholder=" " class="model">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

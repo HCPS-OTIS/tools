@@ -41,7 +41,7 @@ function addPage() {
     for (let i = 0; i < 30; i++) {
         blankLabels.appendChild(document.createElement('div'))
         var currentText = blank_label.replaceAll('%i%', (currentPageNum - 1) * 30 + i)
-        blankLabels.getElementsByTagName('div')[i].outerHTML = currentText
+        blankLabels.querySelectorAll('.labels>div')[i].outerHTML = currentText
     }
 
     // add new page to webpage
