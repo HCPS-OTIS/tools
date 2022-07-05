@@ -78,8 +78,8 @@ body {
     left: 100px;
     width: calc(100% - 200px);
     height: calc(100% - 200px);
-    background: #0000;
-    color: #0000;
+    background: #333;
+    color: #eee;
     border-radius: 10px;
     padding: 0 20px;
     box-shadow: black 0 0 0;
@@ -89,58 +89,19 @@ body {
     overflow-y: scroll;
     z-index: 1002;
     transform: scale(0.9);
+    opacity: 0;
     transition: all .25s;
 }
 
 .help-wrapper.visible+.help {
-    background: #333;
-    color: #eee;
     box-shadow: black 0 0 10px;
     pointer-events: all;
     transform: scale(1);
-}
-
-.help-wrapper+.help h2 {
-    color: #0000;
-    transition: color .25s;
+    opacity: 1;
 }
 
 .help-wrapper+.help h2::before {
     content: "# help: ";
-}
-
-.help-wrapper.visible+.help h2 {
-    color: white;
-}
-
-.help-wrapper+.help h2::after {
-    background: #0000;
-    transition: background .25s;
-}
-
-.help-wrapper.visible+.help h2::after {
-    background: #444;
-}
-
-.help-wrapper+.help img {
-    opacity: 0;
-    transition: opacity .25s;
-}
-
-.help-wrapper.visible+.help img {
-    opacity: 1;
-}
-
-.help-wrapper+.help::-webkit-scrollbar-thumb {
-    background: #0000;
-}
-
-.help-wrapper.visible+.help::-webkit-scrollbar-thumb {
-    background: #444;
-}
-
-.help-wrapper.visible+.help::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
 
 .help-wrapper .close-help {
