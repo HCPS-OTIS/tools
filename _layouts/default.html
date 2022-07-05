@@ -36,7 +36,7 @@
         {% for tab in cat[1] %}
         <a {% if page.name contains tab.id %}class="active" {% endif %} href="{{ tab.id }}">
             <span>{{ tab.name }}</span>
-            <img src="assets/svg/{{ tab.id }}.svg">
+            <img src="assets/nav/{{ tab.id }}.svg">
         </a>
         {% endfor %}
 
@@ -45,7 +45,7 @@
 
         <a id="backgroundtoggle" onclick="togglechill()">
             <span>Toggle Background</span>
-            <img src="assets/svg/chill.svg">
+            <img src="assets/nav/chill.svg">
         </a>
     </nav>
 
