@@ -308,12 +308,8 @@ footer {
     clip-path: inset(-15px 0 1px 0);
 }
 
-footer a:link {
+footer a:any-link {
     color: inherit;
-}
-
-.pencil:link {
-    text-decoration: none;
 }
 
 /* click animation */
