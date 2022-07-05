@@ -59,13 +59,15 @@ body {
     width: 100%;
     height: 100%;
     background: #0000;
+    color: #0000;
     z-index: 1001;
     pointer-events: none;
-    transition: background .25s;
+    transition: background .25s, color .25s;
 }
 
 .help-wrapper.visible {
     background: #0008;
+    color: #aaa;
     pointer-events: auto;
     cursor: pointer;
 }
@@ -139,6 +141,14 @@ body {
 
 .help-wrapper.visible+.help::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+.help-wrapper .close-help {
+    position: absolute;
+    bottom: 75px;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
 }
 
 /* navbar */
