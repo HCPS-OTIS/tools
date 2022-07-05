@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "sissel.shopify-liquid"
+        "sissel.shopify-liquid",
+        "donjayamanne.githistory"
     ]
 }
