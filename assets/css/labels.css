@@ -178,6 +178,14 @@ body.chill .textarea textarea::placeholder {
     text-transform: uppercase;
 }
 
+.label.teacher .hostname:placeholder-shown {
+    user-select: none;
+}
+
+.label.teacher .hostname:placeholder-shown+.nothostname {
+    user-select: none;
+}
+
 .label.teacher .hostname:placeholder-shown+.nothostname span {
     color: #0000;
 }
