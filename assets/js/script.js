@@ -74,24 +74,8 @@ function createParticle(x, y) {
 }
 
 // toggle background
-function chillon() {
-    document.body.className = "chill"
-    document.cookie = "chill=true"
-    document.getElementById("backgroundtoggle").className = "active"
-}
-
-function chilloff() {
-    document.body.className = ""
-    document.cookie = "chill=false"
-    document.getElementById("backgroundtoggle").className = ""
-}
-
 function togglechill() {
-    if (document.body.className == "chill") {
-        chilloff()
-    } else {
-        chillon()
-    }
+    document.body.classList.toggle("chill")
 }
 
 // check for chill cookie and toggle background instantly
