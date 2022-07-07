@@ -58,18 +58,18 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #0000;
-    color: #0000;
+    background: #0008;
+    color: #aaa;
+    opacity: 0;
     z-index: 1001;
-    pointer-events: none;
-    transition: background .25s, color .25s;
+    transition: all .25s;
+    visibility: hidden;
 }
 
 .help-wrapper.visible {
-    background: #0008;
-    color: #aaa;
-    pointer-events: auto;
     cursor: pointer;
+    visibility: visible;
+    opacity: 1;
 }
 
 .help-wrapper+.help {
@@ -85,7 +85,6 @@ body {
     padding: 0 20px;
     box-shadow: black 0 0 0;
     box-sizing: border-box;
-    pointer-events: none;
     cursor: inherit;
     overflow-y: scroll;
     z-index: 1002;
@@ -97,7 +96,6 @@ body {
 .help-wrapper.visible+.help {
     visibility: visible;
     box-shadow: black 0 0 10px;
-    pointer-events: all;
     transform: scale(1);
     opacity: 1;
 }
