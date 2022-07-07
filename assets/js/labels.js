@@ -98,3 +98,14 @@ function updateAll(e) {
 }
 
 window.updateAll = updateAll
+
+function printLabels() {
+    document.getElementById('margin-warning').classList.add('visible')
+    // 500ms delay to allow user to see warning
+    setTimeout(function () {
+        window.print()
+        document.getElementById('margin-warning').classList.remove('visible')
+    }, 250)
+}
+
+window.printLabels = printLabels

@@ -5,10 +5,16 @@ layout: default
 <link rel="stylesheet" href="assets/css/labels.css">
 <script src="assets/js/labels.js" type="module"></script>
 
+<div id="margin-warning" class="margin-warning">
+    <span class="left">Set print margins to None!</span>
+    <span class="bottom">Set print margins to None!</span>
+    <span class="right">Set print margins to None!</span>
+</div>
+
 {{ content }}
 
 <nav class="toolbar">
-    <a onclick="window.print()">
+    <a onclick="printLabels()">
         <span>Print</span>
         <img src="assets/img/print.svg" alt="">
     </a>
