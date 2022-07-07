@@ -260,21 +260,9 @@ nav.toolbar a:hover span::after {
 }
 
 .margin-warning .left {
-    left: -20px;
+    left: -30px;
     top: 50%;
     transform: translateY(-50%) rotate(-90deg);
-}
-
-.margin-warning .right {
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%) rotate(90deg);
-}
-
-.margin-warning .bottom {
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 /* remove unnecessary stuff from printed page */
