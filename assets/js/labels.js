@@ -64,7 +64,7 @@ function forceUpdate(num) {
     document.getElementById('barcode' + num).innerHTML = barcode
 }
 
-function updateAll(e) {
+function updateStudents(e) {
     // get contents of textarea
     var tags = document.getElementById('labeltexts').value
 
@@ -97,7 +97,9 @@ function updateAll(e) {
     }
 }
 
-window.updateAll = updateAll
+window.updateStudents = updateStudents
+
+// TODO: updateTeachers from uploaded csv
 
 function printLabels() {
     document.getElementById('margin-warning').classList.add('visible')
