@@ -183,11 +183,7 @@ body.chill .textarea textarea::placeholder {
 }
 
 .label.teacher .hostname:placeholder-shown+.nothostname {
-    user-select: none;
-}
-
-.label.teacher .hostname:placeholder-shown+.nothostname span {
-    color: #0000;
+    display: none;
 }
 
 /* right hand toolbar */
