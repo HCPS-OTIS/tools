@@ -17,3 +17,7 @@ tools:
 
   - id: teacherlabels
     name: Teacher Label Generator
+
+site:
+  - id: changelog
+    name: Changelog

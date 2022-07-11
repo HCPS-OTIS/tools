@@ -1,0 +1,14 @@
+---
+layout: default
+title: Changelog
+---
+
+{% for change in site.posts %}
+<div class="post">
+    <h2><a {% if change.hash %}href="https://github.com/HCPS-OTIS/tools/commit/{{ change.hash }}" target="_blank" {%
+            endif %}>
+            {{ change.title }}</a></h2>
+    <span class="date">{{ change.date | date: "%B %d, %Y" }}</span>
+    {{ change.content }}
+</div>
+{% endfor %}

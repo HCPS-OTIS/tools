@@ -40,7 +40,10 @@
         </a>
         {% endfor %}
 
+        {% if forloop.last == false %}
         <hr>
+        {% endif %}
+
         {% endfor %}
 
         <a id="backgroundtoggle" onclick="togglechill()">
@@ -51,10 +54,12 @@
 
     <div class="header">
         <h1>Endpoint Technician Utilities</h1>
-        <h3>{{ page.help | capitalize }} — {{ page.title }}</h3>
-        <img class="help-button" src="assets/img/help.svg"
-            onclick="document.getElementById('help-wrapper').classList = 'help-wrapper visible'">
+        <h3>{% if page.help %}{{ page.help | capitalize }} — {% endif %}{{ page.title }}</h3>
+        {% if page.help %}<img class="help-button" src="assets/img/help.svg"
+            onclick="document.getElementById('help-wrapper').classList = 'help-wrapper visible'">{% endif %}
     </div>
+
+    {% if page.help %}
 
     <div class="help-wrapper" id="help-wrapper"
         onclick="document.getElementById('help-wrapper').classList = 'help-wrapper'">
@@ -65,6 +70,8 @@
         {% assign help = site.data.help[page.help] %}
         {{ help | markdownify }}
     </div>
+
+    {% endif %}
 
     <div class="content-wrapper">
 

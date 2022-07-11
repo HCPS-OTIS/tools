@@ -284,10 +284,23 @@ h2::after {
     flex: 1;
 }
 
+h2 a:any-link {
+    color: inherit;
+}
+
+h2 a:any-link::before {
+    text-decoration: none;
+}
+
 h3 {
     margin: 0;
     font-family: 'Roboto Flex', 'sans serif';
     font-weight: 300;
+}
+
+.date {
+    font-variation-settings: 'slnt' -7;
+    line-height: 32px;
 }
 
 /* first line (title of reason) */
