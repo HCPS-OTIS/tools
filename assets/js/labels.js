@@ -99,7 +99,34 @@ function updateStudents(e) {
 
 window.updateStudents = updateStudents
 
-// TODO: updateTeachers from uploaded csv
+function uploadTeachers() {
+    // get file reader
+    var file = document.getElementById('teacher-upload').files[0]
+    var reader = new FileReader()
+    reader.addEventListener('load', (event) => {
+        updateTeachers(reader.result)
+    })
+    reader.readAsText(file)
+}
+
+window.uploadTeachers = uploadTeachers
+
+function updateTeachers(result) {
+    // split result into columns
+    var lines = result.split('\n')
+    var data = []
+    for (let i = 0; i < lines.length; i++) {
+        data.push(lines[i].split(','))
+    }
+
+    // add data to teacher labels
+    var labels = document.getElementsByClassName('teacher')
+    for (let i = 0; i < data.length; i++) {
+        labels[i].getElementsByTagName('input')[0].value = data[i][0]
+        labels[i].getElementsByTagName('input')[1].value = data[i][1]
+        labels[i].getElementsByTagName('input')[2].value = data[i][2]
+    }
+}
 
 function printLabels() {
     document.getElementById('margin-warning').classList.add('visible')

@@ -38,6 +38,9 @@ help: labels
 
     <div class="bulk">
         <a href="assets/teacher_label_template.csv" class="button">Template</a>
-        <span onclick="uploadTeachers()" class="button">Upload</span>
+        <label for="teacher-upload" class="button">
+            Upload
+        </label>
+        <input type="file" name="teacher-upload" id="teacher-upload" accept=".csv" onchange="uploadTeachers()">
     </div>
 </div>

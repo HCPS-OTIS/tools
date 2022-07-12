@@ -46,6 +46,11 @@ body.chill .bulk textarea::placeholder {
     outline: none;
 }
 
+/* bulk teacher input */
+.bulk input[type="file"] {
+    display: none;
+}
+
 /* page and label layout */
 
 .page {
