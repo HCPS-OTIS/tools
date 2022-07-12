@@ -6,13 +6,13 @@ help: labels
 
 <!-- blank label for use by javascript when creating new pages -->
 <div id="blank_label" style="display: none;">
-    <div class="label teacher">
-        <input type="text" placeholder="hostname" class="hostname">
+    <div class="label teacher" id="">
+        <input type="text" placeholder="hostname" class="hostname" id="hostname%i%">
         <div class="nothostname">
             <span class="st">Dell Service Tag: </span>
-            <input type="text" class="st" maxlength="7"><br>
+            <input type="text" class="st" maxlength="7" id="st%i%"><br>
             <span class="model">Model Name: </span>
-            <input type="text" class="model">
+            <input type="text" class="model" id="model%i%">
         </div>
     </div>
 </div>
@@ -22,13 +22,13 @@ help: labels
         <div class="page" id="page1">
             <div class="labels">
                 {% for i in (0..29) %}
-                <div class="label teacher">
-                    <input type="text" placeholder="hostname" class="hostname">
+                <div class="label teacher" id="">
+                    <input type="text" placeholder="hostname" class="hostname" id="hostname{{ i }}">
                     <div class="nothostname">
                         <span class="st">Dell Service Tag: </span>
-                        <input type="text" class="st" maxlength="7"><br>
+                        <input type="text" class="st" maxlength="7" id="st{{ i }}"><br>
                         <span class="model">Model Name: </span>
-                        <input type="text" class="model">
+                        <input type="text" class="model" id="model{{ i }}">
                     </div>
                 </div>
                 {% endfor %}

@@ -112,19 +112,39 @@ function uploadTeachers() {
 window.uploadTeachers = uploadTeachers
 
 function updateTeachers(result) {
+    // delete all-1 pages
+    while (document.getElementsByClassName('page').length > 1) {
+        removePage()
+    }
+
+    // clear inputs 0-29
+    for (let i = 0; i < 30; i++) {
+        document.getElementById('hostname' + i).value = ''
+        document.getElementById('st' + i).value = ''
+        document.getElementById('model' + i).value = ''
+    }
+
     // split result into columns
-    var lines = result.split('\n')
+    var lines = result.split('\n').slice(1)
     var data = []
     for (let i = 0; i < lines.length; i++) {
         data.push(lines[i].split(','))
     }
 
     // add data to teacher labels
-    var labels = document.getElementsByClassName('teacher')
     for (let i = 0; i < data.length; i++) {
-        labels[i].getElementsByTagName('input')[0].value = data[i][0]
-        labels[i].getElementsByTagName('input')[1].value = data[i][1]
-        labels[i].getElementsByTagName('input')[2].value = data[i][2]
+        var hostnameInput = document.getElementById('hostname' + i)
+
+        if (hostnameInput === null) {
+            addPage()
+            hostnameInput = document.getElementById('hostname' + i)
+        }
+        var stInput = document.getElementById('st' + i)
+        var modelInput = document.getElementById('model' + i)
+
+        hostnameInput.value = data[i][0]
+        stInput.value = data[i][1].slice(0, 7)
+        modelInput.value = data[i][2]
     }
 }
 
