@@ -64,7 +64,7 @@ function forceUpdate(num) {
     document.getElementById('barcode' + num).innerHTML = barcode
 }
 
-function updateAll(e) {
+function updateStudents(e) {
     // get contents of textarea
     var tags = document.getElementById('labeltexts').value
 
@@ -97,7 +97,56 @@ function updateAll(e) {
     }
 }
 
-window.updateAll = updateAll
+window.updateStudents = updateStudents
+
+function uploadTeachers() {
+    // get file reader
+    var file = document.getElementById('teacher-upload').files[0]
+    var reader = new FileReader()
+    reader.addEventListener('load', (event) => {
+        updateTeachers(reader.result)
+    })
+    reader.readAsText(file)
+}
+
+window.uploadTeachers = uploadTeachers
+
+function updateTeachers(result) {
+    // delete all-1 pages
+    while (document.getElementsByClassName('page').length > 1) {
+        removePage()
+    }
+
+    // clear inputs 0-29
+    for (let i = 0; i < 30; i++) {
+        document.getElementById('hostname' + i).value = ''
+        document.getElementById('st' + i).value = ''
+        document.getElementById('model' + i).value = ''
+    }
+
+    // split result into columns
+    var lines = result.split('\n').slice(1)
+    var data = []
+    for (let i = 0; i < lines.length; i++) {
+        data.push(lines[i].split(','))
+    }
+
+    // add data to teacher labels
+    for (let i = 0; i < data.length; i++) {
+        var hostnameInput = document.getElementById('hostname' + i)
+
+        if (hostnameInput === null) {
+            addPage()
+            hostnameInput = document.getElementById('hostname' + i)
+        }
+        var stInput = document.getElementById('st' + i)
+        var modelInput = document.getElementById('model' + i)
+
+        hostnameInput.value = data[i][0]
+        stInput.value = data[i][1].slice(0, 7)
+        modelInput.value = data[i][2]
+    }
+}
 
 function printLabels() {
     document.getElementById('margin-warning').classList.add('visible')

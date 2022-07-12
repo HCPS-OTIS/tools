@@ -14,12 +14,12 @@ input {
 }
 
 /* bulk service tag textarea */
-.textarea {
+.bulk {
     grid-area: 'textarea';
     margin: 16px;
 }
 
-.textarea textarea {
+.bulk textarea {
     background: #fff1;
     border-radius: 2px;
     color: white;
@@ -30,20 +30,25 @@ input {
     transition: all 1s;
 }
 
-body.chill .textarea textarea {
+body.chill .bulk textarea {
     background: #0002;
 }
 
-.textarea textarea::placeholder {
+.bulk textarea::placeholder {
     transition: all 1s;
 }
 
-body.chill .textarea textarea::placeholder {
+body.chill .bulk textarea::placeholder {
     color: #fff8;
 }
 
-.textarea textarea:focus {
+.bulk textarea:focus {
     outline: none;
+}
+
+/* bulk teacher input */
+.bulk input[type="file"] {
+    display: none;
 }
 
 /* page and label layout */
@@ -73,7 +78,6 @@ body.chill .textarea textarea::placeholder {
     border-radius: .1in;
     position: relative;
 }
-
 
 /* student labels */
 
@@ -280,7 +284,7 @@ nav.toolbar a:hover span::after {
     .toolbar,
     footer,
     nav,
-    .textarea,
+    .bulk,
     .margin-warning {
         display: none;
     }
