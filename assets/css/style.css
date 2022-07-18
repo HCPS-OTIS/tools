@@ -344,6 +344,16 @@ footer a:any-link {
     box-shadow: 0 2px 4px #000f;
 }
 
+/* table */
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #eee;
+    padding: 1px 6px;
+}
+
 /* click animation */
 particle {
     border-radius: 50px;

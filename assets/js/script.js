@@ -1,7 +1,3 @@
-// tags to add around each line of text
-start = "<span class='copy-on-click' title='click to copy'>"
-end = "</span>"
-
 // show help if this help hasn't been seen before
 if (document.getElementById('help')) {
     // get data-help attribute from the .help
@@ -13,8 +9,12 @@ if (document.getElementById('help')) {
     }
 }
 
+// tags to add around each line of text
+start = "<span class='copy-on-click' title='click to copy'>"
+end = "</span>"
+
 // add tags around text in <p>s based on <br>s
-elements = document.querySelectorAll('.content p')
+elements = document.querySelectorAll('.scripts p')
 for (let i = 0; i < elements.length; i++) {
     html = elements[i].innerHTML
     html = html.replace(/<br>/g, end + "<br>" + start)
