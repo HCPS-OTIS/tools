@@ -171,6 +171,15 @@ body.chill .bulk textarea::placeholder {
     color: white;
     border: none;
     border-radius: 3px;
+    transition: all 1s;
+}
+
+body.chill .label.teacher input {
+    background: #0002;
+}
+
+.label.teacher input::placeholder {
+    color: #fff6;
 }
 
 .label.teacher input:focus {
@@ -300,8 +309,10 @@ nav.toolbar a:hover span::after {
     }
 
     .label.student>input,
-    .label.teacher input {
+    .label.teacher input,
+    body.chill .label.teacher input {
         color: black;
+        background: #0000;
     }
 
     .label.student>img {
