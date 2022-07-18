@@ -1,3 +1,10 @@
+tools:
+  - id: studentlabels
+    name: Student Label Generator
+
+  - id: teacherlabels
+    name: Teacher Label Generator
+
 scripts:
   - id: chromebooks
     name: Chromebooks
@@ -10,13 +17,6 @@ scripts:
 
   - id: workorders
     name: Work Orders
-
-tools:
-  - id: studentlabels
-    name: Student Label Generator
-
-  - id: teacherlabels
-    name: Teacher Label Generator
 
 site:
   - id: changelog
