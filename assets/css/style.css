@@ -336,6 +336,7 @@ footer a:any-link {
     transition: all .25s;
     cursor: pointer;
     user-select: none;
+    margin-bottom: 3px;
 }
 
 .button:hover {
