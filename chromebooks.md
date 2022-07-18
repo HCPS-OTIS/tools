@@ -1,6 +1,6 @@
 ---
 title: Chromebooks
-layout: default
+layout: scripts
 help: scripts
 ---
 

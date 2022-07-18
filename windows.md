@@ -1,6 +1,6 @@
 ---
 title: Windows Laptops
-layout: default
+layout: scripts
 help: scripts
 ---
 

@@ -304,7 +304,7 @@ h3 {
 }
 
 /* first line (title of reason) */
-.content span.copy-on-click:first-child {
+.scripts span.copy-on-click:first-child {
     font-family: 'Roboto Flex', 'sans serif';
     font-variation-settings: 'wght' 700;
     line-height: 32px;

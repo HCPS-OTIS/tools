@@ -1,6 +1,6 @@
 ---
 title: Work Orders
-layout: default
+layout: scripts
 help: scripts
 ---
 

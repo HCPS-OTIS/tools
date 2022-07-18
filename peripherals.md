@@ -1,6 +1,6 @@
 ---
 title: Peripherals
-layout: default
+layout: scripts
 help: scripts
 ---
 

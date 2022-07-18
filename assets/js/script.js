@@ -3,12 +3,14 @@ start = "<span class='copy-on-click' title='click to copy'>"
 end = "</span>"
 
 // show help if this help hasn't been seen before
-// get data-help attribute from the .help
-var help = document.getElementById('help').getAttribute("data-help")
-// check for matching cookie
-if (document.cookie.indexOf(`help.${help}=true`) === -1) {
-    document.getElementById("help-wrapper").classList = "help-wrapper visible"
-    document.cookie = `help.${help}=true; expires=Fri, 31 Dec 9999 23:59:59 GMT`
+if (document.getElementById('help')) {
+    // get data-help attribute from the .help
+    var help = document.getElementById('help').getAttribute("data-help")
+    // check for matching cookie
+    if (document.cookie.indexOf(`help.${help}=true`) === -1) {
+        document.getElementById("help-wrapper").classList = "help-wrapper visible"
+        document.cookie = `help.${help}=true; expires=Fri, 31 Dec 9999 23:59:59 GMT`
+    }
 }
 
 // add tags around text in <p>s based on <br>s
