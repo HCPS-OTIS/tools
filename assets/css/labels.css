@@ -92,8 +92,8 @@ body.chill .bulk textarea::placeholder {
 .label.student>input {
     position: absolute;
     padding: 0;
-    top: .25in;
-    left: 1in;
+    top: .28in;
+    left: .95in;
     width: 1.5in;
 
     font-size: .15in;
@@ -115,7 +115,7 @@ body.chill .bulk textarea::placeholder {
 .label.student>img {
     position: absolute;
     height: .8in;
-    top: .1in;
+    top: .085in;
     left: .3in;
     filter: contrast(0) brightness(200%);
     user-select: none;
@@ -133,8 +133,8 @@ body.chill .bulk textarea::placeholder {
 
 .label.student>span {
     position: absolute;
-    top: 0.05in;
-    left: 1in;
+    top: 0.08in;
+    left: .95in;
     width: 1.5in;
     text-align: center;
     font-family: Code128;
