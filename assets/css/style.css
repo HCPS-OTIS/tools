@@ -250,7 +250,6 @@ p {
 h1,
 h2,
 h3 {
-    user-select: none;
     font-weight: inherit;
 }
 
