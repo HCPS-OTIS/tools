@@ -46,6 +46,18 @@ body.chill .bulk textarea::placeholder {
     outline: none;
 }
 
+.bulk input {
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+
+.bulk input:focus {
+    outline: none;
+}
+
 /* bulk teacher input */
 .bulk input[type="file"] {
     display: none;
@@ -77,19 +89,16 @@ body.chill .bulk textarea::placeholder {
     border: 2px dashed #fff2;
     border-radius: .1in;
     position: relative;
+    overflow: hidden;
 }
 
 /* student labels */
 
-.label.student>input:placeholder-shown {
+.label.student input:placeholder-shown {
     user-select: none;
 }
 
-.label.student>input:placeholder-shown+img {
-    display: none;
-}
-
-.label.student>input {
+.label.student input {
     position: absolute;
     padding: 0;
     top: .28in;
@@ -107,12 +116,12 @@ body.chill .bulk textarea::placeholder {
     border-radius: 3px;
 }
 
-.label.student>input:focus {
+.label.student input:focus {
     background: #333;
     outline: none;
 }
 
-.label.student>img {
+.label.student img {
     position: absolute;
     height: .8in;
     top: .085in;
@@ -121,7 +130,7 @@ body.chill .bulk textarea::placeholder {
     user-select: none;
 }
 
-.label.student>label {
+.label.student label {
     position: absolute;
     top: 0;
     left: 0;
@@ -131,7 +140,7 @@ body.chill .bulk textarea::placeholder {
     cursor: text;
 }
 
-.label.student>span {
+.label.student .barcode {
     position: absolute;
     top: 0.08in;
     left: .95in;
@@ -141,6 +150,18 @@ body.chill .bulk textarea::placeholder {
     font-size: 24px;
     transform: scaleX(1.2);
     user-select: none;
+}
+
+.label.student .subtitle {
+    position: absolute;
+    bottom: .08in;
+    right: .1in;
+    font-size: 12px;
+    font-variation-settings: 'wdth' 70;
+}
+
+.label.student .notinput {
+    pointer-events: none;
 }
 
 /* teacher labels */
@@ -195,7 +216,7 @@ body.chill .label.teacher input {
     user-select: none;
 }
 
-.label.teacher .hostname:placeholder-shown+.nothostname {
+.label .required:placeholder-shown+.notinput {
     display: none;
 }
 
@@ -308,14 +329,14 @@ nav.toolbar a:hover span::after {
         color: black;
     }
 
-    .label.student>input,
+    .label.student input,
     .label.teacher input,
     body.chill .label.teacher input {
         color: black;
         background: #0000;
     }
 
-    .label.student>img {
+    .label.student img {
         filter: contrast(0.5) brightness(0);
     }
 

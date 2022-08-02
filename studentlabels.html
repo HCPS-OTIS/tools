@@ -7,10 +7,13 @@ help: labels
 <!-- blank label for use by javascript when creating new pages -->
 <div id="blank_label" style="display: none;">
     <div class="label student">
-        <input id="input%i%" type="text" maxlength="7" placeholder=" " oninput="update(event)">
-        <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
         <label for="input%i%"></label>
-        <span id="barcode%i%"></span>
+        <input class="required" id="input%i%" type="text" maxlength="7" placeholder=" " oninput="updateBarcode(event)">
+        <div class="notinput">
+            <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
+            <span class="barcode" id="barcode%i%"></span>
+            <span class="subtitle" id="subtitle%i%"></span>
+        </div>
     </div>
 </div>
 
@@ -20,10 +23,14 @@ help: labels
             <div class="labels">
                 {% for i in (0..29) %}
                 <div class="label student">
-                    <input id="input{{ i }}" type="text" maxlength="7" placeholder=" " oninput="update(event)">
-                    <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
                     <label for="input{{ i }}"></label>
-                    <span id="barcode{{ i }}"></span>
+                    <input class="required" id="input{{ i }}" type="text" maxlength="7" placeholder=" "
+                        oninput="updateBarcode(event)">
+                    <div class="notinput">
+                        <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
+                        <span class="barcode" id="barcode{{ i }}"></span>
+                        <span class="subtitle" id="subtitle{{ i }}"></span>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
@@ -31,7 +38,11 @@ help: labels
     </div>
 
     <div class="bulk">
+        <input type="checkbox" name="limit" id="limit-checkbox" onclick="toggleLimit()" checked>
+        <label for="limit-checkbox">Limit tags to 7 characters</label><br>
+        <input type="text" name="subtitle" id="subtitle-input" placeholder="Bottom right text (ex. Title 1)"
+            oninput="updateSubtitle()"><br>
         <textarea name="labeltexts" id="labeltexts" cols="7" rows="20" wrap="hard" oninput="updateStudents(event)"
-            placeholder="to     create labels in     bulk:  -------paste  servicetags   here"></textarea>
+            placeholder="to create labels in bulk: paste service tags here"></textarea>
     </div>
 </div>

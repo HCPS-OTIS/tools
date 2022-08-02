@@ -23,8 +23,8 @@ help: labels
             <div class="labels">
                 {% for i in (0..29) %}
                 <div class="label teacher" id="">
-                    <input type="text" placeholder="hostname" class="hostname" id="hostname{{ i }}">
-                    <div class="nothostname">
+                    <input type="text" placeholder="hostname" class="hostname required" id="hostname{{ i }}">
+                    <div class="notinput">
                         <span class="st">Dell Service Tag: </span>
                         <input type="text" class="st" maxlength="7" id="st{{ i }}"><br>
                         <span class="model">Model Name: </span>

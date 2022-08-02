@@ -1,12 +1,38 @@
 import encode from './encoder.mjs'
 
-function update(e) {
+// label length limit
+var limit = 7
+
+// update the limit on textboxes and bulk textarea
+function updateLimit() {
+    for (const textbox of document.getElementsByClassName('required')) {
+        textbox.maxLength = limit
+    }
+    document.getElementById('labeltexts').cols = limit
+}
+
+// limit toggling between 7 and 20
+function toggleLimit() {
+    let checkbox = document.getElementById('limit-checkbox')
+
+    if (checkbox.checked) {
+        limit = 7
+    } else {
+        limit = 20
+    }
+
+    updateLimit()
+}
+
+window.toggleLimit = toggleLimit
+
+function updateBarcode(e) {
     let num = e.target.id.slice(5)
     let barcode = encode(e.target.value.toUpperCase())
     document.getElementById('barcode' + num).innerHTML = barcode
 
-    // move to next input box if input is 7 characters long
-    if (e.target.value.length == 7) {
+    // move to next input box if input is `limit` characters long
+    if (e.target.value.length == limit) {
         let next = document.getElementById('input' + (parseInt(num) + 1))
         if (next) {
             next.focus()
@@ -18,7 +44,17 @@ function update(e) {
     }
 }
 
-window.update = update
+window.updateBarcode = updateBarcode
+
+function updateSubtitle() {
+    var subtitle = document.getElementById('subtitle-input').value
+    var subtitles = document.getElementsByClassName('subtitle')
+    for (let i = 0; i < subtitles.length; i++) {
+        subtitles[i].innerHTML = subtitle
+    }
+}
+
+window.updateSubtitle = updateSubtitle
 
 function addPage() {
     var currentPages = document.getElementsByClassName('page')
@@ -82,7 +118,7 @@ function updateStudents(e) {
     // populate inputs and add label text, populating barcodes somehow
     var labelTexts = document.getElementById('labeltexts').value.split('\n')
     for (let i = 0; i < labelTexts.length; i++) {
-        const labelText = labelTexts[i];
+        const labelText = labelTexts[i]
 
         // check for label and add a page if needed
         var label = document.getElementById('input' + i)
@@ -92,7 +128,7 @@ function updateStudents(e) {
         }
 
         // set label and barcode
-        label.value = labelText.slice(0, 7)
+        label.value = labelText.slice(0, limit)
         forceUpdate(i)
     }
 }
