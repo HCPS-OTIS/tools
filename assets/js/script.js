@@ -7,8 +7,12 @@ function showTooltip(e) {
         tooltip.setAttribute('data-tooltip', tooltipText)
 
         tooltip.classList = 'fading tooltip'
+        // line up tooltip with calling element
         tooltip.style.top = e.srcElement.getBoundingClientRect().top + 26 + 'px'
-        console.log(e)
+        // check if tooltip is on righthand side and flip if so
+        if (e.srcElement.getBoundingClientRect().left > 100) {
+            tooltip.classList.add('toolbar-tooltip')
+        }
 
         document.body.appendChild(tooltip)
         setTimeout(function () {

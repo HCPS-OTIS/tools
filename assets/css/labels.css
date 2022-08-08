@@ -234,29 +234,24 @@ nav.toolbar a {
     box-shadow: 0 2px 4px black;
 }
 
-nav.toolbar a span {
+.toolbar-tooltip {
     left: inherit;
-    right: 60px;
+    right: 90px;
     margin-left: 0;
     margin-right: 10px;
     float: right;
-    transform: translateY(-50%) translateX(25%) scale(0.7);
-}
-
-nav.toolbar a:hover span {
     transform: translateY(-50%) scale(1);
 }
 
-nav.toolbar a span::after {
-    border-left: 5px solid #eee0;
+.toolbar-tooltip.fading {
+    transform: translateY(-50%) translateX(25%) scale(0.7);
+}
+
+.toolbar-tooltip::after {
+    border-left: 5px solid #eee;
     border-right: none;
     left: inherit;
     right: -5px;
-}
-
-nav.toolbar a:hover span::after {
-    border-left: 5px solid #eee;
-    border-right: none;
 }
 
 /* print margin warnings */
