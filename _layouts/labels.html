@@ -12,16 +12,13 @@ layout: default
 {{ content }}
 
 <nav class="toolbar">
-    <a onclick="printLabels()">
-        <span>Print</span>
+    <a onclick="printLabels()" data-tooltip="Print">
         <img src="assets/img/print.svg" alt="">
     </a>
-    <a onclick="addPage()" id="addPage">
-        <span>Add Page</span>
+    <a onclick="addPage()" id="addPage" data-tooltip="Add Page">
         <img src="assets/img/add.svg" alt="">
     </a>
-    <a onclick="removePage()" id="removePage">
-        <span>Remove Page</span>
+    <a onclick="removePage()" id="removePage" data-tooltip="Remove Page">
         <img src="assets/img/delete.svg" alt="">
     </a>
 </nav>
