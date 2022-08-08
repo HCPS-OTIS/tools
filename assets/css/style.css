@@ -149,7 +149,7 @@ nav a img {
     width: 28px;
     height: 28px;
     position: relative;
-    top: -24px;
+    top: 12px;
     left: 12px;
     filter: contrast(0%) brightness(200%);
     transition: all .25s;
@@ -169,55 +169,46 @@ nav hr {
     margin: 0;
 }
 
-/* navbar label */
-nav a span {
-    background: #eee0;
-    color: #0000;
+/* navbar tooltips */
+.tooltip {
+    background: #eeef;
+    color: #000f;
     font-family: 'Roboto Flex', 'sans serif';
     font-size: 14px;
     font-variation-settings: 'wght' 700;
 
-    position: relative;
-    left: 60px;
-    top: 50%;
-    margin-left: 5px;
+    position: absolute;
+    left: 70px;
+    margin-left: 10px;
+    z-index: 1000;
 
     display: block;
     padding: 10px 12px;
     width: max-content;
     border-radius: 8px;
-    transform: translateY(-50%) translateX(-25%) scale(0.7);
-    transition: all .25s;
+    transform: translateY(-50%) scale(1);
+    transition: opacity .25s, transform .25s;
     pointer-events: none;
+    box-shadow: 0 0 5px -1px #000f;
 }
 
-nav a span::after {
+.tooltip.fading {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-25%) scale(0.7);
+}
+
+.tooltip::after {
     content: "";
     display: block;
     width: 0;
     height: 0;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
-    border-right: 5px solid #eee0;
-
+    border-right: 5px solid #eeef;
     position: absolute;
     left: -5px;
     top: 50%;
     transform: translateY(-50%);
-    transition: all .25s;
-}
-
-nav a:hover span {
-    display: block;
-    color: #000f;
-    background: #eeef;
-    margin-left: 10px;
-    transform: translateY(-50%) scale(1);
-    box-shadow: 0 0 5px -1px #000f;
-}
-
-nav a:hover span::after {
-    border-right: 5px solid #eeef;
 }
 
 /* padding around page */

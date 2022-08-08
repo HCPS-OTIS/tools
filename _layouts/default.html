@@ -44,8 +44,8 @@
     <nav>
         {% for cat in site.data.tabs %}
         {% for tab in cat[1] %}
-        <a {% if page.name contains tab.id %}class="active" {% endif %} href="{{ tab.id }}">
-            <span>{{ tab.name }}</span>
+        <a {% if page.name contains tab.id %}class="active" {% endif %} href="{{ tab.id }}"
+            data-tooltip="{{ tab.name }}" onmouseenter="showTooltip(event)" onmouseleave="hideTooltip(event)">
             <img src="assets/nav/{{ tab.id }}.svg">
         </a>
         {% endfor %}
@@ -56,8 +56,8 @@
 
         {% endfor %}
 
-        <a id="backgroundtoggle" onclick="togglechill()">
-            <span>Toggle Background</span>
+        <a id="backgroundtoggle" onclick="togglechill()" data-tooltip="Toggle Background"
+            onmouseenter="showTooltip(event)" onmouseleave="hideTooltip(event)">
             <img src="assets/nav/chill.svg">
         </a>
     </nav>
