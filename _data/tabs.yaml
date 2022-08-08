@@ -18,6 +18,9 @@ scripts:
   - id: workorders
     name: Work Orders
 
+  - id: emails
+    name: Email Templates
+
 site:
   - id: changelog
     name: Changelog
