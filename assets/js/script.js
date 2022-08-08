@@ -7,7 +7,8 @@ function showTooltip(e) {
         tooltip.setAttribute('data-tooltip', tooltipText)
 
         tooltip.classList = 'fading tooltip'
-        tooltip.style.top = e.srcElement.offsetTop + 26 + 'px'
+        tooltip.style.top = e.srcElement.getBoundingClientRect().top + 26 + 'px'
+        console.log(e)
 
         document.body.appendChild(tooltip)
         setTimeout(function () {
