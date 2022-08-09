@@ -309,6 +309,7 @@ nav.toolbar a {
     .toolbar,
     footer,
     nav,
+    .tooltip,
     .bulk,
     .margin-warning {
         display: none;
