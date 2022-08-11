@@ -118,6 +118,7 @@ nav {
     grid-area: nav;
     display: grid;
     justify-items: center;
+    grid-auto-rows: min-content;
     gap: 10px;
     padding: 10px 0;
     z-index: 999;
