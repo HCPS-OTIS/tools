@@ -9,7 +9,7 @@ help: templates
 Device becomes unresponsive  
 Device shows artifacts on screen and freezes/becomes unresponsive.
 
-Device does not turn on  
+Device will not turn on  
 Device will not power on/screen stays black. LED is lit. Reseated internal connections.  
 Device will not power on/screen stays black. LED will not light. Reseated internal connections.
 
@@ -28,13 +28,7 @@ Screen has known defect
 Screen has known black spot defect. Replacing under SITM-3169.
 
 Screen not displaying  
-Screen not displaying an image. I have reseated the battery and video cable, but screen still shows nothing.
-
-Touch Screen  
-Device touchscreen isn't working or is malfunctioning. I have reseated the battery and LCD Panel but the touchscreen still isn't working properly.
-
-Hinge  
-Screen is working fine on the device, but the hinge is making the plastic pop around the screen. I have looked at the hardware and it looks to be a hinge malfunction.
+Screen not displaying an image. Reseated battery and video cables.
 
 ## charge
 

@@ -8,13 +8,13 @@ help: templates
 
 Instructions to add a printer  
 You now have the option of installing printers on your own, you just need to search for them.  
-On the bottom left-hand corner, type Control Panel, then select “Control Panel”  
-If you see an option for "Hardware and Sound", select "View devices and printers". If you see an option for "Devices and Printers", select that.  
-Then, “add a printer” from the top left menu bar  
-Then at the bottom of the window, select “The printer that I want isn’t listed”  
-Then select the second option “Find the printer in the directory” and click next  
-Under name, enter “XXXX” and then click on “find now”, where “XXXX” represent the 4-letter code for the school  
-A list of all available printer for school will show up at the bottom, double click on the printer you need, and it will install it.
+- On the bottom left-hand corner of your screen, type Control Panel, then select "Control Panel."  
+- If you see an option for "Hardware and Sound", select "View devices and printers". If you see an option for "Devices and Printers", select that.  
+- Select "add a printer" from the top left menu bar.  
+- Select "The printer that I want isn’t listed" at the bottom of the window.  
+- Select the second option "Find the printer in the directory" and click next.  
+- Under name, enter the 4-letter code for the school "XXXX" and click "find now".  
+- A list of all available printers for the school will show in the window. Double click on the printer you need, and it will install it.
 
 Loud motherboard fan  
 The noise you're hearing is most likely the CPU cooling fan. Unfortunately, this model is known to have rather noisy fans. This can be caused by a buildup of dust near the vent of the device, as well as on the fan itself, or by keeping the computer turned on for extended periods of time.  

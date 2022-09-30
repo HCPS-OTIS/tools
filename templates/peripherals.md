@@ -7,4 +7,4 @@ help: templates
 ## docking station
 
 Docking Station Broken  
-Ports do not work properly, and device doesn't interface with dock.
+Ports do not work properly, and known working devices do not interface with dock.
