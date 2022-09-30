@@ -30,16 +30,8 @@ input {
     transition: all 1s;
 }
 
-body.chill .bulk textarea {
-    background: #0002;
-}
-
 .bulk textarea::placeholder {
     transition: all 1s;
-}
-
-body.chill .bulk textarea::placeholder {
-    color: #fff8;
 }
 
 .bulk textarea:focus {
@@ -195,10 +187,6 @@ body.chill .bulk textarea::placeholder {
     transition: all 1s;
 }
 
-body.chill .label.teacher input {
-    background: #0002;
-}
-
 .label.teacher input::placeholder {
     color: #fff6;
 }
@@ -326,8 +314,7 @@ nav.toolbar a {
     }
 
     .label.student input,
-    .label.teacher input,
-    body.chill .label.teacher input {
+    .label.teacher input {
         color: black;
         background: #0000;
     }
