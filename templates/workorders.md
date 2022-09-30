@@ -6,9 +6,9 @@ help: templates
 
 ## techdirect
 
-Created dispatch: [code]. Waiting to return to Dell for repair.
+Created dispatch *SR#########*. Waiting to return to Dell for repair.
 
-Created dispatch for part replacement: [code]. Waiting on parts.
+Created dispatch for part replacement *SR#########*. Waiting on parts.
 
 Repaired by Dell.
 
