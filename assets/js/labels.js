@@ -27,18 +27,18 @@ function toggleLimit() {
 window.toggleLimit = toggleLimit
 
 function updateBarcode(e) {
-    let num = e.target.id.slice(5)
+    let num = e.target.id.slice(10)
     let barcode = encode(e.target.value.toUpperCase())
     document.getElementById('barcode' + num).innerHTML = barcode
 
     // move to next input box if input is `limit` characters long
     if (e.target.value.length == limit) {
-        let next = document.getElementById('input' + (parseInt(num) + 1))
+        let next = document.getElementById('servicetag' + (parseInt(num) + 1))
         if (next) {
             next.focus()
         } else {
             addPage()
-            let next = document.getElementById('input' + (parseInt(num) + 1))
+            let next = document.getElementById('servicetag' + (parseInt(num) + 1))
             next.focus()
         }
     }
@@ -95,93 +95,117 @@ function removePage() {
 
 window.removePage = removePage
 
-function forceUpdate(num) {
-    let barcode = encode(document.getElementById('input' + num).value.toUpperCase())
-    document.getElementById('barcode' + num).innerHTML = barcode
+function loadCSV() {
+    document.getElementById('csvupload').click()
 }
 
-function updateStudents(e) {
-    // get contents of textarea
-    var tags = document.getElementById('labeltexts').value
+window.loadCSV = loadCSV
 
-    // delete all-1 pages
-    while (document.getElementsByClassName('page').length > 1) {
-        removePage()
-    }
-
-    // clear inputs 0-29
-    for (let i = 0; i < 30; i++) {
-        document.getElementById('input' + i).value = ''
-        forceUpdate(i)
-    }
-
-    // populate inputs and add label text, populating barcodes somehow
-    var labelTexts = document.getElementById('labeltexts').value.split('\n')
-    for (let i = 0; i < labelTexts.length; i++) {
-        const labelText = labelTexts[i]
-
-        // check for label and add a page if needed
-        var label = document.getElementById('input' + i)
-        if (label === null) {
-            addPage()
-            var label = document.getElementById('input' + i)
-        }
-
-        // set label and barcode
-        label.value = labelText.slice(0, limit)
-        forceUpdate(i)
-    }
-}
-
-window.updateStudents = updateStudents
-
-function uploadTeachers() {
-    // get file reader
-    var file = document.getElementById('teacher-upload').files[0]
+function readCSV() {
+    // get file contents
+    var file = document.getElementById('csvupload').files[0]
     var reader = new FileReader()
     reader.addEventListener('load', (event) => {
-        updateTeachers(reader.result)
+        updateLabels(reader.result)
     })
     reader.readAsText(file)
 }
 
-window.uploadTeachers = uploadTeachers
+window.readCSV = readCSV
 
-function updateTeachers(result) {
+function updateLabels(result) {
     // delete all-1 pages
     while (document.getElementsByClassName('page').length > 1) {
         removePage()
     }
 
-    // clear inputs 0-29
-    for (let i = 0; i < 30; i++) {
-        document.getElementById('hostname' + i).value = ''
-        document.getElementById('st' + i).value = ''
-        document.getElementById('model' + i).value = ''
+    // clear all inputs
+    let inputs = document.getElementsByTagName('input')
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].value = ''
     }
 
-    // split result into columns
-    var lines = result.split('\n').slice(1)
-    var data = []
-    for (let i = 0; i < lines.length; i++) {
-        data.push(lines[i].split(','))
-    }
+    // split up data
+    let rows = result.split('\n')
+    let headers = rows.shift().split(',')
 
-    // add data to teacher labels
-    for (let i = 0; i < data.length; i++) {
-        var hostnameInput = document.getElementById('hostname' + i)
+    // iterate through rows
+    for (let i = 0; i < rows.length; i++) {
+        let row = rows[i].split(',')
+        if (headers.at(-1) === '')
+            row.pop()
 
-        if (hostnameInput === null) {
-            addPage()
-            hostnameInput = document.getElementById('hostname' + i)
+        // iterate through fields
+        for (let j = 0; j < row.length; j++) {
+            // add a page if necessary
+            if (document.getElementById(headers[j] + i) === null)
+                addPage()
+            document.getElementById(headers[j] + i).value = row[j]
         }
-        var stInput = document.getElementById('st' + i)
-        var modelInput = document.getElementById('model' + i)
 
-        hostnameInput.value = data[i][0]
-        stInput.value = data[i][1].slice(0, 7)
-        modelInput.value = data[i][2]
+        // update barcode if relevant
+        if (document.getElementById('barcode' + i) !== null)
+            forceUpdate(i)
     }
+}
+
+function saveCSV() {
+    let csvdata = []
+
+    // iterate through labels
+    let labels = document.querySelectorAll('.pages .label')
+    for (let i = 0; i < labels.length; i++) {
+        let labeldata = {}
+
+        // iterate through inputs on each label
+        let inputs = labels[i].getElementsByTagName('input')
+        for (let j = 0; j < inputs.length; j++) {
+            const input = inputs[j];
+
+            let id = input.id.slice(0, -i.toString().length)
+            let value = input.value
+            labeldata[id] = value
+        }
+
+        csvdata.push(labeldata)
+    }
+
+    let csvcontent = ''
+
+    // encode data to csv
+    let firstlabel = Object.entries(csvdata[0])
+
+    for (let i = 0; i < firstlabel.length; i++) {
+        csvcontent += firstlabel[i][0] + ','
+    }
+    csvcontent += '\n'
+
+    for (let i = 0; i < csvdata.length; i++) {
+        const label = Object.entries(csvdata[i]);
+        for (let i = 0; i < label.length; i++) {
+            csvcontent += label[i][1] + ','
+        }
+        csvcontent += '\n'
+    }
+
+    // save csv
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(csvcontent));
+    element.setAttribute('download', 'labels.csv');
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+window.saveCSV = saveCSV
+
+function forceUpdate(num) {
+    let barcode = encode(document.getElementById('servicetag' + num).value.toUpperCase())
+    document.getElementById('barcode' + num).innerHTML = barcode
 }
 
 function printLabels() {

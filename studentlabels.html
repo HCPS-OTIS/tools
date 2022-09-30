@@ -7,8 +7,9 @@ help: labels
 <!-- blank label for use by javascript when creating new pages -->
 <div id="blank_label" style="display: none;">
     <div class="label student">
-        <label for="input%i%"></label>
-        <input class="required" id="input%i%" type="text" maxlength="7" placeholder=" " oninput="updateBarcode(event)">
+        <label for="servicetag%i%"></label>
+        <input class="required" id="servicetag%i%" type="text" maxlength="7" placeholder=" "
+            oninput="updateBarcode(event)">
         <div class="notinput">
             <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
             <span class="barcode" id="barcode%i%"></span>
@@ -23,8 +24,8 @@ help: labels
             <div class="labels">
                 {% for i in (0..29) %}
                 <div class="label student">
-                    <label for="input{{ i }}"></label>
-                    <input class="required" id="input{{ i }}" type="text" maxlength="7" placeholder=" "
+                    <label for="servicetag{{ i }}"></label>
+                    <input class="required" id="servicetag{{ i }}" type="text" maxlength="7" placeholder=" "
                         oninput="updateBarcode(event)">
                     <div class="notinput">
                         <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
@@ -42,7 +43,5 @@ help: labels
         <label for="limit-checkbox">Limit tags to 7 characters</label><br>
         <input type="text" name="subtitle" id="subtitle-input" placeholder="Bottom right text (ex. Title 1)"
             oninput="updateSubtitle()"><br>
-        <textarea name="labeltexts" id="labeltexts" cols="7" rows="20" wrap="hard" oninput="updateStudents(event)"
-            placeholder="to create labels in bulk: paste service tags here"></textarea>
     </div>
 </div>
