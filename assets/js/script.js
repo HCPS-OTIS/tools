@@ -9,10 +9,11 @@ function showTooltip(e) {
         tooltip.classList = 'fading tooltip'
         // line up tooltip with calling element
         tooltip.style.top = e.srcElement.getBoundingClientRect().top + 26 + 'px'
-        tooltip.style.left = e.srcElement.getBoundingClientRect().right + 'px'
         // check if tooltip is on righthand side and flip if so
         if (e.srcElement.getBoundingClientRect().left > 200) {
             tooltip.classList.add('toolbar-tooltip')
+        } else {
+            tooltip.style.left = e.srcElement.getBoundingClientRect().right + 'px'
         }
 
         document.body.appendChild(tooltip)
