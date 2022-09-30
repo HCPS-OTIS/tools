@@ -1,7 +1,7 @@
 ---
 title: Email Templates
-layout: scripts
-help: scripts
+layout: templates
+help: templates
 ---
 
 ## emails

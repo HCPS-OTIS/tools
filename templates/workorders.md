@@ -1,7 +1,7 @@
 ---
 title: Work Orders
-layout: scripts
-help: scripts
+layout: templates
+help: templates
 ---
 
 ## techdirect

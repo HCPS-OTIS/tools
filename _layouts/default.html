@@ -3,7 +3,8 @@
 <html>
 
 <head>
-    <title>{{ page.title }} | HCPS Technician Utilities</title>
+    <title>{{ page.title }} | HCPS Endpoint Utilities</title>
+    <base href="/tools/">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="assets/css/style.css?{{ 'now' | date: '%s' }}">
 
@@ -20,7 +21,7 @@
     <link rel="icon" type="image/png" href="assets/icon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="assets/icon/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="assets/icon/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="HCPS Repair Scripts" />
+    <meta name="application-name" content="HCPS Endpoint Utilities" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="assets/icon/mstile-144x144.png" />
     <meta name="msapplication-square70x70logo" content="assets/icon/mstile-70x70.png" />
@@ -41,25 +42,42 @@
 
 <body>
 
-    <nav>
-        {% for cat in site.data.tabs %}
-        {% for tab in cat[1] %}
-        <a {% if page.name contains tab.id %}class="active" {% endif %} href="{{ tab.id }}"
-            data-tooltip="{{ tab.name }}" onmouseenter="showTooltip(event)" onmouseleave="hideTooltip(event)">
-            <img src="assets/nav/{{ tab.id }}.svg">
-        </a>
-        {% endfor %}
+    <div class="navs">
 
-        {% if forloop.last == false %}
-        <hr>
+        <nav>
+            {% for cat in site.data.tabs %}
+            {% for tab in cat[1] %}
+            <a {% if page.path contains tab.id %}class="active" {% endif %} href="{{ tab.id }}"
+                data-tooltip="{{ tab.name }}" onmouseenter="showTooltip(event)" onmouseleave="hideTooltip(event)">
+                <img src="assets/nav/{{ tab.id }}.svg">
+            </a>
+            {% endfor %}
+
+            {% if forloop.last == false %}
+            <hr>
+            {% endif %}
+
+            {% endfor %}
+        </nav>
+
+        {% if page.dir != "/" %}
+        <nav class="subnav">
+            {% assign catname = page.dir | split: "/" | slice: 1 %}
+            {% assign cat = site.data.tabs.tools | where: "id", catname[0] %}
+            {% for tab in cat[0].subpages %}
+            <a class="subtab{% if page.name contains tab.id %} active{% endif %}" href="{{ catname }}/{{ tab.id }}"
+                data-tooltip="{{ tab.name }}" onmouseenter="showTooltip(event)" onmouseleave="hideTooltip(event)">
+                <img src="assets/nav/{{ tab.id }}.svg">
+            </a>
+            {% endfor %}
+        </nav>
         {% endif %}
 
-        {% endfor %}
+    </div>
 
-    </nav>
 
     <div class="header">
-        <h1>Endpoint Technician Utilities</h1>
+        <h1>HCPS Endpoint Utilities</h1>
         <h3>{% if page.help %}{{ page.help | capitalize }} — {% endif %}{{ page.title }}</h3>
         {% if page.help %}<img class="help-button" src="assets/img/help.svg"
             onclick="document.getElementById('help-wrapper').classList = 'help-wrapper visible'">{% endif %}
@@ -95,7 +113,7 @@
 
     </div>
 
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js?{{ 'now' | date: '%s' }}"></script>
 
 </body>
 

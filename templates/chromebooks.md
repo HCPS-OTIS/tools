@@ -1,7 +1,7 @@
 ---
 title: Chromebooks
-layout: scripts
-help: scripts
+layout: templates
+help: templates
 ---
 
 ## motherboard

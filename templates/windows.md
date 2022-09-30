@@ -1,7 +1,7 @@
 ---
 title: Windows Laptops
-layout: scripts
-help: scripts
+layout: templates
+help: templates
 ---
 
 ## motherboard

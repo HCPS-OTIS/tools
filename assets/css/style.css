@@ -8,7 +8,7 @@
 body {
     height: 100vh;
     display: grid;
-    grid-template-columns: 72px auto;
+    grid-template-columns: min-content auto;
     grid-template-rows: min-content auto;
     grid-template-areas:
         "header header"
@@ -113,6 +113,10 @@ body {
 }
 
 /* navbar */
+div.navs {
+    display: flex;
+}
+
 nav {
     background: #282828;
     grid-area: nav;
@@ -120,10 +124,15 @@ nav {
     justify-items: center;
     grid-auto-rows: min-content;
     gap: 10px;
-    padding: 10px 0;
+    padding: 10px;
     z-index: 999;
     box-shadow: black 0 0 10px 0px;
+    clip-path: inset(0 -15px 0 0);
     overflow: scroll;
+}
+
+nav:not(:first-of-type) {
+    padding-left: 0;
 }
 
 nav::-webkit-scrollbar {
@@ -141,6 +150,7 @@ nav a {
     text-decoration: none;
     cursor: pointer;
     user-select: none;
+    grid-column: 1;
 }
 
 nav a:hover,
@@ -183,7 +193,6 @@ nav hr {
     font-variation-settings: 'wght' 700;
 
     position: absolute;
-    left: 70px;
     margin-left: 10px;
     z-index: 1000;
 
@@ -299,7 +308,7 @@ h3 {
 }
 
 /* first line (title of reason) */
-.scripts span.copy-on-click:first-child {
+.templates span.copy-on-click:first-child {
     font-family: 'Roboto Flex', 'sans serif';
     font-variation-settings: 'wght' 700;
     line-height: 32px;

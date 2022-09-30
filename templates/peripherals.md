@@ -1,7 +1,7 @@
 ---
 title: Peripherals
-layout: scripts
-help: scripts
+layout: templates
+help: templates
 ---
 
 ## docking station

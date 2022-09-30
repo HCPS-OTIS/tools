@@ -1,5 +1,5 @@
-scripts: |
-  ## scripts
+templates: |
+  ## templates
   When submitting dispatches in Dell TechDirect, there are several issues that come up repeatedly. The purpose of these pages is to make entering these issues much easier by providing a script to use.  
 
   The first line, in bold, is for the Description of Problem field in TechDirect. The second is for the larger field, Troubleshooting Performed. Some issues have multiple options for the second field for slightly different variants of the same general issue.

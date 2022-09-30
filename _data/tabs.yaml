@@ -5,21 +5,23 @@ tools:
   - id: teacherlabels
     name: Teacher Label Generator
 
-scripts:
-  - id: chromebooks
-    name: Chromebooks
+  - id: templates
+    name: Templates
+    subpages:
+      - id: chromebooks
+        name: Chromebooks
 
-  - id: windows
-    name: Windows Laptops
+      - id: windows
+        name: Windows Laptops
 
-  - id: peripherals
-    name: Peripherals
+      - id: peripherals
+        name: Peripherals
 
-  - id: workorders
-    name: Work Orders
+      - id: workorders
+        name: Work Orders
 
-  - id: emails
-    name: Email Templates
+      - id: emails
+        name: Email Templates
 
 site:
   - id: changelog

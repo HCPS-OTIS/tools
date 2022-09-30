@@ -9,8 +9,9 @@ function showTooltip(e) {
         tooltip.classList = 'fading tooltip'
         // line up tooltip with calling element
         tooltip.style.top = e.srcElement.getBoundingClientRect().top + 26 + 'px'
+        tooltip.style.left = e.srcElement.getBoundingClientRect().right + 'px'
         // check if tooltip is on righthand side and flip if so
-        if (e.srcElement.getBoundingClientRect().left > 100) {
+        if (e.srcElement.getBoundingClientRect().left > 200) {
             tooltip.classList.add('toolbar-tooltip')
         }
 
@@ -47,7 +48,7 @@ start = "<span class='copy-on-click' title='click to copy'>"
 end = "</span>"
 
 // add tags around text in <p>s based on <br>s
-elements = document.querySelectorAll('.scripts p')
+elements = document.querySelectorAll('.templates p')
 for (let i = 0; i < elements.length; i++) {
     html = elements[i].innerHTML
     html = html.replace(/<br>/g, end + "<br>" + start)
