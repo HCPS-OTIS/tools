@@ -115,6 +115,7 @@ body {
 /* navbar */
 div.navs {
     display: flex;
+    overflow: scroll;
 }
 
 nav {
@@ -135,6 +136,7 @@ nav:not(:first-of-type) {
     padding-left: 0;
 }
 
+.navs::-webkit-scrollbar,
 nav::-webkit-scrollbar {
     display: none;
 }
