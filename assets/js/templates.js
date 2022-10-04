@@ -9,7 +9,7 @@ for (let i = 0; i < elements.length; i++) {
     html = html.replace(/<br>/g, end + "<br>" + start)
     html = start + html + end
     elements[i].innerHTML = html
-    elements[i].addEventListener("click", highlight)
+    elements[i].addEventListener("click", highlight.bind(null, elements[i]))
 }
 
 // add event listener to newly added <span>s
@@ -66,12 +66,15 @@ function createParticle(x, y) {
 }
 
 // highlight paragraph on click
-function highlight(e) {
+function highlight(element) {
     elements = document.querySelectorAll('.templates p')
     for (let i = 0; i < elements.length; i++) {
-        elements[i].style = ''
+        elements[i].removeAttribute('style')
     }
 
-    e.target.parentNode.style.backgroundColor = 'rgba(255, 255, 0, 0.2)'
-    e.target.parentNode.style.color = 'white'
+    console.log(element)
+    element.style.backgroundColor = 'rgba(255, 255, 255, .1)'
+    element.style.boxShadow = '0 2px 3px black'
+    element.style.color = 'white'
+
 }
