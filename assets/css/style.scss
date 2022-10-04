@@ -319,6 +319,14 @@ h3 {
     line-height: 32px;
 }
 
+.templates p {
+    margin: 0 -8px 2px -8px;
+    padding: 0px 8px 6px 8px;
+    box-sizing: content-box;
+    border-radius: 8px;
+    transition: all .25s;
+}
+
 /* footer */
 footer {
     width: 100%;
