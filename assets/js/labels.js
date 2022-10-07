@@ -126,7 +126,7 @@ function updateLabels(result) {
     }
 
     // split up data
-    let rows = result.split('\n')
+    let rows = result.split(/\r?\n|\r|\n/g)
     let headers = rows.shift().split(',')
 
     // iterate through rows
@@ -138,9 +138,11 @@ function updateLabels(result) {
         // iterate through fields
         for (let j = 0; j < row.length; j++) {
             // add a page if necessary
-            if (document.getElementById(headers[j] + i) === null)
-                addPage()
-            document.getElementById(headers[j] + i).value = row[j]
+            if (row[j] != '') {
+                if (document.getElementById(headers[j] + i) === null)
+                    addPage()
+                document.getElementById(headers[j] + i).value = row[j]
+            }
         }
 
         // update barcode if relevant
