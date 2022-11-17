@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Roboto Flex';
+    src: url(../fonts/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf) format('truetype');
+}
+
+html {
+    background: #222;
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Roboto Flex', 'sans serif';
+    font-variation-settings: 'wght' 300;
+    color: white;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+    font-family: 'Roboto Flex', 'sans serif';
+    font-variation-settings: 'wght' 700, 'wdth' 80;
+    font-size: 24px;
+    color: white;
+}
+
+body {
+    color: #ddd;
+    font-family: 'Roboto Flex', 'sans serif';
+    margin: 8px;
+    font-size: 16px;
+}
