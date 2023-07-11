@@ -9,10 +9,10 @@ help: templates
 Device will not turn on  
 Device will not power on/screen stays black. Reseated internal connections.
 
-SSD does not show as boot option/not installable
+SSD does not show as boot option/not installable  
 SSD does not show as boot option/not able to install OS or even partition it. Probably has failed. I have reseated it to no effect. I removed the SSD and placed it into a known working device and it still failed to be detected. I removed a known working SSD from another device and placed it into this device, and it was detected and able to boot.
 
-Wi-Fi Card  
+Wi-Fi Card is not functioning  
 Wi-Fi card is not functioning. Wi-Fi drivers were reinstalled and battery cable reseated.
 
 ## screen
