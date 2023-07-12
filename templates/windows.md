@@ -9,6 +9,9 @@ help: templates
 Device will not turn on  
 Device will not power on/screen stays black. Reseated internal connections.
 
+Device randomly blue screens, crashes during memory test  
+Device randomly blue screens, then when you start it back up, it launches the memory test, but always hangs at about 50% completion or crashes again during that test. I have swapped in known good ram and that fixed the issue. Trying this ram in a different machine yields the same crashes.
+
 SSD does not show as boot option/not installable  
 SSD does not show as boot option/not able to install OS or even partition it. Probably has failed. I have reseated it to no effect. I removed the SSD and placed it into a known working device and it still failed to be detected. I removed a known working SSD from another device and placed it into this device, and it was detected and able to boot.
 
