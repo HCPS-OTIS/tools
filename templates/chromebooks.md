@@ -17,7 +17,7 @@ ChromeOS will not stay installed
 ChromeOS reinstalled multiple times and device continues to show "ChromeOS missing or damaged" error.
 
 USB port not working  
-The USB port does not work. Plugging known working devices into the other USB ports are recognized by the device. Nothing is obstructing the port and it has been blown out with compressed air to no effect.
+The USB port does not work. Plugging known working devices into the other USB ports is recognized by the device. Nothing is obstructing the port and it has been blown out with compressed air to no effect.
 
 Headphone jack not working  
 The headphone jack does not work. Known working headphones have no sound, and there are no visible signs of damage.
