@@ -6,5 +6,5 @@ help: templates
 
 ## docking station
 
-Docking Station Broken  
-Ports do not work properly, and known working devices do not interface with dock.
+Ports are not being properly passed through
+Ports are not being properly passed through the docking station. Plugging in known working devices and connecting the docking station to a known working laptop does not work. Plugging the laptop into a known docking station with the same devices works.
