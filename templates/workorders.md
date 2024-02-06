@@ -26,6 +26,8 @@ Damage does not warrant replacement at this time. Device in working order.
 
 ## repairs
 
+Powerwashed device. Device in working order.
+
 Reimaged device. Device in working order.
 
 Could not replicate problem. Device in working order.
