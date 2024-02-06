@@ -7,7 +7,8 @@ help: templates
 ## motherboard
 
 Device will not turn on  
-Device will not power on/screen stays black. Reseated internal connections.
+Device will not power on/screen stays black. LED is lit. Reseated internal connections.  
+Device will not power on/screen stays black. LED will not light. Reseated internal connections.
 
 Device blue screens, crashes during memory test  
 Device randomly blue screens, then when you start it back up, it launches the memory test, but always hangs at about 50% completion or crashes again during that test. I have swapped in known good ram and that fixed the issue. Trying this ram in a different machine yields the same crashes.
@@ -17,6 +18,12 @@ SSD does not show as boot option/not able to install OS or even partition it. Pr
 
 Wi-Fi Card is not functioning  
 Wi-Fi card is not functioning. Wi-Fi drivers were reinstalled and battery cable reseated.
+
+USB port not working  
+The USB port does not work. Plugging known working devices into the other USB ports is recognized by the device. Nothing is obstructing the port and it has been blown out with compressed air to no effect. Motherboard needs replaced.
+
+Headphone jack not working  
+The headphone jack does not work. Known working headphones have no sound, and there are no visible signs of damage.
 
 ## screen
 
@@ -29,20 +36,29 @@ Device touchscreen is not working/malfunctioning. Reseated battery and display c
 Hinge  
 Screen is working fine on the device, but the hinge is making the bezel pop around the screen. It appears to be a hinge malfunction.
 
-## battery
+## charge
 
-Battery  
-Battery will not charge. Reseated battery cable.
+Device will not charge  
+Device will not power on/does not charge when plugged into known working charger. No signs of damage in the ports.
+
+Charger died  
+Charger will not charge device. Tried other chargers on device and they function as expected. Charger will not charge other devices.
+
+## overheating
+
+Device overheats/reboots  
+Device freezes and reboots under high loads. Issue not seen on other Chromebooks. Performed powerwash/software reset.
 
 ## keyboard
 
-Keyboard  
-Certain keys are not working when pressed. Reseated battery and keyboard cables.
+Bad keyboard  
+Keyboard keys no longer registered by device. Keys mechanically function with no sign of physical damage. Reseated internal ribbon cable.  
+Keys occasionally typing multiple times. Keys mechanically function with no sign of physical damage. Reseated internal ribbon cable.
 
 ## touchpad
 
-Touchpad not responding  
-Reseated the touchpad and battery and reinstalled drivers.
+Touchpad is unresponsive  
+Touchpad does not respond to any movements or button clicks. External USB mouse works fine. Reseated touchpad ribbon cable on motherboard and still does not function.
 
 ## enrollment
 
