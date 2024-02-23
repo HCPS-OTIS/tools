@@ -21,4 +21,22 @@
     "scope": "/",
     "start_url": "/",
     "display": "minimal-ui"
+    "shortcuts": [
+        {
+            "name": "Student Labels",
+            "url": "/studentlabels"
+        },
+        {
+            "name": "Teacher Labels",
+            "url": "/studentlabels"
+        },
+        {
+            "name": "Chromebook Templates",
+            "url": "/templates/chromebooks"
+        },
+        {
+            "name": "Windows Templates",
+            "url": "/templates/windows"
+        }
+    ]
 }
