@@ -15,6 +15,7 @@ Device will not power on/screen stays black. LED will not light. Reseated intern
 
 ChromeOS will not stay installed  
 ChromeOS reinstalled multiple times and device continues to show "ChromeOS missing or damaged" error.
+ChromeOS reinstalled multiple times and device continues to show "Something went wrong" error.
 
 USB port not working  
 The USB port does not work. Plugging known working devices into the other USB ports is recognized by the device. Nothing is obstructing the port and it has been blown out with compressed air to no effect.
