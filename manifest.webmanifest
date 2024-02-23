@@ -20,7 +20,7 @@
     ],
     "scope": "/",
     "start_url": "/",
-    "display": "minimal-ui"
+    "display": "minimal-ui",
     "shortcuts": [
         {
             "name": "Student Labels",
