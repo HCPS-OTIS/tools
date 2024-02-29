@@ -31,6 +31,9 @@ Screen has known black spot defect. Replacing under SITM-3169.
 Screen not displaying  
 Screen not displaying an image. Reseated battery and video cables.
 
+Hinge  
+Screen is working fine on the device, but the hinge is making the bezel pop around the screen. It appears to be a hinge malfunction.
+
 ## charge
 
 Device will not charge  
