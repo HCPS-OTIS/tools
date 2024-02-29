@@ -48,11 +48,6 @@ Device will not power on/does not charge when plugged into known working charger
 Charger died  
 Charger will not charge device. Tried other chargers on device and they function as expected. Charger will not charge other devices.
 
-## overheating
-
-Device overheats/reboots  
-Device freezes and reboots under high loads. Issue not seen on other Chromebooks. Performed powerwash/software reset.
-
 ## keyboard
 
 Bad keyboard  
