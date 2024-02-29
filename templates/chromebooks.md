@@ -9,6 +9,9 @@ help: templates
 Device becomes unresponsive  
 Device shows artifacts on screen and freezes/becomes unresponsive.
 
+Device randomly shuts down  
+Devices will shut down or restart randomly during use. There is no obvious pattern or cause of this behavior.
+
 Device will not turn on  
 Device will not power on/screen stays black. LED is lit. Reseated internal connections.  
 Device will not power on/screen stays black. LED will not light. Reseated internal connections.
