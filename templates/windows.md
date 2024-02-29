@@ -6,12 +6,15 @@ help: templates
 
 ## motherboard
 
-Device randomly shuts down  
-Devices will shut down or restart randomly during use. There is no obvious pattern or cause of this behavior.
-
 Device will not turn on  
 Device will not power on/screen stays black. LED is lit. Reseated internal connections.  
 Device will not power on/screen stays black. LED will not light. Reseated internal connections.
+
+Device randomly shuts down  
+Devices will shut down or restart randomly during use. There is no obvious pattern or cause of this behavior.
+
+Device overheats  
+Device is overheating while in use. Replaced thermal paste and cleared out the cooling to no effect.
 
 Device blue screens and crashes during memory test  
 Device randomly blue screens, then when starting back up, it launches the memory test, but always hangs at about 50% completion or crashes again during that test. Swapping in known good RAM fixes the issue. Trying the same RAM in a different machine yields the same crashes.
