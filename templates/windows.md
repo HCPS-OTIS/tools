@@ -16,6 +16,9 @@ Devices will shut down or restart randomly during use. There is no obvious patte
 Device overheats  
 Device is overheating while in use. Replaced thermal paste and cleared out the cooling to no effect.
 
+Fan needs replaced  
+Device is overheating while in use. Replaced thermal paste and cleared out the cooling to no effect. Replaced with a known working fan and the issue is resolved. Tried the defective fan in a known working device and the issue appears. The fan needs replaced.
+
 Device blue screens and crashes during memory test  
 Device randomly blue screens, then when starting back up, it launches the memory test, but always hangs at about 50% completion or crashes again during that test. Swapping in known good RAM fixes the issue. Trying the same RAM in a different machine yields the same crashes.
 
