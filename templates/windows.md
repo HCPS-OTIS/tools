@@ -34,6 +34,9 @@ The USB port does not work. Plugging known working devices into the other USB po
 Headphone jack not working  
 The headphone jack does not work. Known working headphones have no sound, and there are no visible signs of damage.
 
+Device is unfixable, needs replaced  
+This device will crash randomly. Reseating the battery will fix the issue temporarily for about a week, but the issue will resurface. I have fixed this device around 10 times. Device needs fully replaced. Please escalate to exchange team.
+
 ## screen
 
 Screen not displaying  
