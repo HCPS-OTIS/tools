@@ -37,6 +37,9 @@ Screen has known black spot defect. Replacing under SITM-3169.
 Screen not displaying  
 Screen not displaying an image. Reseated battery and video cables.
 
+Screen is glitching  
+Screen has visible glitching on it. There are no signs of physical damage. Swapping with a known working screen fixes the issue. Swapping this known broken screen into other devices reproduces the issue.
+
 Touchscreen  
 Device touchscreen is not working/malfunctioning. Reseated battery and display cables and powerwashed Chromebook to no effect.
 
