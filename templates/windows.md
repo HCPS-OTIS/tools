@@ -42,6 +42,9 @@ This device will crash randomly. Reseating the battery will fix the issue tempor
 Screen not displaying  
 Screen not displaying an image. Battery and video cables have been reseated to no avail.
 
+Screen is glitching  
+Screen has visible glitching on it. There are no signs of physical damage. Swapping with a known working screen fixes the issue. Swapping this known broken screen into other devices reproduces the issue.
+
 Touchscreen  
 Device touchscreen is not working/malfunctioning. Reseated battery and display cables and reinstalled display drivers.
 
