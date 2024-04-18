@@ -37,6 +37,9 @@ Screen has known black spot defect. Replacing under SITM-3169.
 Screen not displaying  
 Screen not displaying an image. Reseated battery and video cables.
 
+Screen has light bleed/uneven backlighting  
+Screen has light bleed/uneven backlighting on it. There are no signs of physical damage. Swapping with a known working screen fixes the issue. Swapping this known broken screen into other devices reproduces the issue.
+
 Screen is glitching  
 Screen has visible glitching on it. There are no signs of physical damage. Swapping with a known working screen fixes the issue. Swapping this known broken screen into other devices reproduces the issue.
 
