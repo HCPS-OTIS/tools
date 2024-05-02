@@ -44,7 +44,7 @@ Screen is glitching
 Screen has visible glitching on it. There are no signs of physical damage. Swapping with a known working screen fixes the issue. Swapping this known broken screen into other devices reproduces the issue.
 
 Touchscreen  
-Device touchscreen is not working/malfunctioning. Reseated battery and display cables and powerwashed Chromebook to no effect.
+Device touchscreen is malfunctioning/not working. Reseated battery and display cables and powerwashed Chromebook to no effect.
 
 Hinge  
 Screen is working fine on the device, but the hinge is making the bezel pop around the screen. It appears to be a hinge malfunction.
