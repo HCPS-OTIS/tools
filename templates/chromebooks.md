@@ -23,6 +23,9 @@ ChromeOS will not stay installed
 ChromeOS reinstalled multiple times and device continues to show "ChromeOS missing or damaged" error.
 ChromeOS reinstalled multiple times and device continues to show "Something went wrong" error.
 
+Wi-Fi is not functioning  
+Wi-Fi is not functioning. Chromebook was powerwashed and battery cable and antennas reseated to no effect.
+
 USB port not working  
 The USB port does not work. Plugging known working devices into the other USB ports is recognized by the device. Nothing is obstructing the port and it has been blown out with compressed air to no effect.
 
