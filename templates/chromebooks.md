@@ -23,14 +23,11 @@ ChromeOS will not stay installed
 ChromeOS reinstalled multiple times and device continues to show "ChromeOS missing or damaged" error.
 ChromeOS reinstalled multiple times and device continues to show "Something went wrong" error.
 
-Wi-Fi is not functioning  
-Wi-Fi is not functioning. Chromebook was powerwashed and battery cable and antennas reseated to no effect.
+Network not available  
+Device is unable to detect or connect to any Wi-Fi networks - only shows "Network not available" error. Powerwashed to no effect. Reseated antenna cables to no effect.
 
 USB port not working  
 The USB port does not work. Plugging known working devices into the other USB ports is recognized by the device. Nothing is obstructing the port and it has been blown out with compressed air to no effect.
-
-Network not available  
-Device is unable to detect or connect to any Wi-Fi networks - only shows "Network not available" error. Powerwashed to no effect. Reseated antenna cables to no effect.
 
 Headphone jack not working  
 The headphone jack does not work. Known working headphones have no sound, and there are no visible signs of damage.
