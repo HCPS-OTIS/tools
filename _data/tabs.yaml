@@ -20,6 +20,9 @@ tools:
       - id: workorders
         name: Work Orders
 
+      - id: images
+        name: Images
+
 site:
   - id: changelog
     name: Changelog
