@@ -238,9 +238,20 @@ input {
     font-variation-settings: 'wght' 700;
 }
 
-.label.qr .qrtext {
-    top: .73in;
+.label.qr .subtitle {
+    top: .7in;
     width: 1.55in;
+    z-index: 1;
+}
+
+.label.qr .qrtext {
+    top: .33in;
+    left: 1.7in;
+
+    width: .7in;
+
+    background: #333;
+    padding: .05in;
 }
 
 .label.qr img {
@@ -249,13 +260,16 @@ input {
     top: .1in;
     height: .75in;
     width: .75in;
+
+    z-index: 0;
 }
 
-.label.qr .qrtext {
-    color: #aaa;
+.label.qr .notinput {
+    z-index: 0;
 }
 
 .label.qr .notinput canvas {
+    /* fix flickering */
     display: none !important;
 }
 
@@ -366,7 +380,8 @@ nav.toolbar a {
 
     .label.student input,
     .label.teacher input,
-    .label.qr textarea {
+    .label.qr textarea,
+    .label.qr input {
         color: black;
         background: #0000;
     }

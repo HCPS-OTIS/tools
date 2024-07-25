@@ -9,10 +9,11 @@ help: labels
 <!-- blank label for use by javascript when creating new pages -->
 <div id="blank_label" style="display: none;">
     <div class="label qr">
-        <textarea class="name" id="name{{ i }}" type="text" placeholder="Label"></textarea>
-        <input class="qrtext" id="qrtext{{ i }}" type="text" placeholder="URL for QR code" oninput="updateQR(event)">
+        <textarea class="name" id="name{{ i }}" type="text" placeholder="Label" autocomplete="one-time-code"></textarea>
+        <input class="subtitle" id="subtitle{{ i }}" type="text" placeholder="Label 2" autocomplete="one-time-code">
         <div class="notinput" id="qrcode{{ i }}">
         </div>
+        <input class="qrtext" id="qrtext{{ i }}" type="text" placeholder="URL for QR" oninput="updateQR(event)" autocomplete="one-time-code">
     </div>
 </div>
 
@@ -22,11 +23,14 @@ help: labels
             <div class="labels">
                 {% for i in (0..29) %}
                 <div class="label qr">
-                    <textarea class="name" id="name{{ i }}" type="text" placeholder="Label"></textarea>
-                    <input class="qrtext" id="qrtext{{ i }}" type="text" placeholder="URL for QR code"
-                        oninput="updateQR(event)">
+                    <textarea class="name" id="name{{ i }}" type="text" placeholder="Label"
+                        autocomplete="one-time-code"></textarea>
+                    <input class="subtitle" id="subtitle{{ i }}" type="text" placeholder="Label 2"
+                        autocomplete="one-time-code">
                     <div class="notinput" id="qrcode{{ i }}">
                     </div>
+                    <input class="qrtext" id="qrtext{{ i }}" type="text" placeholder="URL for QR"
+                        oninput="updateQR(event)" autocomplete="one-time-code">
                 </div>
                 {% endfor %}
             </div>
