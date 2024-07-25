@@ -211,6 +211,54 @@ input {
     display: none;
 }
 
+/* QR labels */
+
+.label.qr input, .label.qr textarea {
+    width: 100px;
+
+    background: #fff1;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: all 1s;
+
+    position: absolute;
+    top: .05in;
+    left: .05in;
+}
+
+.label.qr textarea {
+    width: 1.6in;
+    resize: none;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+
+    font-family: 'Roboto Flex';
+    font-size: 14pt;
+    font-variation-settings: 'wght' 700;
+}
+
+.label.qr .qrtext {
+    top: .73in;
+    width: 1.55in;
+}
+
+.label.qr img {
+    position: absolute;
+    right: .15in;
+    top: .1in;
+    height: .75in;
+    width: .75in;
+}
+
+.label.qr .qrtext {
+    color: #aaa;
+}
+
+.label.qr .notinput canvas {
+    display: none !important;
+}
+
 /* right hand toolbar */
 
 nav.toolbar {
@@ -317,7 +365,8 @@ nav.toolbar a {
     }
 
     .label.student input,
-    .label.teacher input {
+    .label.teacher input,
+    .label.qr textarea {
         color: black;
         background: #0000;
     }
@@ -326,7 +375,16 @@ nav.toolbar a {
         filter: contrast(0.5) brightness(0);
     }
 
-    .label.teacher input::placeholder {
+    .label input::placeholder,
+    .label textarea::placeholder {
         color: #0000;
+    }
+
+    .label.qr img {
+        filter: contrast(2) invert(1);
+    }
+
+    .label.qr input.qrtext {
+        display: none;
     }
 }

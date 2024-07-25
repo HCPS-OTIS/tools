@@ -5,6 +5,9 @@ tools:
   - id: teacherlabels
     name: Teacher Label Generator
 
+  - id: qrlabels
+    name: QR Code Label Generator
+
   - id: templates
     name: Templates
     subpages:

@@ -46,6 +46,20 @@ function updateBarcode(e) {
 
 window.updateBarcode = updateBarcode
 
+function updateQR(e) {
+    let num = e.target.id.slice(6)
+    document.getElementById('qrcode' + num).innerHTML = ''
+
+    new QRCode(document.getElementById('qrcode' + num), {
+        colorDark: '#fff',
+        colorLight: '#222',
+        text: e.target.value,
+        correctLevel: QRCode.CorrectLevel.L,
+    })
+}
+
+window.updateQR = updateQR
+
 function updateSubtitle() {
     var subtitle = document.getElementById('subtitle-input').value
     var subtitles = document.getElementsByClassName('subtitle')
@@ -148,6 +162,10 @@ function updateLabels(result) {
         // update barcode if relevant
         if (document.getElementById('barcode' + i) !== null)
             forceUpdate(i)
+
+        // update QR code if relevant
+        if (document.getElementById('qrtext' + i) !== null)
+            forceQRUpdate(i)
     }
 }
 
@@ -163,6 +181,16 @@ function saveCSV() {
         let inputs = labels[i].getElementsByTagName('input')
         for (let j = 0; j < inputs.length; j++) {
             const input = inputs[j];
+
+            let id = input.id.slice(0, -i.toString().length)
+            let value = input.value
+            labeldata[id] = value
+        }
+
+        // iterate through textareas, if any
+        let textareas = labels[i].getElementsByTagName('textarea')
+        for (let j = 0; j < textareas.length; j++) {
+            const input = textareas[j];
 
             let id = input.id.slice(0, -i.toString().length)
             let value = input.value
@@ -208,6 +236,17 @@ window.saveCSV = saveCSV
 function forceUpdate(num) {
     let barcode = encode(document.getElementById('servicetag' + num).value.toUpperCase())
     document.getElementById('barcode' + num).innerHTML = barcode
+}
+
+function forceQRUpdate(num) {
+    document.getElementById('qrcode' + num).innerHTML = ''
+
+    new QRCode(document.getElementById('qrcode' + num), {
+        colorDark: '#fff',
+        colorLight: '#222',
+        text: document.getElementById('qrtext' + num).value,
+        correctLevel: QRCode.CorrectLevel.L,
+    })
 }
 
 function printLabels() {

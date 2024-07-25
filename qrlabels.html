@@ -1,0 +1,35 @@
+---
+title: Student Label Generator
+layout: labels
+help: labels
+---
+
+<script src="assets/js/qrcode.js?{{ 'now' | date: '%s' }}"></script>
+
+<!-- blank label for use by javascript when creating new pages -->
+<div id="blank_label" style="display: none;">
+    <div class="label qr">
+        <textarea class="name" id="name{{ i }}" type="text" placeholder="Label"></textarea>
+        <input class="qrtext" id="qrtext{{ i }}" type="text" placeholder="URL for QR code" oninput="updateQR(event)">
+        <div class="notinput" id="qrcode{{ i }}">
+        </div>
+    </div>
+</div>
+
+<div class="label-content">
+    <div class="pages" id="pages">
+        <div class="page" id="page1">
+            <div class="labels">
+                {% for i in (0..29) %}
+                <div class="label qr">
+                    <textarea class="name" id="name{{ i }}" type="text" placeholder="Label"></textarea>
+                    <input class="qrtext" id="qrtext{{ i }}" type="text" placeholder="URL for QR code"
+                        oninput="updateQR(event)">
+                    <div class="notinput" id="qrcode{{ i }}">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
