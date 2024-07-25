@@ -11,15 +11,15 @@ labels: |
   
   To use it, click on the label you wish to use and type/scan the service tag. More pages can be added or removed with the + and - at the top right. When you would like to print the sheet, click the print button at the top right.  
   To create labels in bulk (in lieu of a mail merge):
-  - Click the download icon on the right hand side to get a CSV template.
-  - Enter your data in the downloaded CSV.
-  - Click the upload button to upload the modified CSV.
+  - Click the download icon on the right hand side to get a TSV template.
+  - Enter your data in the downloaded TSV.
+  - Click the upload button to upload the modified TSV.
   
   |Hostname|Service Tag|Model Number|
   |HOSTNAME01|ABC1234|Latitude XXXX|
   |HOSTNAME02|ABC1235|Latitude XXXX|
 
-  *Example teacher label import CSV*
+  *Example teacher label import TSV*
 
   ***Make sure to open the More Options dropdown and set the print margins to None***, otherwise the labels will not line up with the printed page.  
   ![settings margins to none](assets/img/margins.png)  

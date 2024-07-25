@@ -23,16 +23,16 @@ layout: default
         onmouseleave="hideTooltip(event)">
         <img src="assets/img/delete.svg" alt="">
     </a>
-    <a onclick="loadCSV()" id="loadCSV" data-tooltip="Load CSV" onmouseenter="showTooltip(event)"
+    <a onclick="loadTSV()" id="loadTSV" data-tooltip="Load TSV" onmouseenter="showTooltip(event)"
         onmouseleave="hideTooltip(event)">
         <img src="assets/img/load.svg" alt="">
     </a>
-    <a onclick="saveCSV()" id="saveCSV" data-tooltip="Save CSV" onmouseenter="showTooltip(event)"
+    <a onclick="saveTSV()" id="saveTSV" data-tooltip="Save TSV" onmouseenter="showTooltip(event)"
         onmouseleave="hideTooltip(event)">
         <img src="assets/img/save.svg" alt="">
     </a>
 </nav>
 
 <p style="display:none">
-    <input type="file" id="csvupload" accept=".csv" onchange="readCSV()" style="display:none" />
+    <input type="file" id="tsvupload" accept=".tsv" onchange="readTSV()" style="display:none" />
 </span>

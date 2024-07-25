@@ -109,15 +109,15 @@ function removePage() {
 
 window.removePage = removePage
 
-function loadCSV() {
-    document.getElementById('csvupload').click()
+function loadTSV() {
+    document.getElementById('tsvupload').click()
 }
 
-window.loadCSV = loadCSV
+window.loadTSV = loadTSV
 
-function readCSV() {
+function readTSV() {
     // get file contents
-    var file = document.getElementById('csvupload').files[0]
+    var file = document.getElementById('tsvupload').files[0]
     var reader = new FileReader()
     reader.addEventListener('load', (event) => {
         updateLabels(reader.result)
@@ -125,7 +125,7 @@ function readCSV() {
     reader.readAsText(file)
 }
 
-window.readCSV = readCSV
+window.readTSV = readTSV
 
 function updateLabels(result) {
     // delete all-1 pages
@@ -141,11 +141,11 @@ function updateLabels(result) {
 
     // split up data
     let rows = result.split(/\r?\n|\r|\n/g)
-    let headers = rows.shift().split(',')
+    let headers = rows.shift().split('\t')
 
     // iterate through rows
     for (let i = 0; i < rows.length; i++) {
-        let row = rows[i].split(',')
+        let row = rows[i].split('\t')
         if (headers.at(-1) === '')
             row.pop()
 
@@ -155,7 +155,13 @@ function updateLabels(result) {
             if (row[j] != '') {
                 if (document.getElementById(headers[j] + i) === null)
                     addPage()
-                document.getElementById(headers[j] + i).value = row[j]
+
+                // check for "s because excel
+                if (row[j].charAt(0) === '"' && row[j].slice(-1) === '"') {
+                    document.getElementById(headers[j] + i).value = row[j].slice(1, -1)
+                } else {
+                    document.getElementById(headers[j] + i).value = row[j]
+                }
             }
         }
 
@@ -169,8 +175,8 @@ function updateLabels(result) {
     }
 }
 
-function saveCSV() {
-    let csvdata = []
+function saveTSV() {
+    let tsvdata = []
 
     // iterate through labels
     let labels = document.querySelectorAll('.pages .label')
@@ -197,31 +203,31 @@ function saveCSV() {
             labeldata[id] = value
         }
 
-        csvdata.push(labeldata)
+        tsvdata.push(labeldata)
     }
 
-    let csvcontent = ''
+    let tsvcontent = ''
 
-    // encode data to csv
-    let firstlabel = Object.entries(csvdata[0])
+    // encode data to tsv
+    let firstlabel = Object.entries(tsvdata[0])
 
     for (let i = 0; i < firstlabel.length; i++) {
-        csvcontent += firstlabel[i][0] + ','
+        tsvcontent += firstlabel[i][0] + '\t'
     }
-    csvcontent += '\n'
+    tsvcontent += '\n'
 
-    for (let i = 0; i < csvdata.length; i++) {
-        const label = Object.entries(csvdata[i]);
+    for (let i = 0; i < tsvdata.length; i++) {
+        const label = Object.entries(tsvdata[i]);
         for (let i = 0; i < label.length; i++) {
-            csvcontent += label[i][1] + ','
+            tsvcontent += label[i][1] + '\t'
         }
-        csvcontent += '\n'
+        tsvcontent += '\n'
     }
 
-    // save csv
+    // save tsv
     var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(csvcontent));
-    element.setAttribute('download', 'labels.csv');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(tsvcontent));
+    element.setAttribute('download', 'labels.tsv');
 
     element.style.display = 'none';
     document.body.appendChild(element);
@@ -231,7 +237,7 @@ function saveCSV() {
     document.body.removeChild(element);
 }
 
-window.saveCSV = saveCSV
+window.saveTSV = saveTSV
 
 function forceUpdate(num) {
     let barcode = encode(document.getElementById('servicetag' + num).value.toUpperCase())
