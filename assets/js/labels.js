@@ -239,6 +239,82 @@ function saveTSV() {
 
 window.saveTSV = saveTSV
 
+// start shortening URLs
+function shortenURLs() {
+    let endpoint = document.getElementById('shortener-endpoint-input').value
+    let key = document.getElementById('shortener-key-input').value
+
+    shortenURL(0, endpoint, key)
+}
+
+window.shortenURLs = shortenURLs
+
+// recursively shorten URLs
+async function shortenURL(num, endpoint, key) {
+    // get long URL
+    let long = document.getElementById('qrtext' + num).value
+
+    // if no long URL, move to next
+    if (long === '') {
+        if (document.getElementById('qrtext' + (num + 1)) !== null) {
+            shortenURL(num + 1, endpoint, key)
+        }
+        return
+    }
+
+    // if long URL is not valid, move to next
+    if (isValidHttpUrl(long) === false) {
+        console.log('invalid URL ' + num + ': ' + long)
+        if (document.getElementById('qrtext' + (num + 1)) !== null) {
+            shortenURL(num + 1, endpoint, key)
+        }
+        return
+    }
+
+    // shorten URL
+    console.log('shortening URL ' + num + ': ' + long)
+
+    // send POST request to shortener
+    const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: '{"' + key + '":"' + long + '"}'
+    }).then((response) => {
+        // process response
+        return response.json()
+    }).then((data) => {
+        if (data.link) {
+            console.log('shortened URL ' + num + ': ' + data.link)
+
+            // update QR code
+            document.getElementById('qrtext' + num).value = data.link
+            forceQRUpdate(num)
+
+            // move to next URL
+            if (document.getElementById('qrtext' + (num + 1)) !== null) {
+                shortenURL(num + 1, endpoint, key)
+            }
+        } else {
+            // catch shortener errors
+            console.log('failed to shorten URL ' + num + ': ' + data.error)
+        }
+    })
+}
+
+function isValidHttpUrl(string) {
+    let url;
+
+    try {
+        url = new URL(string);
+    } catch (_) {
+        return false;
+    }
+
+    return url.protocol === "http:" || url.protocol === "https:";
+}
+
 function forceUpdate(num) {
     let barcode = encode(document.getElementById('servicetag' + num).value.toUpperCase())
     document.getElementById('barcode' + num).innerHTML = barcode

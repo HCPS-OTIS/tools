@@ -46,6 +46,24 @@ input {
         border: none;
         border-radius: 3px;
         margin: 10px 0;
+        padding: 4px 6px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"] {
+        width: 2in;
+    }
+
+    input[type="button"] {
+        transition: all .25s;
+        cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+        background: white;
+        color: black;
+        box-shadow: 0 2px 4px black;
     }
 
     input:focus {
