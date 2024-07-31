@@ -289,9 +289,9 @@ input {
     .barcode {
         position: absolute;
         top: .55in;
-        left: .1in;
+        left: .25in;
         width: 1.5in;
-        text-align: center;
+        text-align: left;
         font-family: Code128;
         font-size: 24px;
         transform: scaleX(1.2);
