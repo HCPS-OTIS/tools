@@ -134,7 +134,7 @@ function updateLabels(result) {
     }
 
     // clear all inputs
-    let inputs = document.getElementsByTagName('input')
+    let inputs = document.querySelector('.label input')
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].value = ''
     }
