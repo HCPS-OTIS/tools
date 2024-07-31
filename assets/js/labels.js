@@ -26,8 +26,8 @@ function toggleLimit() {
 
 window.toggleLimit = toggleLimit
 
-function updateBarcode(e) {
-    let num = e.target.id.slice(10)
+function updateBarcode(e, idLength) {
+    let num = e.target.id.slice(idLength)
     let barcode = encode(e.target.value.toUpperCase())
     document.getElementById('barcode' + num).innerHTML = barcode
 

@@ -9,11 +9,16 @@ help: labels
 <!-- blank label for use by javascript when creating new pages -->
 <div id="blank_label" style="display: none;">
     <div class="label qr">
-        <textarea class="name" id="name{{ i }}" type="text" placeholder="Label" autocomplete="one-time-code"></textarea>
-        <input class="subtitle" id="subtitle{{ i }}" type="text" placeholder="Label 2" autocomplete="one-time-code">
-        <div class="notinput" id="qrcode{{ i }}">
+        <textarea class="name" id="title{{ i }}" type="text" placeholder="Title" autocomplete="one-time-code"></textarea>
+        <input class="subtitle" id="subtitle{{ i }}" type="text" placeholder="Subtitle" autocomplete="one-time-code">
+        <div class="notinput">
+            <div class="barcode" id="barcode{{ i }}"></div>
+            <div id="qrcode{{ i }}"></div>
         </div>
-        <input class="qrtext" id="qrtext{{ i }}" type="text" placeholder="URL for QR" oninput="updateQR(event)" autocomplete="one-time-code">
+        <input class="qrtext" id="qrtext{{ i }}" type="text" placeholder="QR text" oninput="updateQR(event)"
+            autocomplete="one-time-code">
+        <input class="barcodetext" id="barcodetext{{ i }}" type="text" placeholder="Barcode text"
+            oninput="updateBarcode(event, 11)" autocomplete="one-time-code">
     </div>
 </div>
 
@@ -23,14 +28,18 @@ help: labels
             <div class="labels">
                 {% for i in (0..29) %}
                 <div class="label qr">
-                    <textarea class="name" id="name{{ i }}" type="text" placeholder="Label"
+                    <textarea class="name" id="title{{ i }}" type="text" placeholder="Title"
                         autocomplete="one-time-code"></textarea>
-                    <input class="subtitle" id="subtitle{{ i }}" type="text" placeholder="Label 2"
+                    <input class="subtitle" id="subtitle{{ i }}" type="text" placeholder="Subtitle"
                         autocomplete="one-time-code">
-                    <div class="notinput" id="qrcode{{ i }}">
+                    <div class="notinput">
+                        <div class="barcode" id="barcode{{ i }}"></div>
+                        <div id="qrcode{{ i }}"></div>
                     </div>
-                    <input class="qrtext" id="qrtext{{ i }}" type="text" placeholder="URL for QR"
+                    <input class="qrtext" id="qrtext{{ i }}" type="text" placeholder="QR text"
                         oninput="updateQR(event)" autocomplete="one-time-code">
+                    <input class="barcodetext" id="barcodetext{{ i }}" type="text" placeholder="Barcode text" oninput="updateBarcode(event, 11)"
+                        autocomplete="one-time-code">
                 </div>
                 {% endfor %}
             </div>

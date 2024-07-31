@@ -255,7 +255,7 @@ input {
         left: .05in;
     }
 
-    textarea {
+    textarea.name {
         width: 1.6in;
         resize: none;
         box-sizing: border-box;
@@ -272,14 +272,30 @@ input {
         z-index: 1;
     }
 
-    .qrtext {
-        top: .33in;
+    .qrtext,
+    .barcodetext {
+        top: .2in;
         left: 1.7in;
-
         width: .7in;
 
         background: #333;
         padding: .05in;
+    }
+
+    .barcodetext {
+        top: .5in;
+    }
+
+    .barcode {
+        position: absolute;
+        top: .55in;
+        left: .1in;
+        width: 1.5in;
+        text-align: center;
+        font-family: Code128;
+        font-size: 24px;
+        transform: scaleX(1.2);
+        user-select: none;
     }
 
     img {
@@ -429,7 +445,8 @@ nav.toolbar a {
         filter: contrast(2) invert(1);
     }
 
-    .label.qr input.qrtext {
+    .label.qr input.qrtext,
+    .label.qr input.barcodetext {
         display: none;
     }
 }

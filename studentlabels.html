@@ -26,7 +26,7 @@ help: labels
                 <div class="label student">
                     <label for="servicetag{{ i }}"></label>
                     <input class="required" id="servicetag{{ i }}" type="text" maxlength="7" placeholder=" "
-                        oninput="updateBarcode(event)" autocomplete="one-time-code">
+                        oninput="updateBarcode(event, 10)" autocomplete="one-time-code">
                     <div class="notinput">
                         <img src="assets/img/HCPS_FullLogo_color.svg" alt="">
                         <span class="barcode" id="barcode{{ i }}"></span>
