@@ -7,6 +7,8 @@ templates: |
 
 labels: |
   ## labels
+  Label template uses Avery 5160 Address labels.
+  
   Creating labels for laptops can be a pain, requiring Word documents or other templates. This page is designed to simplify the process.
   
   To use it, click on the label you wish to use and type/scan the service tag. More pages can be added or removed with the + and - at the top right. When you would like to print the sheet, click the print button at the top right.  
