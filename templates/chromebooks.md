@@ -70,3 +70,8 @@ Keys occasionally typing multiple times. Keys mechanically function with no sign
 
 Touchpad is unresponsive  
 Touchpad does not respond to any movements or button clicks. External USB mouse works fine. Reseated touchpad ribbon cable on motherboard and still does not function.
+
+## camera
+
+Camera isn’t recognized  
+Camera isn’t being picked up by ChromeOS or any apps. Nothing appears physically broken. I tried unseating and reseating the camera cable to no avail.
