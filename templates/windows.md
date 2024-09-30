@@ -46,7 +46,7 @@ Screen has light bleed/uneven backlighting
 Screen has light bleed/uneven backlighting on it. There are no signs of physical damage. Swapping with a known working screen fixes the issue. Swapping this known broken screen into other devices reproduces the issue.
 
 Screen is glitching  
-Screen has visible glitching on it. There are no signs of physical damage. Swapping with a known working screen fixes the issue. Swapping this known broken screen into other devices reproduces the issue.
+Screen has visible glitching on it. There are no signs of physical damage. Installing a known working screen fixes the issue. Installing this known defective screen into other devices reproduces the issue.
 
 Touchscreen  
 Device touchscreen is malfunctioning/not working. Reseated battery and display cables and reinstalled display drivers.
