@@ -16,7 +16,7 @@ input {
     grid-template-columns: min-content 1fr;
 }
 
-/* bulk service tag textarea */
+// bulk service tag textarea
 .bulk {
     grid-area: 'textarea';
     margin: 16px;
@@ -70,13 +70,13 @@ input {
         outline: none;
     }
 
-    /* bulk teacher input */
+    // bulk teacher input
     input[type="file"] {
         display: none;
     }
 }
 
-/* page and label layout */
+// page and label layout
 
 .page {
     width: 8.5in;
@@ -96,202 +96,230 @@ input {
     column-gap: .125in;
 }
 
+// individual labels
+
 .label {
     display: block;
-    /* box-sizing: content-box; */
+    // box-sizing: content-box;
     border: 2px dashed #fff2;
     border-radius: .1in;
     position: relative;
     overflow: hidden;
+
+    .required:placeholder-shown+.notinput {
+        display: none;
+    }
 }
 
-/* student labels */
+// student labels
 
-.label.student input:placeholder-shown {
-    user-select: none;
+.label.student {
+
+    input:placeholder-shown {
+        user-select: none;
+    }
+
+    input {
+        position: absolute;
+        padding: 0;
+        top: .28in;
+        left: .95in;
+        width: 1.5in;
+
+        font-size: .15in;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+
+        background: #0000;
+        color: white;
+        border: none;
+        border-radius: 3px;
+    }
+
+    input:focus {
+        background: #333;
+        outline: none;
+    }
+
+    img {
+        position: absolute;
+        height: .8in;
+        top: .085in;
+        left: .3in;
+        filter: contrast(0) brightness(200%);
+        user-select: none;
+    }
+
+    label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2.625in;
+        height: 1in;
+        border-radius: .1in;
+        cursor: text;
+    }
+
+    .barcode {
+        position: absolute;
+        top: 0.08in;
+        left: .95in;
+        width: 1.5in;
+        text-align: center;
+        font-family: Code128;
+        font-size: 24px;
+        transform: scaleX(1.2);
+        user-select: none;
+    }
+
+    .subtitle {
+        position: absolute;
+        bottom: .08in;
+        right: .1in;
+        font-size: 12px;
+        font-variation-settings: 'wdth' 70;
+    }
+
+    .notinput {
+        pointer-events: none;
+    }
+
 }
 
-.label.student input {
-    position: absolute;
-    padding: 0;
-    top: .28in;
-    left: .95in;
-    width: 1.5in;
-
-    font-size: .15in;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-
-    background: #0000;
-    color: white;
-    border: none;
-    border-radius: 3px;
-}
-
-.label.student input:focus {
-    background: #333;
-    outline: none;
-}
-
-.label.student img {
-    position: absolute;
-    height: .8in;
-    top: .085in;
-    left: .3in;
-    filter: contrast(0) brightness(200%);
-    user-select: none;
-}
-
-.label.student label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2.625in;
-    height: 1in;
-    border-radius: .1in;
-    cursor: text;
-}
-
-.label.student .barcode {
-    position: absolute;
-    top: 0.08in;
-    left: .95in;
-    width: 1.5in;
-    text-align: center;
-    font-family: Code128;
-    font-size: 24px;
-    transform: scaleX(1.2);
-    user-select: none;
-}
-
-.label.student .subtitle {
-    position: absolute;
-    bottom: .08in;
-    right: .1in;
-    font-size: 12px;
-    font-variation-settings: 'wdth' 70;
-}
-
-.label.student .notinput {
-    pointer-events: none;
-}
-
-/* teacher labels */
-
-.label.teacher {
-    padding: 15px;
-    line-height: 1em;
-}
+// teacher labels
 
 .label.teacher>* {
     font-size: 9pt;
 }
 
-.label.teacher .hostname {
-    width: 100%;
-    box-sizing: border-box;
-    text-transform: uppercase;
-    margin-bottom: 5px;
+.label.teacher {
+    padding: 15px;
+    line-height: 1em;
 
-    font-size: 14pt;
-    font-variation-settings: 'wght' 700, 'slnt' -10;
+    .hostname {
+        width: 100%;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+
+        font-size: 14pt;
+        font-variation-settings: 'wght' 700, 'slnt' -10;
+    }
+
+    input {
+        width: 100px;
+
+        background: #fff1;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        transition: all 1s;
+    }
+
+    input::placeholder {
+        color: #fff6;
+    }
+
+    input:focus {
+        background: #333;
+        outline: none;
+    }
+
+    input.st {
+        text-transform: uppercase;
+    }
+
+    .hostname:placeholder-shown {
+        user-select: none;
+    }
+
 }
 
-.label.teacher input {
-    width: 100px;
+// QR labels
 
-    background: #fff1;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    transition: all 1s;
+.label.qr {
+
+    input,
+    textarea {
+        width: 100px;
+
+        background: #fff1;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        transition: all 1s;
+
+        position: absolute;
+        top: .05in;
+        left: .05in;
+    }
+
+    textarea.name {
+        width: 1.6in;
+        resize: none;
+        box-sizing: border-box;
+        margin-bottom: 5px;
+
+        font-family: 'Roboto Flex';
+        font-size: 14pt;
+        font-variation-settings: 'wght' 700;
+    }
+
+    .subtitle {
+        top: .7in;
+        width: 1.55in;
+        z-index: 1;
+    }
+
+    .qrtext,
+    .barcodetext {
+        top: .2in;
+        left: 1.7in;
+        width: .7in;
+
+        background: #333;
+        padding: .05in;
+    }
+
+    .barcodetext {
+        top: .5in;
+    }
+
+    .barcode {
+        position: absolute;
+        top: .55in;
+        left: .25in;
+        width: 1.5in;
+        text-align: left;
+        font-family: Code128;
+        font-size: 24px;
+        transform: scaleX(1.2);
+        user-select: none;
+    }
+
+    img {
+        position: absolute;
+        right: .15in;
+        top: .1in;
+        height: .75in;
+        width: .75in;
+
+        z-index: 0;
+    }
+
+    .notinput {
+        z-index: 0;
+    }
+
+    .notinput canvas {
+        // fix flickering
+        display: none !important;
+    }
+
 }
 
-.label.teacher input::placeholder {
-    color: #fff6;
-}
-
-.label.teacher input:focus {
-    background: #333;
-    outline: none;
-}
-
-.label.teacher input.st {
-    text-transform: uppercase;
-}
-
-.label.teacher .hostname:placeholder-shown {
-    user-select: none;
-}
-
-.label .required:placeholder-shown+.notinput {
-    display: none;
-}
-
-/* QR labels */
-
-.label.qr input, .label.qr textarea {
-    width: 100px;
-
-    background: #fff1;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    transition: all 1s;
-
-    position: absolute;
-    top: .05in;
-    left: .05in;
-}
-
-.label.qr textarea {
-    width: 1.6in;
-    resize: none;
-    box-sizing: border-box;
-    margin-bottom: 5px;
-
-    font-family: 'Roboto Flex';
-    font-size: 14pt;
-    font-variation-settings: 'wght' 700;
-}
-
-.label.qr .subtitle {
-    top: .7in;
-    width: 1.55in;
-    z-index: 1;
-}
-
-.label.qr .qrtext {
-    top: .33in;
-    left: 1.7in;
-
-    width: .7in;
-
-    background: #333;
-    padding: .05in;
-}
-
-.label.qr img {
-    position: absolute;
-    right: .15in;
-    top: .1in;
-    height: .75in;
-    width: .75in;
-
-    z-index: 0;
-}
-
-.label.qr .notinput {
-    z-index: 0;
-}
-
-.label.qr .notinput canvas {
-    /* fix flickering */
-    display: none !important;
-}
-
-/* right hand toolbar */
+// right hand toolbar
 
 nav.toolbar {
     position: fixed;
@@ -325,7 +353,7 @@ nav.toolbar a {
     right: -5px;
 }
 
-/* print margin warnings */
+// print margin warnings
 .margin-warning {
     position: fixed;
     top: 0;
@@ -361,7 +389,7 @@ nav.toolbar a {
     transform: translateY(-50%) rotate(-90deg);
 }
 
-/* remove unnecessary stuff from printed page */
+// remove unnecessary stuff from printed page
 @media print {
     body {
         display: block;
@@ -417,7 +445,8 @@ nav.toolbar a {
         filter: contrast(2) invert(1);
     }
 
-    .label.qr input.qrtext {
+    .label.qr input.qrtext,
+    .label.qr input.barcodetext {
         display: none;
     }
 }

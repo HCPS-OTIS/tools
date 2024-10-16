@@ -27,18 +27,18 @@ function toggleLimit() {
 window.toggleLimit = toggleLimit
 
 function updateBarcode(e) {
-    let num = e.target.id.slice(10)
+    let num = e.target.id.slice(11)
     let barcode = encode(e.target.value.toUpperCase())
     document.getElementById('barcode' + num).innerHTML = barcode
 
     // move to next input box if input is `limit` characters long
     if (e.target.value.length == limit) {
-        let next = document.getElementById('servicetag' + (parseInt(num) + 1))
+        let next = document.getElementById('barcodetext' + (parseInt(num) + 1))
         if (next) {
             next.focus()
         } else {
             addPage()
-            let next = document.getElementById('servicetag' + (parseInt(num) + 1))
+            let next = document.getElementById('barcodetext' + (parseInt(num) + 1))
             next.focus()
         }
     }
@@ -134,7 +134,7 @@ function updateLabels(result) {
     }
 
     // clear all inputs
-    let inputs = document.getElementsByTagName('input')
+    let inputs = document.querySelector('.label input')
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].value = ''
     }
@@ -167,7 +167,7 @@ function updateLabels(result) {
 
         // update barcode if relevant
         if (document.getElementById('barcode' + i) !== null)
-            forceUpdate(i)
+            forceBarcodeUpdate(i)
 
         // update QR code if relevant
         if (document.getElementById('qrtext' + i) !== null)
@@ -315,8 +315,8 @@ function isValidHttpUrl(string) {
     return url.protocol === "http:" || url.protocol === "https:";
 }
 
-function forceUpdate(num) {
-    let barcode = encode(document.getElementById('servicetag' + num).value.toUpperCase())
+function forceBarcodeUpdate(num) {
+    let barcode = encode(document.getElementById('barcodetext' + num).value.toUpperCase())
     document.getElementById('barcode' + num).innerHTML = barcode
 }
 
