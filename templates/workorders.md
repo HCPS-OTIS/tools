@@ -26,17 +26,17 @@ Damage does not warrant replacement at this time. Device in working order.
 
 ## follett notes
 
-# ACCIDENTAL, HAS DSP
+ACCIDENTAL, HAS DSP
 
 Work Order:  
 Screen replaced. Student [] has DSP - no fine issued. Note made on account for  use of DSP.
 
 Follett Destiny:  
 Date:
-Screen was damaged and replaced.
+Screen was damaged and replaced.  
 st ; wo
 
-# ACCIDENTAL, NO DSP
+ACCIDENTAL, NO DSP
 
 Work Order:  
 Screen replaced. Student [] does not have DSP - fine issued.
@@ -46,7 +46,7 @@ Date:
 Screen was damaged and replaced.
 st ; wo
 
-# INTENTIONAL DAMAGE
+INTENTIONAL DAMAGE
 
 Work Order:  
 Screen replaced. Student [] caused intentional damage - fine issued.
