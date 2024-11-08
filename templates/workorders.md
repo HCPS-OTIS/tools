@@ -24,6 +24,38 @@ Plastics replaced.
 Not replaced  
 Damage does not warrant replacement at this time. Device in working order.
 
+## follett notes
+
+# ACCIDENTAL, HAS DSP
+
+Work Order:  
+Screen replaced. Student [] has DSP - no fine issued. Note made on account for  use of DSP.
+
+Follett Destiny:  
+Date:
+Screen was damaged and replaced.
+st ; wo
+
+# ACCIDENTAL, NO DSP
+
+Work Order:  
+Screen replaced. Student [] does not have DSP - fine issued.
+
+Fine Note:  
+Date:
+Screen was damaged and replaced.
+st ; wo
+
+# INTENTIONAL DAMAGE
+
+Work Order:  
+Screen replaced. Student [] caused intentional damage - fine issued.
+
+Fine Note:  
+Date:
+Screen was intentionally damaged and replaced.
+st ; wo
+
 ## repairs
 
 Powerwashed device. Device in working order.
