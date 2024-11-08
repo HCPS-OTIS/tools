@@ -13,7 +13,7 @@ Screen replaced. Student [] has DSP - no fine issued. Note made on account for  
 
 Follett Destiny:  
 Date:
-Screen was damaged and replaced.  
+Screen was damaged and replaced.
 st ; wo
 
 ACCIDENTAL, NO DSP
