@@ -75,3 +75,8 @@ Touchpad does not respond to any movements or button clicks. External USB mouse 
 
 Camera isn’t recognized  
 Camera isn’t being picked up by ChromeOS or any apps. Nothing appears physically broken. I tried unseating and reseating the camera cable to no avail.
+
+## microphone
+
+Microphone isn't recognized  
+Microphone isn't being picked up by ChromeOS or any apps. Nothing appears physically broken. I tried unseating and reseating the microphone cable to no avail.
