@@ -14,7 +14,7 @@ Device becomes unresponsive
 Device shows artifacts on screen and freezes/becomes unresponsive.
 
 Device randomly shuts down  
-Devices will shut down or restart randomly during use. There is no obvious pattern or cause of this behavior.
+Device will shut down or restart randomly during use. There is no obvious pattern or cause of this behavior.
 
 Device overheats  
 Device is overheating while in use. Replaced thermal paste and cleared out the cooling to no effect.
