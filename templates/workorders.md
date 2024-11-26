@@ -44,6 +44,10 @@ Created dispatch for part replacement *SR#########*. Waiting on parts.
 
 Repaired by Dell.
 
+Device has been deemed uneconomical to repair by Dell and is being retired and replaced with Chromebook 3110 - ST to follow.
+
+Replacement ST is .
+
 ## replacements
 
 Replaced  
