@@ -1,24 +1,74 @@
 import encode from './encoder.mjs'
 
-function update(e) {
-    let num = e.target.id.slice(5)
+// label length limit
+var limit = 7
+
+// update the limit on textboxes and bulk textarea
+function updateLimit() {
+    for (const textbox of document.getElementsByClassName('required')) {
+        textbox.maxLength = limit
+    }
+    document.getElementById('labeltexts').cols = limit
+}
+
+// limit toggling between 7 and 20
+function toggleLimit() {
+    let checkbox = document.getElementById('limit-checkbox')
+
+    if (checkbox.checked) {
+        limit = 7
+    } else {
+        limit = 20
+    }
+
+    updateLimit()
+}
+
+window.toggleLimit = toggleLimit
+
+function updateBarcode(e) {
+    let num = e.target.id.slice(11)
     let barcode = encode(e.target.value.toUpperCase())
     document.getElementById('barcode' + num).innerHTML = barcode
 
-    // move to next input box if input is 7 characters long
-    if (e.target.value.length == 7) {
-        let next = document.getElementById('input' + (parseInt(num) + 1))
+    // move to next input box if input is `limit` characters long
+    if (e.target.value.length == limit) {
+        let next = document.getElementById('barcodetext' + (parseInt(num) + 1))
         if (next) {
             next.focus()
         } else {
             addPage()
-            let next = document.getElementById('input' + (parseInt(num) + 1))
+            let next = document.getElementById('barcodetext' + (parseInt(num) + 1))
             next.focus()
         }
     }
 }
 
-window.update = update
+window.updateBarcode = updateBarcode
+
+function updateQR(e) {
+    let num = e.target.id.slice(6)
+    document.getElementById('qrcode' + num).innerHTML = ''
+
+    new QRCode(document.getElementById('qrcode' + num), {
+        colorDark: '#fff',
+        colorLight: '#222',
+        text: e.target.value,
+        correctLevel: QRCode.CorrectLevel.L,
+    })
+}
+
+window.updateQR = updateQR
+
+function updateSubtitle() {
+    var subtitle = document.getElementById('subtitle-input').value
+    var subtitles = document.getElementsByClassName('subtitle')
+    for (let i = 0; i < subtitles.length; i++) {
+        subtitles[i].innerHTML = subtitle
+    }
+}
+
+window.updateSubtitle = updateSubtitle
 
 function addPage() {
     var currentPages = document.getElementsByClassName('page')
@@ -59,93 +109,226 @@ function removePage() {
 
 window.removePage = removePage
 
-function forceUpdate(num) {
-    let barcode = encode(document.getElementById('input' + num).value.toUpperCase())
-    document.getElementById('barcode' + num).innerHTML = barcode
+function loadTSV() {
+    document.getElementById('tsvupload').click()
 }
 
-function updateStudents(e) {
-    // get contents of textarea
-    var tags = document.getElementById('labeltexts').value
+window.loadTSV = loadTSV
 
-    // delete all-1 pages
-    while (document.getElementsByClassName('page').length > 1) {
-        removePage()
-    }
-
-    // clear inputs 0-29
-    for (let i = 0; i < 30; i++) {
-        document.getElementById('input' + i).value = ''
-        forceUpdate(i)
-    }
-
-    // populate inputs and add label text, populating barcodes somehow
-    var labelTexts = document.getElementById('labeltexts').value.split('\n')
-    for (let i = 0; i < labelTexts.length; i++) {
-        const labelText = labelTexts[i];
-
-        // check for label and add a page if needed
-        var label = document.getElementById('input' + i)
-        if (label === null) {
-            addPage()
-            var label = document.getElementById('input' + i)
-        }
-
-        // set label and barcode
-        label.value = labelText.slice(0, 7)
-        forceUpdate(i)
-    }
-}
-
-window.updateStudents = updateStudents
-
-function uploadTeachers() {
-    // get file reader
-    var file = document.getElementById('teacher-upload').files[0]
+function readTSV() {
+    // get file contents
+    var file = document.getElementById('tsvupload').files[0]
     var reader = new FileReader()
     reader.addEventListener('load', (event) => {
-        updateTeachers(reader.result)
+        updateLabels(reader.result)
     })
     reader.readAsText(file)
 }
 
-window.uploadTeachers = uploadTeachers
+window.readTSV = readTSV
 
-function updateTeachers(result) {
+function updateLabels(result) {
     // delete all-1 pages
     while (document.getElementsByClassName('page').length > 1) {
         removePage()
     }
 
-    // clear inputs 0-29
-    for (let i = 0; i < 30; i++) {
-        document.getElementById('hostname' + i).value = ''
-        document.getElementById('st' + i).value = ''
-        document.getElementById('model' + i).value = ''
+    // clear all inputs
+    let inputs = document.querySelector('.label input')
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].value = ''
     }
 
-    // split result into columns
-    var lines = result.split('\n').slice(1)
-    var data = []
-    for (let i = 0; i < lines.length; i++) {
-        data.push(lines[i].split(','))
-    }
+    // split up data
+    let rows = result.split(/\r?\n|\r|\n/g)
+    let headers = rows.shift().split('\t')
 
-    // add data to teacher labels
-    for (let i = 0; i < data.length; i++) {
-        var hostnameInput = document.getElementById('hostname' + i)
+    // iterate through rows
+    for (let i = 0; i < rows.length; i++) {
+        let row = rows[i].split('\t')
+        if (headers.at(-1) === '')
+            row.pop()
 
-        if (hostnameInput === null) {
-            addPage()
-            hostnameInput = document.getElementById('hostname' + i)
+        // iterate through fields
+        for (let j = 0; j < row.length; j++) {
+            // add a page if necessary
+            if (row[j] != '') {
+                if (document.getElementById(headers[j] + i) === null)
+                    addPage()
+
+                // check for "s because excel
+                if (row[j].charAt(0) === '"' && row[j].slice(-1) === '"') {
+                    document.getElementById(headers[j] + i).value = row[j].slice(1, -1)
+                } else {
+                    document.getElementById(headers[j] + i).value = row[j]
+                }
+            }
         }
-        var stInput = document.getElementById('st' + i)
-        var modelInput = document.getElementById('model' + i)
 
-        hostnameInput.value = data[i][0]
-        stInput.value = data[i][1].slice(0, 7)
-        modelInput.value = data[i][2]
+        // update barcode if relevant
+        if (document.getElementById('barcode' + i) !== null)
+            forceBarcodeUpdate(i)
+
+        // update QR code if relevant
+        if (document.getElementById('qrtext' + i) !== null)
+            forceQRUpdate(i)
     }
+}
+
+function saveTSV() {
+    let tsvdata = []
+
+    // iterate through labels
+    let labels = document.querySelectorAll('.pages .label')
+    for (let i = 0; i < labels.length; i++) {
+        let labeldata = {}
+
+        // iterate through inputs on each label
+        let inputs = labels[i].getElementsByTagName('input')
+        for (let j = 0; j < inputs.length; j++) {
+            const input = inputs[j];
+
+            let id = input.id.slice(0, -i.toString().length)
+            let value = input.value
+            labeldata[id] = value
+        }
+
+        // iterate through textareas, if any
+        let textareas = labels[i].getElementsByTagName('textarea')
+        for (let j = 0; j < textareas.length; j++) {
+            const input = textareas[j];
+
+            let id = input.id.slice(0, -i.toString().length)
+            let value = input.value
+            labeldata[id] = value
+        }
+
+        tsvdata.push(labeldata)
+    }
+
+    let tsvcontent = ''
+
+    // encode data to tsv
+    let firstlabel = Object.entries(tsvdata[0])
+
+    for (let i = 0; i < firstlabel.length; i++) {
+        tsvcontent += firstlabel[i][0] + '\t'
+    }
+    tsvcontent += '\n'
+
+    for (let i = 0; i < tsvdata.length; i++) {
+        const label = Object.entries(tsvdata[i]);
+        for (let i = 0; i < label.length; i++) {
+            tsvcontent += label[i][1] + '\t'
+        }
+        tsvcontent += '\n'
+    }
+
+    // save tsv
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(tsvcontent));
+    element.setAttribute('download', 'labels.tsv');
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+window.saveTSV = saveTSV
+
+// start shortening URLs
+function shortenURLs() {
+    let endpoint = document.getElementById('shortener-endpoint-input').value
+    let key = document.getElementById('shortener-key-input').value
+
+    shortenURL(0, endpoint, key)
+}
+
+window.shortenURLs = shortenURLs
+
+// recursively shorten URLs
+async function shortenURL(num, endpoint, key) {
+    // get long URL
+    let long = document.getElementById('qrtext' + num).value
+
+    // if no long URL, move to next
+    if (long === '') {
+        if (document.getElementById('qrtext' + (num + 1)) !== null) {
+            shortenURL(num + 1, endpoint, key)
+        }
+        return
+    }
+
+    // if long URL is not valid, move to next
+    if (isValidHttpUrl(long) === false) {
+        console.log('invalid URL ' + num + ': ' + long)
+        if (document.getElementById('qrtext' + (num + 1)) !== null) {
+            shortenURL(num + 1, endpoint, key)
+        }
+        return
+    }
+
+    // shorten URL
+    console.log('shortening URL ' + num + ': ' + long)
+
+    // send POST request to shortener
+    const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: '{"' + key + '":"' + long + '"}'
+    }).then((response) => {
+        // process response
+        return response.json()
+    }).then((data) => {
+        if (data.link) {
+            console.log('shortened URL ' + num + ': ' + data.link)
+
+            // update QR code
+            document.getElementById('qrtext' + num).value = data.link
+            forceQRUpdate(num)
+
+            // move to next URL
+            if (document.getElementById('qrtext' + (num + 1)) !== null) {
+                shortenURL(num + 1, endpoint, key)
+            }
+        } else {
+            // catch shortener errors
+            console.log('failed to shorten URL ' + num + ': ' + data.error)
+        }
+    })
+}
+
+function isValidHttpUrl(string) {
+    let url;
+
+    try {
+        url = new URL(string);
+    } catch (_) {
+        return false;
+    }
+
+    return url.protocol === "http:" || url.protocol === "https:";
+}
+
+function forceBarcodeUpdate(num) {
+    let barcode = encode(document.getElementById('barcodetext' + num).value.toUpperCase())
+    document.getElementById('barcode' + num).innerHTML = barcode
+}
+
+function forceQRUpdate(num) {
+    document.getElementById('qrcode' + num).innerHTML = ''
+
+    new QRCode(document.getElementById('qrcode' + num), {
+        colorDark: '#fff',
+        colorLight: '#222',
+        text: document.getElementById('qrtext' + num).value,
+        correctLevel: QRCode.CorrectLevel.L,
+    })
 }
 
 function printLabels() {

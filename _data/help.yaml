@@ -1,5 +1,5 @@
-scripts: |
-  ## scripts
+templates: |
+  ## templates
   When submitting dispatches in Dell TechDirect, there are several issues that come up repeatedly. The purpose of these pages is to make entering these issues much easier by providing a script to use.  
 
   The first line, in bold, is for the Description of Problem field in TechDirect. The second is for the larger field, Troubleshooting Performed. Some issues have multiple options for the second field for slightly different variants of the same general issue.
@@ -7,9 +7,21 @@ scripts: |
 
 labels: |
   ## labels
+  Label template uses Avery 5160 Address labels.
+  
   Creating labels for laptops can be a pain, requiring Word documents or other templates. This page is designed to simplify the process.
   
-  To use it, click on the label you wish to use and type/scan the service tag. More pages can be added or removed with the + and - at the top of the page. When you would like to print the sheet, click the print button at the top right.  
+  To use it, click on the label you wish to use and type/scan the service tag. More pages can be added or removed with the + and - at the top right. When you would like to print the sheet, click the print button at the top right.  
+  To create labels in bulk (in lieu of a mail merge):
+  - Click the download icon on the right hand side to get a TSV template.
+  - Enter your data in the downloaded TSV.
+  - Click the upload button to upload the modified TSV.
+  
+  |Hostname|Service Tag|Model Number|
+  |HOSTNAME01|ABC1234|Latitude XXXX|
+  |HOSTNAME02|ABC1235|Latitude XXXX|
+
+  *Example teacher label import TSV*
+
   ***Make sure to open the More Options dropdown and set the print margins to None***, otherwise the labels will not line up with the printed page.  
   ![settings margins to none](assets/img/margins.png)  
-  To create large amounts of labels for student laptops (in lieu of a mail merge), paste a list of service tags, separated by line breaks, into the text area on the right.  

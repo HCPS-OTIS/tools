@@ -1,0 +1,18 @@
+---
+title: Images
+layout: default
+help: templates
+---
+
+<style>
+    .content img {
+        width: 20em;
+    }
+</style>
+
+{% for file in site.static_files %}
+{% if file.path contains 'assets/img/templates' %}
+## {{ file.basename }}
+![{{ file.basename }}]({{ file.path }})
+{% endif %}
+{% endfor %}

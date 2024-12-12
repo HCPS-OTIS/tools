@@ -1,5 +1,5 @@
 {
-    "name": "HCPS Technician Utilities",
+    "name": "HCPS Endpoint Utilities",
     "description": "A set of utilities to make our jobs slightly easier",
     "icons": [
         {
@@ -8,9 +8,9 @@
             "sizes": "512x512"
         },
         {
-            "src": "assets/icon/favicon-192.png",
+            "src": "assets/icon/favicon-128.png",
             "type": "image/png",
-            "sizes": "192x192"
+            "sizes": "128x128"
         },
         {
             "src": "assets/icon/favicon-512.png",
@@ -18,7 +18,25 @@
             "sizes": "512x512"
         }
     ],
-    "scope": "/tools/",
-    "start_url": "/tools/",
-    "display": "minimal-ui"
+    "scope": "/",
+    "start_url": "/",
+    "display": "minimal-ui",
+    "shortcuts": [
+        {
+            "name": "Student Labels",
+            "url": "/studentlabels"
+        },
+        {
+            "name": "Teacher Labels",
+            "url": "/studentlabels"
+        },
+        {
+            "name": "Chromebook Templates",
+            "url": "/templates/chromebooks"
+        },
+        {
+            "name": "Windows Templates",
+            "url": "/templates/windows"
+        }
+    ]
 }

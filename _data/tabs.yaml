@@ -5,18 +5,26 @@ tools:
   - id: teacherlabels
     name: Teacher Label Generator
 
-scripts:
-  - id: chromebooks
-    name: Chromebooks
+  - id: qrlabels
+    name: QR Code Label Generator
 
-  - id: windows
-    name: Windows Laptops
+  - id: templates
+    name: Templates
+    subpages:
+      - id: chromebooks
+        name: Chromebooks
 
-  - id: peripherals
-    name: Peripherals
+      - id: windows
+        name: Windows Laptops
 
-  - id: workorders
-    name: Work Orders
+      - id: peripherals
+        name: Peripherals
+
+      - id: workorders
+        name: Work Orders
+
+      - id: images
+        name: Images
 
 site:
   - id: changelog

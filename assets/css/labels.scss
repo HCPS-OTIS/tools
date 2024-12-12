@@ -1,0 +1,452 @@
+---
+---
+
+@font-face {
+    font-family: 'Code128';
+    src: url(../fonts/LibreBarcode128-Regular.ttf);
+}
+
+input {
+    font-family: 'Roboto Flex';
+}
+
+.label-content {
+    display: grid;
+    grid-template-areas: 'pages textarea';
+    grid-template-columns: min-content 1fr;
+}
+
+// bulk service tag textarea
+.bulk {
+    grid-area: 'textarea';
+    margin: 16px;
+
+    textarea {
+        background: #fff1;
+        border-radius: 2px;
+        color: white;
+        border: none;
+        resize: none;
+        text-transform: uppercase;
+        overflow-y: scroll;
+        transition: all 1s;
+    }
+
+    textarea::placeholder {
+        transition: all 1s;
+    }
+
+    textarea:focus {
+        outline: none;
+    }
+
+    input {
+        background: #333;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        margin: 10px 0;
+        padding: 4px 6px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"] {
+        width: 2in;
+    }
+
+    input[type="button"] {
+        transition: all .25s;
+        cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+        background: white;
+        color: black;
+        box-shadow: 0 2px 4px black;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    // bulk teacher input
+    input[type="file"] {
+        display: none;
+    }
+}
+
+// page and label layout
+
+.page {
+    width: 8.5in;
+    height: 11in;
+    margin: 16px;
+    border: 2px solid #fff2;
+    box-shadow: 0 0 12px #000;
+    border-radius: 4px;
+    padding: .5in .1875in;
+    box-sizing: border-box;
+}
+
+.labels {
+    display: grid;
+    grid-template-columns: repeat(3, 2.625in);
+    grid-template-rows: repeat(10, 1in);
+    column-gap: .125in;
+}
+
+// individual labels
+
+.label {
+    display: block;
+    // box-sizing: content-box;
+    border: 2px dashed #fff2;
+    border-radius: .1in;
+    position: relative;
+    overflow: hidden;
+
+    .required:placeholder-shown+.notinput {
+        display: none;
+    }
+}
+
+// student labels
+
+.label.student {
+
+    input:placeholder-shown {
+        user-select: none;
+    }
+
+    input {
+        position: absolute;
+        padding: 0;
+        top: .28in;
+        left: .95in;
+        width: 1.5in;
+
+        font-size: .15in;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+
+        background: #0000;
+        color: white;
+        border: none;
+        border-radius: 3px;
+    }
+
+    input:focus {
+        background: #333;
+        outline: none;
+    }
+
+    img {
+        position: absolute;
+        height: .8in;
+        top: .085in;
+        left: .3in;
+        filter: contrast(0) brightness(200%);
+        user-select: none;
+    }
+
+    label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2.625in;
+        height: 1in;
+        border-radius: .1in;
+        cursor: text;
+    }
+
+    .barcode {
+        position: absolute;
+        top: 0.08in;
+        left: .95in;
+        width: 1.5in;
+        text-align: center;
+        font-family: Code128;
+        font-size: 24px;
+        transform: scaleX(1.2);
+        user-select: none;
+    }
+
+    .subtitle {
+        position: absolute;
+        bottom: .08in;
+        right: .1in;
+        font-size: 12px;
+        font-variation-settings: 'wdth' 70;
+    }
+
+    .notinput {
+        pointer-events: none;
+    }
+
+}
+
+// teacher labels
+
+.label.teacher>* {
+    font-size: 9pt;
+}
+
+.label.teacher {
+    padding: 15px;
+    line-height: 1em;
+
+    .hostname {
+        width: 100%;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+
+        font-size: 14pt;
+        font-variation-settings: 'wght' 700, 'slnt' -10;
+    }
+
+    input {
+        width: 100px;
+
+        background: #fff1;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        transition: all 1s;
+    }
+
+    input::placeholder {
+        color: #fff6;
+    }
+
+    input:focus {
+        background: #333;
+        outline: none;
+    }
+
+    input.st {
+        text-transform: uppercase;
+    }
+
+    .hostname:placeholder-shown {
+        user-select: none;
+    }
+
+}
+
+// QR labels
+
+.label.qr {
+
+    input,
+    textarea {
+        width: 100px;
+
+        background: #fff1;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        transition: all 1s;
+
+        position: absolute;
+        top: .05in;
+        left: .05in;
+    }
+
+    textarea.name {
+        width: 1.6in;
+        resize: none;
+        box-sizing: border-box;
+        margin-bottom: 5px;
+
+        font-family: 'Roboto Flex';
+        font-size: 14pt;
+        font-variation-settings: 'wght' 700;
+    }
+
+    .subtitle {
+        top: .7in;
+        width: 1.55in;
+        z-index: 1;
+    }
+
+    .qrtext,
+    .barcodetext {
+        top: .2in;
+        left: 1.7in;
+        width: .7in;
+
+        background: #333;
+        padding: .05in;
+    }
+
+    .barcodetext {
+        top: .5in;
+    }
+
+    .barcode {
+        position: absolute;
+        top: .55in;
+        left: .25in;
+        width: 1.5in;
+        text-align: left;
+        font-family: Code128;
+        font-size: 24px;
+        transform: scaleX(1.2);
+        user-select: none;
+    }
+
+    img {
+        position: absolute;
+        right: .15in;
+        top: .1in;
+        height: .75in;
+        width: .75in;
+
+        z-index: 0;
+    }
+
+    .notinput {
+        z-index: 0;
+    }
+
+    .notinput canvas {
+        // fix flickering
+        display: none !important;
+    }
+
+}
+
+// right hand toolbar
+
+nav.toolbar {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background: #0000;
+    box-shadow: none;
+}
+
+nav.toolbar a {
+    box-shadow: 0 2px 4px black;
+}
+
+.toolbar-tooltip {
+    left: inherit;
+    right: 90px;
+    margin-left: 0;
+    margin-right: 10px;
+    float: right;
+    transform: translateY(-50%) scale(1);
+}
+
+.toolbar-tooltip.fading {
+    transform: translateY(-50%) translateX(25%) scale(0.7);
+}
+
+.toolbar-tooltip::after {
+    border-left: 5px solid #eee;
+    border-right: none;
+    left: inherit;
+    right: -5px;
+}
+
+// print margin warnings
+.margin-warning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0008;
+    color: #000;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1020;
+    transform: scale(1.2);
+    transition: all .25s;
+}
+
+.margin-warning.visible {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+}
+
+.margin-warning span {
+    padding: 0 3px;
+    font-size: 24px;
+    background: #ff5;
+    border-radius: 4px;
+    position: fixed;
+}
+
+.margin-warning .left {
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+// remove unnecessary stuff from printed page
+@media print {
+    body {
+        display: block;
+        background: white;
+    }
+
+    .content-wrapper {
+        background: none;
+    }
+
+    .content {
+        padding: 0;
+    }
+
+    .header,
+    .toolbar,
+    footer,
+    nav,
+    .tooltip,
+    .bulk,
+    .margin-warning {
+        display: none;
+    }
+
+    .page {
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .label {
+        border: none;
+        color: black;
+    }
+
+    .label.student input,
+    .label.teacher input,
+    .label.qr textarea,
+    .label.qr input {
+        color: black;
+        background: #0000;
+    }
+
+    .label.student img {
+        filter: contrast(0.5) brightness(0);
+    }
+
+    .label input::placeholder,
+    .label textarea::placeholder {
+        color: #0000;
+    }
+
+    .label.qr img {
+        filter: contrast(2) invert(1);
+    }
+
+    .label.qr input.qrtext,
+    .label.qr input.barcodetext {
+        display: none;
+    }
+}

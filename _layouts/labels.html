@@ -3,7 +3,7 @@ layout: default
 ---
 
 <link rel="stylesheet" href="assets/css/labels.css?{{ 'now' | date: '%s' }}">
-<script src="assets/js/labels.js" type="module"></script>
+<script src="assets/js/labels.js?{{ 'now' | date: '%s' }}" type="module"></script>
 
 <div id="margin-warning" class="margin-warning">
     <span class="left">Set print margins to None!</span>
@@ -12,16 +12,27 @@ layout: default
 {{ content }}
 
 <nav class="toolbar">
-    <a onclick="printLabels()">
-        <span>Print</span>
+    <a onclick="printLabels()" data-tooltip="Print" onmouseenter="showTooltip(event)" onmouseleave="hideTooltip(event)">
         <img src="assets/img/print.svg" alt="">
     </a>
-    <a onclick="addPage()" id="addPage">
-        <span>Add Page</span>
+    <a onclick="addPage()" id="addPage" data-tooltip="Add Page" onmouseenter="showTooltip(event)"
+        onmouseleave="hideTooltip(event)">
         <img src="assets/img/add.svg" alt="">
     </a>
-    <a onclick="removePage()" id="removePage">
-        <span>Remove Page</span>
+    <a onclick="removePage()" id="removePage" data-tooltip="Remove Page" onmouseenter="showTooltip(event)"
+        onmouseleave="hideTooltip(event)">
         <img src="assets/img/delete.svg" alt="">
     </a>
+    <a onclick="loadTSV()" id="loadTSV" data-tooltip="Load TSV" onmouseenter="showTooltip(event)"
+        onmouseleave="hideTooltip(event)">
+        <img src="assets/img/load.svg" alt="">
+    </a>
+    <a onclick="saveTSV()" id="saveTSV" data-tooltip="Save TSV" onmouseenter="showTooltip(event)"
+        onmouseleave="hideTooltip(event)">
+        <img src="assets/img/save.svg" alt="">
+    </a>
 </nav>
+
+<p style="display:none">
+    <input type="file" id="tsvupload" accept=".tsv" onchange="readTSV()" style="display:none" />
+</span>

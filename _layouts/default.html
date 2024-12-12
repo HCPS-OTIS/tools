@@ -3,57 +3,53 @@
 <html>
 
 <head>
-    <title>{{ page.title }} | HCPS Technician Utilities</title>
+    <title>{{ page.title }} | HCPS Endpoint Utilities</title>
+    <base href="/">
     <link rel="manifest" href="manifest.webmanifest">
+    <script defer data-domain="tools.hcps.win" src="https://plausible.hcps.win/js/script.js"></script>
     <link rel="stylesheet" href="assets/css/style.css?{{ 'now' | date: '%s' }}">
 
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/icon/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/icon/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/icon/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/icon/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="assets/icon/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/icon/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="assets/icon/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/icon/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="assets/icon/favicon-196x196.png" sizes="196x196" />
-    <link rel="icon" type="image/png" href="assets/icon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="assets/icon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="assets/icon/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="assets/icon/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="HCPS Repair Scripts" />
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="assets/icon/mstile-144x144.png" />
-    <meta name="msapplication-square70x70logo" content="assets/icon/mstile-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="assets/icon/mstile-150x150.png" />
-    <meta name="msapplication-wide310x150logo" content="assets/icon/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="assets/icon/mstile-310x310.png" />
+    <link rel="icon" type="image/png" href="assets/icon/favicon-512.png" sizes="512x512" />
+    <meta name="application-name" content="HCPS Endpoint Utilities" />
 </head>
 
 <body>
 
-    <nav>
-        {% for cat in site.data.tabs %}
-        {% for tab in cat[1] %}
-        <a {% if page.name contains tab.id %}class="active" {% endif %} href="{{ tab.id }}">
-            <span>{{ tab.name }}</span>
-            <img src="assets/nav/{{ tab.id }}.svg">
-        </a>
-        {% endfor %}
+    <div class="navs">
 
-        {% if forloop.last == false %}
-        <hr>
+        <nav>
+            {% for cat in site.data.tabs %}
+            {% for tab in cat[1] %}
+            <a {% if page.path contains tab.id %}class="active" {% endif %} href="{{ tab.id }}"
+                data-tooltip="{{ tab.name }}" onmouseenter="showTooltip(event)" onmouseleave="hideTooltip(event)">
+                <img src="assets/nav/{{ tab.id }}.svg">
+            </a>
+            {% endfor %}
+
+            {% if forloop.last == false %}
+            <hr>
+            {% endif %}
+
+            {% endfor %}
+        </nav>
+
+        {% if page.dir != "/" %}
+        <nav class="subnav">
+            {% assign catname = page.dir | split: "/" | slice: 1 %}
+            {% assign cat = site.data.tabs.tools | where: "id", catname[0] %}
+            {% for tab in cat[0].subpages %}
+            <a class="subtab{% if page.name contains tab.id %} active{% endif %}" href="{{ catname }}/{{ tab.id }}"
+                data-tooltip="{{ tab.name }}" onmouseenter="showTooltip(event)" onmouseleave="hideTooltip(event)">
+                <img src="assets/nav/{{ tab.id }}.svg">
+            </a>
+            {% endfor %}
+        </nav>
         {% endif %}
 
-        {% endfor %}
-
-        <a id="backgroundtoggle" onclick="togglechill()">
-            <span>Toggle Background</span>
-            <img src="assets/nav/chill.svg">
-        </a>
-    </nav>
+    </div>
 
     <div class="header">
-        <h1>Endpoint Technician Utilities</h1>
+        <h1>HCPS Endpoint Utilities</h1>
         <h3>{% if page.help %}{{ page.help | capitalize }} — {% endif %}{{ page.title }}</h3>
         {% if page.help %}<img class="help-button" src="assets/img/help.svg"
             onclick="document.getElementById('help-wrapper').classList = 'help-wrapper visible'">{% endif %}
@@ -81,13 +77,15 @@
 
         <footer>
             <a href="https://github.com/HCPS-OTIS/tools" target="_blank">Written</a> by
-            <a href="mailto:aidan.bennett@hcps.org">Aidan Bennett</a> and
-            <a href="mailto:conner.welker@hcps.org">Conner Welker</a>
+            <a href="https://teams.microsoft.com/l/chat/0/0?users=aidan.bennett@hcps.org" target="_blank">Aidan
+                Bennett</a> and
+            <a href="https://teams.microsoft.com/l/chat/0/0?users=conner.welker@hcps.org" target="_blank">Conner
+                Welker</a>
         </footer>
 
     </div>
 
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js?{{ 'now' | date: '%s' }}"></script>
 
 </body>
 

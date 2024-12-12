@@ -1,0 +1,54 @@
+---
+title: QR Label Generator
+layout: labels
+help: labels
+---
+
+<script src="assets/js/qrcode.js?{{ 'now' | date: '%s' }}"></script>
+
+<!-- blank label for use by javascript when creating new pages -->
+<div id="blank_label" style="display:none;">
+    <div class="label qr">
+        <textarea class="name" id="title%i%" type="text" placeholder="Title" autocomplete="one-time-code"></textarea>
+        <input class="subtitle" id="subtitle%i%" type="text" placeholder="Subtitle" autocomplete="one-time-code">
+        <div class="notinput">
+            <div class="barcode" id="barcode%i%"></div>
+            <div id="qrcode%i%"></div>
+        </div>
+        <input class="qrtext" id="qrtext%i%" type="text" placeholder="QR text" oninput="updateQR(event)"
+            autocomplete="one-time-code">
+        <input class="barcodetext" id="barcodetext%i%" type="text" placeholder="Barcode text"
+            oninput="updateBarcode(event)" autocomplete="one-time-code">
+    </div>
+</div>
+
+<div class="label-content">
+    <div class="pages" id="pages">
+        <div class="page" id="page1">
+            <div class="labels">
+                {% for i in (0..29) %}
+                <div class="label qr">
+                    <textarea class="name" id="title{{ i }}" type="text" placeholder="Title"
+                        autocomplete="one-time-code"></textarea>
+                    <input class="subtitle" id="subtitle{{ i }}" type="text" placeholder="Subtitle"
+                        autocomplete="one-time-code">
+                    <div class="notinput">
+                        <div class="barcode" id="barcode{{ i }}"></div>
+                        <div id="qrcode{{ i }}"></div>
+                    </div>
+                    <input class="qrtext" id="qrtext{{ i }}" type="text" placeholder="QR text"
+                        oninput="updateQR(event)" autocomplete="one-time-code">
+                    <input class="barcodetext" id="barcodetext{{ i }}" type="text" placeholder="Barcode text" oninput="updateBarcode(event)"
+                        autocomplete="one-time-code">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="bulk">
+        <input type="text" name="shortener-endpoint" id="shortener-endpoint-input" placeholder="URL shortener URL"><br>
+        <input type="password" name="shortener-key" id="shortener-key-input" placeholder="URL shortener key"><br>
+        <input type="button" value="Shorten" onclick="shortenURLs()">
+    </div>
+</div>
