@@ -8,6 +8,12 @@ tools:
   - id: qrlabels
     name: QR Code Label Generator
 
+  - id: labels
+    name: Labels
+    subpages:
+      - id: design
+        name: Design
+
   - id: templates
     name: Templates
     subpages:
