@@ -1,16 +1,17 @@
 tools:
-  - id: studentlabels
-    name: Student Label Generator
-
-  - id: teacherlabels
-    name: Teacher Label Generator
-
-  - id: qrlabels
-    name: QR Code Label Generator
 
   - id: labels
     name: Labels
     subpages:
+      - id: student
+        name: Student Label Generator
+
+      - id: teacher
+        name: Teacher Label Generator
+
+      - id: qr
+        name: QR Code Label Generator
+
       - id: design
         name: Design
 
