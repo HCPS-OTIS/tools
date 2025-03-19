@@ -66,6 +66,7 @@ Charger will not charge device. Tried other chargers on device and they function
 
 Bad keyboard  
 Keyboard keys no longer registered by device. Keys mechanically function with no sign of physical damage. Reseated internal ribbon cable.  
+Keyboard key no longer registered by device. Key mechanically functions with no sign of physical damage. Reseated internal ribbon cable.  
 Keys occasionally typing multiple times. Keys mechanically function with no sign of physical damage. Reseated internal ribbon cable.
 
 ## touchpad
