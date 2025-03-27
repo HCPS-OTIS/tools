@@ -42,6 +42,8 @@ Created dispatch *SR#########*. Waiting to return to Dell for repair.
 
 Created dispatch for part replacement *SR#########*. Waiting on parts.
 
+Submitted as part of a bulk dispatch request.
+
 Repaired by Dell.
 
 Device has been deemed uneconomical to repair by Dell and is being retired and replaced with an identical device - ST to follow.
