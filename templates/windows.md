@@ -48,8 +48,11 @@ Screen has light bleed/uneven backlighting on it. There are no signs of physical
 Screen is glitching  
 Screen has visible glitching on it. There are no signs of physical damage. Installing a known working screen fixes the issue. Installing this known defective screen into other devices reproduces the issue.
 
-Touchscreen  
+Touchscreen not working  
 Device touchscreen is malfunctioning/not working. Reseated battery and display cables and reinstalled display drivers.
+
+Touchscreen is possessed  
+Touchscreen registers phantom touches in a specific spot even when nothing is touching the screen. Device acts as if it is being constantly pressed at that location, causing interference with normal use. Reseated battery and display cables and reinstalled display drivers to no effect. Swapping in a known working screen fixes the issue. Installing this defective screen into another device reproduces the issue.
 
 Hinge  
 Screen is working fine on the device, but the hinge is making the bezel pop around the screen. It appears to be a hinge malfunction.
