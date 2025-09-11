@@ -45,6 +45,9 @@ Screen not displaying an image. Battery and video cables have been reseated to n
 Screen has light bleed/uneven backlighting  
 Screen has light bleed/uneven backlighting on it. There are no signs of physical damage. Swapping with a known working screen fixes the issue. Swapping this known broken screen into other devices reproduces the issue.
 
+Screen goes black intermittently  
+Screen will go black randomly while the device is in use. Updating the system and running Windows Updates did not resolve the issue. Swapping with a known working screen resolves the problem. Installing this screen into another device reproduces the same issue.
+
 Screen is glitching  
 Screen has visible glitching on it. There are no signs of physical damage. Installing a known working screen fixes the issue. Installing this known defective screen into other devices reproduces the issue.
 
