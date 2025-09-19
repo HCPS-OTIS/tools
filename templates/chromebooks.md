@@ -23,6 +23,9 @@ ChromeOS will not stay installed
 ChromeOS reinstalled multiple times and device continues to show "ChromeOS missing or damaged" error.
 ChromeOS reinstalled multiple times and device continues to show "Something went wrong" error.
 
+Cryptohome is corrupted  
+Device displays a “Cryptohome is corrupted” error at startup. Powerwashing and reinstalling ChromeOS does not resolve the issue.
+
 Network not available  
 Device is unable to detect or connect to any Wi-Fi networks - only shows "Network not available" error. Powerwashed to no effect. Reseated antenna cables to no effect.
 
