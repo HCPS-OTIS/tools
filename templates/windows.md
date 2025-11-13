@@ -6,9 +6,6 @@ help: templates
 
 ## motherboard
 
-Device will not power on  
-Device does not power on. Screen remains black. Reseated internal connections with no effect.
-
 Device will not power on — LED lit  
 Device does not power on. Screen remains black but LED indicator is lit. Reseated internal connections with no effect.
 
