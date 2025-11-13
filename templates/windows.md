@@ -6,96 +6,103 @@ help: templates
 
 ## motherboard
 
-Device will not turn on  
-Device will not power on/screen stays black. LED is lit. Reseated internal connections.  
-Device will not power on/screen stays black. LED will not light. Reseated internal connections.
+Device will not power on  
+Device does not power on. Screen remains black. Reseated internal connections with no effect.
+
+Device will not power on — LED lit  
+Device does not power on. Screen remains black but LED indicator is lit. Reseated internal connections with no effect.
+
+Device will not power on — LED not lit  
+Device does not power on. Screen remains black and LED indicator does not light. Reseated internal connections with no effect.
 
 Device randomly shuts down  
-Device will shut down or restart randomly during use. There is no obvious pattern or cause of this behavior.
+Device shuts down or restarts randomly during normal use. No identifiable pattern. Troubleshooting did not resolve issue.
 
 Device overheats  
-Device is overheating while in use. Replaced thermal paste and cleared out the cooling to no effect.
+Device overheats during normal use. Thermal paste replaced and cooling system cleaned with no improvement.
 
-Fan needs replaced  
-Device is overheating while in use. Replaced thermal paste and cleared out the cooling to no effect. Replaced with a known working fan and the issue is resolved. Tried the defective fan in a known working device and the issue appears. The fan needs replaced.
+Device is slow and unresponsive  
+Device runs unusually slow, frequently freezes, and becomes unresponsive. Windows updates, driver reinstalls, diagnostics, and full reimage performed with no improvement. Known-good SSD and RAM were tested and issue persisted. Likely motherboard failure.
 
-Device blue screens and crashes during memory test  
-Device randomly blue screens, then when starting back up, it launches the memory test, but always hangs at about 50% completion or crashes again during that test. Swapping in known good RAM fixes the issue. Trying the same RAM in a different machine yields the same crashes.
+Fan failure  
+Device overheats during normal use. Thermal paste replaced and cooling cleaned with no effect. Known-working fan resolves issue. Defective fan reproduces issue when tested in another device. Fan needs replacement.
 
-SSD does not show as boot option/not installable  
-SSD does not show as boot option/not able to install OS or even partition it. Probably has failed. I have reseated it to no effect. I removed the SSD and placed it into a known working device and it still failed to be detected. I removed a known working SSD from another device and placed it into this device, and it was detected and able to boot.
+Blue screens and fails memory test  
+Device blue screens randomly. On reboot, built-in memory test hangs or crashes around 50%. Known-good RAM resolves issue; faulty RAM causes identical crashes in another device.
 
-Wi-Fi Card is not functioning  
-Wi-Fi card is not functioning. Wi-Fi drivers were reinstalled and battery cable reseated to no effect.
+SSD not detected / cannot install OS  
+SSD does not appear as a boot option and OS cannot be installed or partitioned. Reseating had no effect. SSD fails to be detected in a known-working device. Known-working SSD works normally in this device. SSD has failed.
+
+Wi-Fi card not functioning  
+Wi-Fi card does not function. Drivers reinstalled and battery cable reseated with no effect.
 
 USB port not working  
-The USB port does not work. Plugging known working devices into the other USB ports is recognized by the device. Nothing is obstructing the port and it has been blown out with compressed air to no effect. Motherboard needs replaced.
+One USB port does not detect any devices. Other USB ports function normally. Port is clean and unobstructed. Indicates motherboard-level port failure.
 
 Headphone jack not working  
-The headphone jack does not work. Known working headphones have no sound, and there are no visible signs of damage.
+Headphone jack does not output sound. Known-working headphones tested. No visible physical damage.
 
-Device is unfixable, needs replaced  
-This device will crash randomly. Reseating the battery will fix the issue temporarily for about a week, but the issue will resurface. I have fixed this device around 10 times. Device needs fully replaced. Please escalate to exchange team.
+Device is unfixable — requires replacement  
+Device crashes randomly. Reseating the battery temporarily resolves issue for about a week, but it returns. Issue has occurred repeatedly despite multiple repairs. Device requires full replacement; please escalate to exchange team.
 
 ## screen
 
 Screen not displaying  
-Screen not displaying an image. Battery and video cables have been reseated to no avail.
+Screen does not display an image. Battery and video cables reseated with no effect.
 
-Screen has light bleed/uneven backlighting  
-Screen has light bleed/uneven backlighting on it. There are no signs of physical damage. Swapping with a known working screen fixes the issue. Swapping this known broken screen into other devices reproduces the issue.
+Light bleed / uneven backlighting  
+Screen shows light bleed or uneven backlighting. No signs of physical damage. Known-working screen resolves the issue; defective screen reproduces issue in other devices.
 
 Screen goes black intermittently  
-Screen will go black randomly while the device is in use. Updating the system and running Windows Updates did not resolve the issue. Swapping with a known working screen resolves the problem. Installing this screen into another device reproduces the same issue.
+Screen intermittently goes black during use. Software updates did not resolve issue. Known-working screen resolves issue; defective screen reproduces it.
 
-Screen is glitching  
-Screen has visible glitching on it. There are no signs of physical damage. Installing a known working screen fixes the issue. Installing this known defective screen into other devices reproduces the issue.
+Screen glitching  
+Screen shows visual glitching with no signs of damage. Known-working screen resolves issue; defective screen reproduces it.
 
 Touchscreen not working  
-Device touchscreen is malfunctioning/not working. Reseated battery and display cables and reinstalled display drivers.
+Touchscreen does not respond to input. Battery and display cables reseated and display drivers reinstalled with no effect.
 
-Touchscreen is possessed  
-Touchscreen registers phantom touches in a specific spot even when nothing is touching the screen. Device acts as if it is being constantly pressed at that location, causing interference with normal use. Reseated battery and display cables and reinstalled display drivers to no effect. Swapping in a known working screen fixes the issue. Installing this defective screen into another device reproduces the issue.
+Touchscreen phantom touches ("possessed")  
+Touchscreen registers phantom touches in a specific area. Battery and display cables reseated and drivers reinstalled with no effect. Known-working screen resolves issue; defective screen reproduces it.
 
-Hinge  
-Screen is working fine on the device, but the hinge is making the bezel pop around the screen. It appears to be a hinge malfunction.
+Hinge issue  
+Screen functions normally, but hinge pressure causes bezel to separate. Indicates hinge malfunction.
 
 ## charge
 
 Device will not charge  
-Device will not power on/does not charge when plugged into known working charger. No signs of damage in the ports.
+Device does not charge or power on when connected to a known-working charger. No visible port damage.
 
-Charger died  
-Charger will not charge device. Tried other chargers on device and they function as expected. Charger will not charge other devices.
+Charger not functioning  
+Charger does not charge this device or other devices. Known-working chargers successfully charge this device.
 
 ## keyboard
 
-Bad keyboard  
-Keyboard keys no longer registered by device. Keys mechanically function with no sign of physical damage. Reseated internal ribbon cable. Installed known working keyboard into this device and that resolved the issue. Installed this keyboard into another known working device and the issue persisted. Keyboard is faulty.  
-Keyboard key no longer registered by device. Key mechanically functions with no sign of physical damage. Reseated internal ribbon cable. Installed known working keyboard into this device and that resolved the issue. Installed this keyboard into another known working device and the issue persisted. Keyboard is faulty.  
-Keys occasionally typing multiple times. Keys mechanically function with no sign of physical damage. Reseated internal ribbon cable. Installed known working keyboard into this device and that resolved the issue. Installed this keyboard into another known working device and the issue persisted. Keyboard is faulty.
+Keyboard not registering keys  
+Keyboard fails to register key presses. Keys move normally with no visible damage. Ribbon cable reseated. Known-working keyboard resolves issue; defective keyboard reproduces issue in another device.
+
+Single key not registering  
+One key fails to register. Mechanical function normal with no visible damage. Ribbon cable reseated. Known-working keyboard resolves issue; defective keyboard reproduces failure in another device.
+
+Keys typing multiple times  
+Keys intermittently register multiple characters. No visible damage. Ribbon cable reseated. Known-working keyboard resolves issue; defective keyboard reproduces issue in another device.
 
 ## touchpad
 
-Touchpad is unresponsive  
-Touchpad does not respond to any movements or button clicks. External USB mouse works fine. Reseated touchpad ribbon cable on motherboard and still does not function.
+Touchpad unresponsive  
+Touchpad does not respond to movement or clicks. External USB mouse works. Ribbon cable reseated with no effect.
 
 ## camera
 
-Camera isn't recognized  
-Camera isn't being picked up by Windows or any apps. Nothing appears physically broken. I tried unseating and reseating the camera cable to no avail.
+Camera not recognized  
+Camera is not detected by Windows or applications. No visible damage. Camera cable reseated with no effect.
 
 ## speakers
 
-Speakers aren't recognized  
-Speakers aren't being picked up by Windows or any apps. Nothing appears physically broken. I tried unseating and reseating the speaker cable to no avail.
+Speakers not recognized  
+Speakers are not detected by Windows or applications. No visible damage. Speaker cable reseated with no effect.
 
 ## microphone
 
-Microphone isn't recognized  
-Microphone isn't being picked up by Windows or any apps. Nothing appears physically broken. I tried unseating and reseating the microphone cable to no avail.
-
-## enrollment
-
-Registered to another school  
-Sent this device to Dell for repairs, Dell replaced the motherboard, and the motherboard was registered to another school district. I tried adding the hardware hash to HCPS, contacting the school district to delete the device from their Enterprise, and looking through Intune groups to delete it out but none of these methods worked. Need a device I can utilize for HCPS Enterprise.  
+Microphone not recognized  
+Microphone is not detected by Windows or applications. No visible damage. Microphone cable reseated with no effect.
