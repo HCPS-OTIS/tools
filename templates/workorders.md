@@ -50,7 +50,7 @@ Device deemed uneconomical to repair by Dell. Being retired and replaced with id
 
 Replacement ST is .
 
-Replacements
+## replacements
 
 Replaced  
 Screen replaced.  
