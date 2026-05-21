@@ -36,6 +36,9 @@ Wi-Fi card does not function. Drivers reinstalled and battery cable reseated wit
 USB port not working  
 One USB port does not detect any devices. Other USB ports function normally. Port is clean and unobstructed. Indicates motherboard-level port failure.
 
+USB-C video output not functioning  
+USB-C port does not pass video to docking station. USB devices and charging function normally, but external displays are not detected. Tested with known-working dock, cables, and monitors. Drivers reinstalled with no effect. Indicates motherboard-level USB-C/display output failure.
+
 Headphone jack not working  
 Headphone jack does not output sound. Known-working headphones tested. No visible physical damage.
 
